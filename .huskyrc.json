@@ -1,0 +1,8 @@
+{
+    "hooks": {
+        "pre-commit": [
+            "yarn lint",
+            "yarn prettier"
+        ]
+    }
+}
