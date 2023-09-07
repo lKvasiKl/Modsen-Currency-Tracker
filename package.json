@@ -5,7 +5,12 @@
   "repository": "https://github.com/lKvasiKl/Modsen-Currency-Tracker.git",
   "author": "Kirill Vasko <kirill.vasko.2003@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/ --fix",
+    "prettier": "prettier --write .js,.jsx,.ts,.tsx ./src/"
+  },
   "dependencies": {
+    "husky": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
