@@ -3,17 +3,16 @@ import styled from "styled-components";
 export const ToggleSwitch = styled.label`
   position: relative;
   display: inline-block;
-  width: 54px;
-  height: 29px;
+  width: 50px;
+  height: 25px;
   margin: 0 0.75rem;
 `;
 
 export const ToggleSwitchSlider = styled.span`
   position: absolute;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #84dd37;
   border-radius: 25px;
-  border: solid 1px #ffffff;
   top: 0;
   right: 0;
   bottom: 0;
@@ -27,7 +26,7 @@ export const ToggleSwitchSlider = styled.span`
     top: 2px;
     width: 21px;
     height: 21px;
-    border: solid 1px #ffffff;
+    background-color: #ffffff;
     border-radius: 50%;
     transition: transform 0.3s ease;
   }
@@ -37,13 +36,11 @@ export const ToggleSwitchInput = styled.input`
   display: none;
 
   &:checked + ${ToggleSwitchSlider} {
-    background-color: transparent;
-    border: solid 1px #000000;
+    background-color: #84dd37;
   }
 
   &:checked + ${ToggleSwitchSlider}::before {
     transform: translateX(25px);
-    background-color: transparent;
-    border: solid 1px #000000;
+    background-color: #000000;
   }
 `;
