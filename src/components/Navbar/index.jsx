@@ -1,26 +1,26 @@
 import icon from "@assets/images/icon.webp";
 import { NAVBAR_ITEMS } from "@constants/navigation";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Switch from "../Switch";
 
-import { NavbarContainer, NavListContainer } from "./styled";
+import { NavbarContainer, NavLinksContainer } from "./styled";
 
 const Navbar = () => {
   return (
     <NavbarContainer>
       <img alt="Application icon" height="40px" src={icon} width="41.19px" />
-      <NavListContainer>
+      <NavLinksContainer>
         {NAVBAR_ITEMS.map((item) => {
           const { id, name, path } = item;
 
           return (
             <li key={id}>
-              <Link to={path}>{name}</Link>
+              <NavLink to={path}>{name}</NavLink>
             </li>
           );
         })}
-      </NavListContainer>
+      </NavLinksContainer>
       <Switch />
     </NavbarContainer>
   );

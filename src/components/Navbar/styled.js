@@ -14,7 +14,7 @@ export const NavbarContainer = styled.nav`
   }
 `;
 
-export const NavListContainer = styled.ul`
+export const NavLinksContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   list-style-type: none;
@@ -26,7 +26,8 @@ export const NavListContainer = styled.ul`
     text-decoration: none;
     color: white;
 
-    &:hover {
+    &:hover,
+    &.active {
       color: #84dd37;
       text-decoration: underline;
       text-underline-offset: 5px;
