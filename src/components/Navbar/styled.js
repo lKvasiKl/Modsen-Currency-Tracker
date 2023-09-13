@@ -9,8 +9,7 @@ export const NavbarContainer = styled.nav`
   padding: 0px 100px;
 
   img {
-    height: 40px;
-    width: 41.19px;
+    background-color: transparent;
   }
 `;
 

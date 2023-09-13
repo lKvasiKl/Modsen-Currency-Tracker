@@ -1,4 +1,4 @@
-import icon from "@assets/images/icon.webp";
+import logotype from "@assets/images/logotype.svg";
 import { NAVBAR_ITEMS } from "@constants/navigation";
 import { NavLink } from "react-router-dom";
 
@@ -9,7 +9,12 @@ import { NavbarContainer, NavLinksContainer } from "./styled";
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <img alt="Application icon" height="40px" src={icon} width="41.19px" />
+      <img
+        alt="Application logotype"
+        height="40px"
+        src={logotype}
+        width="41.19px"
+      />
       <NavLinksContainer>
         {NAVBAR_ITEMS.map((item) => {
           const { id, name, path } = item;
