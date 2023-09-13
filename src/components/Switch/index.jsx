@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import { ToggleSwitch, ToggleSwitchInput, ToggleSwitchSlider } from "./styled";
 
 const Switch = () => {
@@ -11,8 +12,8 @@ const Switch = () => {
   return (
     <ToggleSwitch>
       <ToggleSwitchInput
-        type="checkbox"
         checked={isToggled}
+        type="checkbox"
         onChange={handleToggleClick}
       />
       <ToggleSwitchSlider />

@@ -7,9 +7,7 @@ export const NavbarContainer = styled.nav`
   height: 103px;
   background-color: #000000;
   padding: 0px 100px;
-`;
 
-export const IconContainer = styled.div`
   img {
     height: 40px;
     width: 41.19px;
@@ -27,6 +25,12 @@ export const NavListContainer = styled.ul`
     font-weight: 300;
     text-decoration: none;
     color: white;
+
+    &:hover {
+      color: #84dd37;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
   }
 `;
 
