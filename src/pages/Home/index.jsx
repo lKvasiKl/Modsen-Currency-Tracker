@@ -1,6 +1,7 @@
 import { Navbar, Header } from "@components";
 
 import UpdateInfo from "../../components/UpdateInfo";
+import { Footer } from "../../components";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <UpdateInfo />
+      <Footer />
     </>
   );
 };
