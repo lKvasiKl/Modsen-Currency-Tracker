@@ -1,4 +1,4 @@
-import logotype from "@assets/images/logotype.svg";
+import logotype from "@assets/icons/logotype.svg";
 import { NAVBAR_ITEMS } from "@constants/navigation";
 import { NavLink } from "react-router-dom";
 

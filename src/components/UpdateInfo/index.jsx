@@ -1,4 +1,4 @@
-import circle from "@assets/images/circle.svg";
+import circle from "@assets/icons/circle.svg";
 
 import { UpdateInfoContainer, Text } from "./styled";
 

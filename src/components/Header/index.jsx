@@ -1,4 +1,4 @@
-import logotype from "@assets/images/logotype.svg";
+import logotype from "@assets/icons/logotype.svg";
 import { HEADER_DATA } from "@constants/header";
 
 import {

@@ -1,4 +1,4 @@
-import logotype from "@assets/images/logotype.svg";
+import logotype from "@assets/icons/logotype.svg";
 
 import { FOOTER_DATA } from "../../constants/footer";
 import FooterLinks from "../FooterLinks";

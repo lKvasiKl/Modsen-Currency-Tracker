@@ -25,7 +25,10 @@ export const NavLinksContainer = styled.ul`
     text-decoration: none;
     color: white;
 
-    &:hover,
+    &:hover {
+      color: #84dd37;
+    }
+
     &.active {
       color: #84dd37;
       text-decoration: underline;

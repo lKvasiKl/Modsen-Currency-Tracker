@@ -1,7 +1,4 @@
-import { Navbar, Header } from "@components";
-
-import UpdateInfo from "../../components/UpdateInfo";
-import { Footer } from "../../components";
+import { Navbar, Header, Footer, UpdateInfo, CurrentRate } from "@components";
 
 const Home = () => {
   return (
@@ -9,6 +6,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <UpdateInfo />
+      <CurrentRate />
       <Footer />
     </>
   );
