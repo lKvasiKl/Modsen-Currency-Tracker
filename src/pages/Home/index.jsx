@@ -1,4 +1,6 @@
-import { Navbar, Header, Footer, UpdateInfo, CurrentRate } from "@components";
+import { Navbar, Header, Footer, UpdateInfo } from "@components";
+
+import CurrentRate from "./components/CurrentRate";
 
 const Home = () => {
   return (

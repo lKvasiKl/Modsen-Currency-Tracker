@@ -60,5 +60,6 @@ export const Quote = styled.p`
 
 export const Logotype = styled.img`
   flex-shrink: 0;
+  user-select: none;
   background-color: transparent;
 `;

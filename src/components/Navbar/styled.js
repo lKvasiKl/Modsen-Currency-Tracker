@@ -13,6 +13,10 @@ export const NavbarContainer = styled.nav`
   }
 `;
 
+export const Logotype = styled.img`
+  user-select: none;
+`;
+
 export const NavLinksContainer = styled.ul`
   display: flex;
   justify-content: space-between;

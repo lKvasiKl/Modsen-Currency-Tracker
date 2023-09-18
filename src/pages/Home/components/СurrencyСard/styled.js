@@ -12,9 +12,18 @@ export const CardContainer = styled.div`
   border: 1px solid #474747;
   background-color: #202025;
   margin-bottom: 56px;
+  transition: ${({ onClick }) => (onClick ? "transform 0.5s" : "none")};
+
+  &:hover {
+    transform: ${({ onClick }) => (onClick ? "scale(1.05)" : "none")};
+    cursor: ${({ onClick }) => (onClick ? "pointer" : "arrow")};
+    box-shadow: ${({ onClick }) =>
+      onClick ? "0px 0px 25px 4px #84dd3770" : ""};
+  }
 `;
 
 export const Image = styled.img`
+  user-select: none;
   background-color: transparent;
 `;
 

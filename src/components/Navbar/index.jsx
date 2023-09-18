@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 
 import Switch from "../Switch";
 
-import { NavbarContainer, NavLinksContainer } from "./styled";
+import { NavbarContainer, Logotype, NavLinksContainer } from "./styled";
 
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <img
+      <Logotype
         alt="Application logotype"
         height="40px"
         src={logotype}

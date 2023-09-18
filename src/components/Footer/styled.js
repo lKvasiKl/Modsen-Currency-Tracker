@@ -25,6 +25,10 @@ export const Title = styled.div`
   gap: 10px;
 `;
 
+export const Image = styled.img`
+  user-delect: none;
+`;
+
 export const Text = styled.h3`
   font-family: Poppins;
   font-size: 26px;
@@ -64,4 +68,5 @@ export const Copyright = styled.p`
   font-weight: 400;
   line-height: 150%;
   padding: 55px 0 40px 0;
+  user-select: none;
 `;

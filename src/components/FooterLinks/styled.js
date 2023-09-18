@@ -28,5 +28,9 @@ export const LinksContainer = styled.div`
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+
+    &:hover {
+      color: #84dd37;
+    }
   }
 `;

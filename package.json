@@ -12,7 +12,6 @@
     "prettier": "prettier --write .js,.jsx,.ts,.tsx ./src/"
   },
   "dependencies": {
-    "husky": "^8.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0"
@@ -32,11 +31,13 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
     "style-loader": "^3.3.3",
     "styled-components": "^6.0.7",
+    "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",

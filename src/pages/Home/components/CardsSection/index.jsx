@@ -4,7 +4,7 @@ import CurrencyCard from "../СurrencyСard";
 
 import { CardsList, CardsSectionContainer, CardsSectionTitle } from "./styled";
 
-const CardsSection = ({ title, cardsArray }) => {
+const CardsSection = ({ title, cardsArray, onClick }) => {
   return (
     <CardsSectionContainer>
       <CardsSectionTitle>{title}</CardsSectionTitle>
@@ -18,6 +18,7 @@ const CardsSection = ({ title, cardsArray }) => {
               key={title}
               rateValue={rateValue}
               title={title}
+              onClick={onClick}
             />
           );
         })}
@@ -29,6 +30,7 @@ const CardsSection = ({ title, cardsArray }) => {
 CardsSection.propTypes = {
   title: PropTypes.string.isRequired,
   cardsArray: PropTypes.array.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default CardsSection;

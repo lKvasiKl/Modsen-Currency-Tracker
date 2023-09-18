@@ -7,6 +7,7 @@ import {
   FooterConatiner,
   InfoContainer,
   Title,
+  Image,
   Text,
   Quote,
   Copyright,
@@ -22,7 +23,7 @@ const Footer = () => {
       <FooterWrapper>
         <InfoContainer>
           <Title>
-            <img
+            <Image
               alt="Application logotype"
               height="40px"
               src={logotype}
