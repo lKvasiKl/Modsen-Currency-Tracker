@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const ToggleSwitch = styled.label`
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 100%;
+  max-width: 50px;
   height: 25px;
   margin: 0 0.75rem;
 `;

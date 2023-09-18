@@ -10,6 +10,10 @@ export const StyledHeader = styled.header`
     #00ce2c20 49.12%,
     #121212b8 91.12%
   );
+
+  @media (max-width: 1200px) {
+    padding: 32.95px 0 58.03px 0;
+  }
 `;
 
 export const SectionContainer = styled.section`
@@ -24,6 +28,10 @@ export const TextContainer = styled.div`
   align-items: flex-end;
   text-align: center;
   background-color: transparent;
+
+  @media (max-width: 1200px) {
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -41,9 +49,17 @@ export const Title = styled.h1`
     #aedf23 49.3%,
     #a3dc00 99.88%
   );
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 1200px) {
+    padding: 0;
+    text-align: center;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 50px;
+  }
 `;
 
 export const Quote = styled.p`
@@ -62,4 +78,8 @@ export const Logotype = styled.img`
   flex-shrink: 0;
   user-select: none;
   background-color: transparent;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;

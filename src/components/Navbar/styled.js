@@ -11,6 +11,10 @@ export const NavbarContainer = styled.nav`
   img {
     background-color: transparent;
   }
+
+  @media (max-width: 1200px) {
+    padding: 0px 30px;
+  }
 `;
 
 export const Logotype = styled.img`
@@ -38,6 +42,15 @@ export const NavLinksContainer = styled.ul`
       text-decoration: underline;
       text-underline-offset: 5px;
     }
+  }
+
+  @media (max-width: 900px) {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  @media (max-width: 600px) {
+    gap: 15px;
   }
 `;
 

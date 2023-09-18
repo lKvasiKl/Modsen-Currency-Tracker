@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { App, ErrorBoundary } from "@components";
+import { ErrorBoundary } from "@components";
+
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

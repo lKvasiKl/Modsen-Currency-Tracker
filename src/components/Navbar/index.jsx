@@ -2,8 +2,7 @@ import logotype from "@assets/icons/logotype.svg";
 import { NAVBAR_ITEMS } from "@constants/navigation";
 import { NavLink } from "react-router-dom";
 
-import Switch from "../Switch";
-
+import Switch from "./Switch";
 import { NavbarContainer, Logotype, NavLinksContainer } from "./styled";
 
 const Navbar = () => {

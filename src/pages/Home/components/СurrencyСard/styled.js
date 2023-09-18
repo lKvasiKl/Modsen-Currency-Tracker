@@ -15,10 +15,14 @@ export const CardContainer = styled.div`
   transition: ${({ onClick }) => (onClick ? "transform 0.5s" : "none")};
 
   &:hover {
-    transform: ${({ onClick }) => (onClick ? "scale(1.05)" : "none")};
+    transform: ${({ onClick }) => (onClick ? "scale(1.03)" : "none")};
     cursor: ${({ onClick }) => (onClick ? "pointer" : "arrow")};
     box-shadow: ${({ onClick }) =>
       onClick ? "0px 0px 25px 4px #84dd3770" : ""};
+  }
+
+  @media (max-width: 1200px) {
+    max-width: unset;
   }
 `;
 

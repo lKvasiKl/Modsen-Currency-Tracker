@@ -1,8 +1,8 @@
 import logotype from "@assets/icons/logotype.svg";
 
 import { FOOTER_DATA } from "../../constants/footer";
-import FooterLinks from "../FooterLinks";
 
+import FooterLinks from "./Links";
 import {
   FooterConatiner,
   InfoContainer,
@@ -13,7 +13,9 @@ import {
   Copyright,
   FooterWrapper,
   LinksContainer,
+  MobileLinksContainer,
 } from "./styled";
+import MobileLinks from "./MobileLinks";
 
 const Footer = () => {
   const { title, quote, footerSections, copyright } = FOOTER_DATA;
@@ -38,6 +40,11 @@ const Footer = () => {
             <FooterLinks key={section.title} {...section} />
           ))}
         </LinksContainer>
+        <MobileLinksContainer>
+          {footerSections.map((section) => (
+            <MobileLinks key={section.title} {...section} />
+          ))}
+        </MobileLinksContainer>
       </FooterWrapper>
       <Copyright>{copyright}</Copyright>
     </FooterConatiner>
