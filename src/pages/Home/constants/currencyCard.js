@@ -25,48 +25,27 @@ export const STOCKS_CARD_DATA = [
 
 export const QUOTES_CARD_DATA = [
   {
+    id: "USD",
     imgPath: dollar,
     title: "Commercial Dollar",
     rateValue: "R$ 5,13",
   },
+  { id: "ARS", imgPath: peso, title: "Argentine Peso", rateValue: "R$ 0,02" },
   {
-    imgPath: peso,
-    title: "Argentine Peso",
-    rateValue: "R$ 0,02",
-  },
-  {
+    id: "CAD",
     imgPath: canadianDollar,
     title: "Canadian Dollar",
     rateValue: "R$ 3,78",
   },
+  { id: "JPY", imgPath: yen, title: "Yen", rateValue: "R$ 0,03" },
   {
-    imgPath: yen,
-    title: "Yen",
-    rateValue: "R$ 0,03",
-  },
-  {
+    id: "AUD",
     imgPath: australianDollar,
     title: "Australian Dollar",
     rateValue: "R$ 3,48",
   },
-  {
-    imgPath: yuan,
-    title: "Yuan",
-    rateValue: "R$ 0,74",
-  },
-  {
-    imgPath: euro,
-    title: "Euro",
-    rateValue: "R$ 5,43",
-  },
-  {
-    imgPath: bitcoin,
-    title: "Bitcoin",
-    rateValue: "R$ 122.148,71",
-  },
-  {
-    imgPath: libra,
-    title: "Libra",
-    rateValue: "R$ 6,16",
-  },
+  { id: "CNY", imgPath: yuan, title: "Yuan", rateValue: "R$ 0,74" },
+  { id: "EUR", imgPath: euro, title: "Euro", rateValue: "R$ 5,43" },
+  { id: "BTC", imgPath: bitcoin, title: "Bitcoin", rateValue: "R$ 122.148,71" },
+  { id: "LBP", imgPath: libra, title: "Libra", rateValue: "R$ 6,16" },
 ];

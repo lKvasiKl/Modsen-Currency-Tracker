@@ -1,6 +1,7 @@
 import { Navbar, Header, Footer, UpdateInfo } from "@components";
 
 import CurrentRate from "./components/CurrentRate";
+import CurrencyConvertorModal from "./components/CurrencyConvertorModal";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <UpdateInfo />
+      <CurrencyConvertorModal />
       <CurrentRate />
       <Footer />
     </>
