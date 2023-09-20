@@ -77,6 +77,14 @@ export const CurrencyInput = styled.input`
   color: #ffffff;
   border: none;
   outline: none;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    margin: 0;
+  }
 `;
 
 export const CurrencyContainer = styled.div`

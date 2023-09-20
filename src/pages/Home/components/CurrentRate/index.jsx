@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import usd from "@assets/icons/dollar.svg";
 import getCurriencies from "@services/currencyService";
 import { getCache, saveCache, isCacheValid } from "@utils/cachingFunctions";
 
@@ -8,6 +7,7 @@ import CardsSection from "../CardsSection";
 import {
   STOCKS_CARD_DATA,
   QUOTES_CARD_DATA,
+  CURRENCY_DEFAULT,
 } from "../../constants/currencyCard";
 import CurrencyConvertorModal from "../CurrencyConvertorModal";
 
@@ -20,13 +20,12 @@ const CACHE_LAST_UPDATE_KEY = process.env.REACT_APP_CACHE_LAST_UPDATE_KEY;
 const CurrentRate = () => {
   const [rates, setRates] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [targetCurrency, setTargetCurrency] = useState({
-    id: "USD",
-    imgPath: usd,
-  });
+  const [exchangeAmount, setExchangeAmount] = useState(0);
+  const [targetCurrency, setTargetCurrency] = useState(CURRENCY_DEFAULT);
 
   const handleCardClick = ({ id, imgPath }) => {
     setIsModalOpen((prevSatate) => !prevSatate);
+    setExchangeAmount(rates.data[id].value);
     setTargetCurrency({
       id,
       imgPath,
@@ -69,6 +68,9 @@ const CurrentRate = () => {
       {isModalOpen &&
         createPortal(
           <CurrencyConvertorModal
+            exchangeAmount={exchangeAmount}
+            rates={rates}
+            setExchangeAmount={setExchangeAmount}
             setIsModalOpen={setIsModalOpen}
             targetCurrency={targetCurrency}
           />,

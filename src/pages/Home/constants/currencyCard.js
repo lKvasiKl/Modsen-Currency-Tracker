@@ -10,6 +10,11 @@ import euro from "@assets/icons/euro.svg";
 import bitcoin from "@assets/icons/bitcoin.svg";
 import libra from "@assets/icons/libra.svg";
 
+export const CURRENCY_DEFAULT = {
+  id: "USD",
+  imgPath: dollar,
+};
+
 export const STOCKS_CARD_DATA = [
   {
     imgPath: bovespa,

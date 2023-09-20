@@ -1,3 +1,5 @@
+const DECIMAL_PLACES = process.env.REACT_APP_DECIMAL_PLACES;
+
 const formatTime = (milliseconds) => {
   const date = new Date(milliseconds);
   const hours = date.getHours();
@@ -10,15 +12,39 @@ const formatTime = (milliseconds) => {
 };
 
 const formatRateValue = (rates, id, rateValue) => {
-  const REGEX_TRAILING_ZEROS_AFTER_DECIMAL = /\.?0+$/;
-
   if (rates && rates.data && rates.data[id]) {
-    return `$ ${rates.data[id].value
-      .toFixed(5)
-      .replace(REGEX_TRAILING_ZEROS_AFTER_DECIMAL, "")}`;
+    const value = `$ ${rates.data[id].value.toFixed(DECIMAL_PLACES)}`;
+
+    return formatDecimalTrimZeros(value);
   } else {
     return rateValue ? rateValue : "Loading...";
   }
 };
 
-export { formatTime, formatRateValue };
+const formatDecimalTrimZeros = (str) => {
+  const REGEX_TRAILING_ZEROS_AFTER_DECIMAL = /\.?0+$/;
+
+  return String(str).replace(REGEX_TRAILING_ZEROS_AFTER_DECIMAL, "");
+};
+
+const formatConvertedCurrency = (
+  exchangeAmount,
+  fromCurrency,
+  convertedCurrencyValue,
+  toCurrency,
+) => {
+  if (exchangeAmount) {
+    return `${formatDecimalTrimZeros(
+      exchangeAmount.toFixed(DECIMAL_PLACES),
+    )} ${fromCurrency} = ${convertedCurrencyValue} ${toCurrency}`;
+  } else {
+    return "";
+  }
+};
+
+export {
+  formatTime,
+  formatRateValue,
+  formatDecimalTrimZeros,
+  formatConvertedCurrency,
+};
