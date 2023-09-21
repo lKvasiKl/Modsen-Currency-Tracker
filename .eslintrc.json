@@ -51,7 +51,7 @@
               "position": "after"
             },
             {
-              "pattern": "helpers/**",
+              "pattern": "utils/**",
               "group": "internal",
               "position": "after"
             },

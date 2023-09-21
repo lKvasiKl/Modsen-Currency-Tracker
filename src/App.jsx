@@ -1,14 +1,7 @@
-import Home from "@pages/Home";
-
-import { Global } from "./styled";
+import Router from "./routes";
 
 const App = () => {
-  return (
-    <>
-      <Global />
-      <Home />
-    </>
-  );
+  return <Router />;
 };
 
 export default App;

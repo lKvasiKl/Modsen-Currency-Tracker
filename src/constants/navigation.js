@@ -1,6 +1,21 @@
-export const NAVBAR_ITEMS = [
-  { id: 1, name: "Home", path: "/" },
-  { id: 2, name: "Timeline", path: "/timeline" },
-  { id: 3, name: "Bank card", path: "/bank-card" },
-  { id: 4, name: "Contato", path: "/contato" },
-];
+import { lazy } from "react";
+
+const Home = lazy(() => import("@pages/Home"));
+const Contato = lazy(() => import("@pages/Contato"));
+
+export const NAVBAR_ITEMS = {
+  Home: {
+    path: "/",
+    element: <Home />,
+  },
+  Timeline: {
+    path: "/timeline",
+  },
+  "Bank card": {
+    path: "/bank-card",
+  },
+  Contato: {
+    path: "/contato",
+    element: <Contato />,
+  },
+};
