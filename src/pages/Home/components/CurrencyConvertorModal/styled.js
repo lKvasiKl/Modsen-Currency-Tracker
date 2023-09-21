@@ -55,7 +55,6 @@ export const Image = styled.img`
 
 export const Label = styled.label`
   ${CommonStyles}
-  background: transparent;
   padding-left: 25px;
 `;
 

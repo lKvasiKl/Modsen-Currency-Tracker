@@ -15,12 +15,12 @@ const Navbar = () => {
         width="41.19px"
       />
       <NavLinksContainer>
-        {NAVBAR_ITEMS.map((item) => {
-          const { id, name, path } = item;
+        {Object.keys(NAVBAR_ITEMS).map((itemName) => {
+          const { path } = NAVBAR_ITEMS[itemName];
 
           return (
-            <li key={id}>
-              <NavLink to={path}>{name}</NavLink>
+            <li key={itemName}>
+              <NavLink to={path}>{itemName}</NavLink>
             </li>
           );
         })}
