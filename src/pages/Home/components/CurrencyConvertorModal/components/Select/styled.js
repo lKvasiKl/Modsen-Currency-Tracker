@@ -28,19 +28,19 @@ export const ArrowIcon = styled.img`
   background-color: transparent;
   transition: transform 0.3s;
 
-  transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(360deg)")};
+  transform: ${({ open }) => (open ? "rotate(180deg)" : "rotate(360deg)")};
 `;
 
 export const SelectList = styled.ul`
   position: absolute;
   top: 66.1%;
-  width: 388px;
+  width: 287px;
   left: 35px;
   list-style-type: none;
   height: 183px;
   overflow: auto;
 
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  display: ${({ open }) => (open ? "block" : "none")};
 
   &::-webkit-scrollbar {
     width: 4px;

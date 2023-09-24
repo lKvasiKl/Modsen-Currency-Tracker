@@ -13,6 +13,7 @@ import libra from "@assets/icons/libra.svg";
 export const CURRENCY_DEFAULT = {
   id: "USD",
   imgPath: dollar,
+  title: "Commercial Dollar",
 };
 
 export const STOCKS_CARD_DATA = [

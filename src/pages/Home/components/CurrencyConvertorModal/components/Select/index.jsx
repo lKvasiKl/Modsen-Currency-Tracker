@@ -1,9 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import arrow from "@assets/icons/arrow.svg";
+import { QUOTES_CARD_DATA } from "@constants/currency";
 
-import { QUOTES_CARD_DATA } from "../../../constants/currencyCard";
-import { Text, Image } from "../styled";
+import { Text, Image } from "../../styled";
 
 import {
   SelectButton,
@@ -46,12 +46,12 @@ const Select = ({
         <ArrowIcon
           alt="Arrow icon"
           height="20px"
-          isOpen={isOpen}
+          open={isOpen}
           src={arrow}
           width="20px"
         />
       </SelectButton>
-      <SelectList isOpen={isOpen}>
+      <SelectList open={isOpen}>
         {QUOTES_CARD_DATA.map((listItem) => {
           const { id, imgPath } = listItem;
 
