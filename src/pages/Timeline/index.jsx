@@ -1,10 +1,10 @@
 import { Component } from "react";
 
-import CurrencyChart from "./components/CurrencyChart";
+import TimelineMainSection from "./components/TimelineMainSection";
 
 class Timeline extends Component {
   render() {
-    return <CurrencyChart />;
+    return <TimelineMainSection />;
   }
 }
 

@@ -8,7 +8,7 @@ export const CurrencyContainer = styled.div`
   gap: 25px;
   margin-bottom: 50px;
   border: none;
-  cursor: pointer;
+  cursor: ${(props) => (!props.$isChartCanBuild ? "pointer" : "arrow")};
   padding: 30px;
   border-radius: 8px;
   border: 1px solid #474747;
@@ -16,8 +16,9 @@ export const CurrencyContainer = styled.div`
   transition: transform 0.5s;
 
   &:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 0px 25px 4px #84dd3770;
+    transform: ${(props) => (!props.$isChartCanBuild ? "scale(1.03)" : "none")};
+    box-shadow: ${(props) =>
+      !props.$isChartCanBuild ? "0px 0px 25px 4px #84dd3770" : "none"};
   }
 `;
 

@@ -28,7 +28,8 @@ export const ArrowIcon = styled.img`
   background-color: transparent;
   transition: transform 0.3s;
 
-  transform: ${({ open }) => (open ? "rotate(180deg)" : "rotate(360deg)")};
+  transform: ${(props) =>
+    props.$isOpen ? "rotate(180deg)" : "rotate(360deg)"};
 `;
 
 export const SelectList = styled.ul`
@@ -40,7 +41,7 @@ export const SelectList = styled.ul`
   height: 183px;
   overflow: auto;
 
-  display: ${({ open }) => (open ? "block" : "none")};
+  display: ${(props) => (props.$isOpen ? "block" : "none")};
 
   &::-webkit-scrollbar {
     width: 4px;

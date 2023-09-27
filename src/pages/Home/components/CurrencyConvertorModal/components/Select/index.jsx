@@ -44,14 +44,14 @@ const Select = ({
           <Text>{id}</Text>
         </ButtonContentContainer>
         <ArrowIcon
+          $isOpen={isOpen}
           alt="Arrow icon"
           height="20px"
-          open={isOpen}
           src={arrow}
           width="20px"
         />
       </SelectButton>
-      <SelectList open={isOpen}>
+      <SelectList $isOpen={isOpen}>
         {QUOTES_CARD_DATA.map((listItem) => {
           const { id, imgPath } = listItem;
 

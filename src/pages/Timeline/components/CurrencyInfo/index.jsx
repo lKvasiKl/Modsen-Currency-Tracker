@@ -11,14 +11,19 @@ import {
 
 class CurrencyInfo extends Component {
   handleCurrencyInfoClick = () => {
-    this.props.onClick();
+    if (!this.props.isChartCanBuild) {
+      this.props.onClick();
+    }
   };
 
   render() {
     const { id, imgPath, title } = this.props.selectedCurrency;
 
     return (
-      <CurrencyContainer onClick={this.handleCurrencyInfoClick}>
+      <CurrencyContainer
+        $isChartCanBuild={this.props.isChartCanBuild}
+        onClick={this.handleCurrencyInfoClick}
+      >
         <Image alt={`${id} icon`} height="80px" src={imgPath} width="80px" />
         <TextContainer>
           <Title>{title}</Title>
@@ -34,4 +39,5 @@ export default CurrencyInfo;
 CurrencyInfo.propTypes = {
   selectedCurrency: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
+  isChartCanBuild: PropTypes.bool.isRequired,
 };
