@@ -2,6 +2,7 @@ import { lazy } from "react";
 
 const Home = lazy(() => import("@pages/Home"));
 const Contato = lazy(() => import("@pages/Contato"));
+const Timeline = lazy(() => import("@pages/Timeline"));
 
 export const NAVBAR_ITEMS = {
   Home: {
@@ -10,6 +11,7 @@ export const NAVBAR_ITEMS = {
   },
   Timeline: {
     path: "/timeline",
+    element: <Timeline />,
   },
   "Bank card": {
     path: "/bank-card",

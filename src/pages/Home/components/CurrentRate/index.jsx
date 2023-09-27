@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import getCurriencies from "@services/currencyService";
 import { getCache, saveCache, isCacheValid } from "@utils/cachingFunctions";
-
-import CardsSection from "../CardsSection";
 import {
   STOCKS_CARD_DATA,
   QUOTES_CARD_DATA,
   CURRENCY_DEFAULT,
-} from "../../constants/currencyCard";
+} from "@constants/currency";
+
+import CardsSection from "../CardsSection";
 import CurrencyConvertorModal from "../CurrencyConvertorModal";
 
 import { Main, OverflowHidden } from "./styled";
