@@ -15,7 +15,7 @@ import { OverflowHidden } from "../../../../styled";
 
 import { Main, ChartSection, Button, ButtonContainer } from "./styled";
 
-const DAYS_IN_MONTH = 12;
+const MAX_CHART_ITEMS = 30;
 const DISPLAY_TIME = 3000;
 const SUCCSESS_MESSAGE = "The chart can be successfully built!";
 const ERROR_MESSAGE = "The high price value cannot be less than the low.";
@@ -50,9 +50,15 @@ class TimelineMainSection extends Component {
   }
 
   handleCurrencyChange = (newCurrency) => {
-    this.setState({ selectedCurrency: newCurrency }, () => {
-      this.checkChartBuildStatus();
-    });
+    this.setState(
+      {
+        showChart: false,
+        selectedCurrency: newCurrency,
+      },
+      () => {
+        this.checkChartBuildStatus();
+      },
+    );
   };
 
   handleOpenModal = () => {
@@ -113,7 +119,7 @@ class TimelineMainSection extends Component {
     const currencyData = getCache(selectedCurrencyId);
     const numberOfEntries = Object.keys(currencyData).length;
 
-    if (numberOfEntries >= DAYS_IN_MONTH) {
+    if (numberOfEntries >= MAX_CHART_ITEMS) {
       this.handleCloseModal();
       this.setState(
         {

@@ -103,4 +103,9 @@ export const Copyright = styled.p`
   line-height: 150%;
   padding: 55px 0 40px 0;
   user-select: none;
+
+  @media (max-width: 650px) {
+    text-align: center;
+    font-size: 20px;
+  }
 `;

@@ -4,7 +4,7 @@ export const CardContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 520px;
-  height: 153px;
+  height: fit-contnet;
   padding: 30px 100px 30px 32px;
   align-items: center;
   gap: 30px;
@@ -23,17 +23,25 @@ export const CardContainer = styled.div`
 
   @media (max-width: 1200px) {
     max-width: unset;
+    padding: 0 0 0 30px;
+  }
+
+  @media (max-width: 500px) {
+    height: 100px;
   }
 `;
 
 export const Image = styled.img`
   user-select: none;
-  background-color: transparent;
+
+  @media (max-width: 500px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const CardContent = styled.div`
   display: block;
-  background-color: transparent;
 `;
 
 export const CardTitle = styled.p`
@@ -44,6 +52,10 @@ export const CardTitle = styled.p`
   font-weight: 400;
   line-height: 49.371px;
   background-color: transparent;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 export const CurrencyRate = styled.span`
@@ -54,4 +66,8 @@ export const CurrencyRate = styled.span`
   font-weight: 300;
   line-height: 41.143px;
   background-color: transparent;
+
+  @media (max-width: 500px) {
+    font-size: 25px;
+  }
 `;

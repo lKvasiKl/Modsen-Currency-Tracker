@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 import { Global } from "../../styled";
 
@@ -33,7 +32,6 @@ class ErrorBoundary extends React.Component {
           <ErrorTitle>An error has occured</ErrorTitle>
           <Error>{error && error.toString()}</Error>
           <Text>{"(╯°□°）╯︵ ┻━┻"}</Text>
-          <Link to="/">Go back</Link>
         </ErrorBoundaryContainer>
       );
     }

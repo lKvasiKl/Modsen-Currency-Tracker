@@ -20,17 +20,24 @@ export const CurrencyContainer = styled.div`
     box-shadow: ${(props) =>
       !props.$isChartCanBuild ? "0px 0px 25px 4px #84dd3770" : "none"};
   }
+
+  @media (max-width: 500px) {
+    height: 100px;
+  }
 `;
 
 export const Image = styled.img`
-  background-color: transparent;
   user-select: none;
+
+  @media (max-width: 500px) {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: transparent;
 `;
 
 export const Title = styled.p`
@@ -39,7 +46,14 @@ export const Title = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 49.371px;
-  background-color: transparent;
+
+  @media (max-width: 600px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 500px) {
+    line-height: normal;
+  }
 `;
 
 export const Description = styled.span`
@@ -50,4 +64,8 @@ export const Description = styled.span`
   line-height: 49.371px;
   background-color: transparent;
   text-align: left;
+
+  @media (max-width: 500px) {
+    line-height: normal;
+  }
 `;

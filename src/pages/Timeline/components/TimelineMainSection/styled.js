@@ -10,11 +10,16 @@ export const ChartSection = styled.section`
   width: 100%;
   max-width: 1140px;
   margin-bottom: 50px;
+  padding: 0 30px;
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   margin-bottom: 50px;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 
 export const Button = styled.button`
@@ -31,5 +36,9 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #aedf23;
+  }
+
+  @media (max-width: 500px) {
+    margin: 0 0 20px 0;
   }
 `;

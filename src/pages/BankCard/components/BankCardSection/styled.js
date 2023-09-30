@@ -13,4 +13,9 @@ export const Title = styled.h2`
   font-weight: 400;
   line-height: normal;
   margin-top: 110px;
+  text-align: center;
+
+  @media (max-width: 650px) {
+    padding: 0 20px;
+  }
 `;

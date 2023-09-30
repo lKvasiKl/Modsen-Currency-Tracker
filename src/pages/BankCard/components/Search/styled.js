@@ -4,6 +4,10 @@ export const SearchWrapper = styled.div`
   position: relative;
   max-width: 450px;
   width: 100%;
+
+  @media (max-width: 500px) {
+    max-width: 350px;
+  }
 `;
 
 export const SearchContainer = styled.div`
@@ -37,7 +41,6 @@ export const Image = styled.img`
 
 export const SearchList = styled.ul`
   width: 100%;
-  max-width: 450px;
   position: absolute;
   top: 55%;
   left: 50%;

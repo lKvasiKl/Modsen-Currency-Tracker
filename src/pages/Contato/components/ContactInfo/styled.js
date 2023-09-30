@@ -28,15 +28,24 @@ export const ContactInfoWrapper = styled.div`
   justify-content: space-between;
   border: 1px solid #ffffff;
   max-width: 800px;
-  width: 100%;
   height: fit-content;
-  margin-bottom: 170px;
+  margin: 0 20px 170px 20px;
   padding: 30px;
+  gap: 50px;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    order: -1;
+  }
 `;
 
 export const InnerTitle = styled.h3`
