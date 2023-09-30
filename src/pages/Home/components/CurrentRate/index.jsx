@@ -10,8 +10,9 @@ import {
 
 import CardsSection from "../CardsSection";
 import CurrencyConvertorModal from "../CurrencyConvertorModal";
+import { OverflowHidden } from "../../../../styled";
 
-import { Main, OverflowHidden } from "./styled";
+import { Main } from "./styled";
 
 const CACHE_LIFETIME = Number(process.env.REACT_APP_CACHE_LIFETIME);
 const CACHE_CURRENCY_RATES_KEY = process.env.REACT_APP_CACHE_CURRENCY_RATES_KEY;

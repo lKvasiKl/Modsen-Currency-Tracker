@@ -23,7 +23,7 @@ const CurrencyCard = ({ imgPath, title, rateValue, onClick }) => {
 CurrencyCard.propTypes = {
   imgPath: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  rateValue: PropTypes.string.isRequired,
+  rateValue: PropTypes.string,
   onClick: PropTypes.func,
 };
 
