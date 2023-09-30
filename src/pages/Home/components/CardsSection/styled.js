@@ -28,6 +28,10 @@ export const CardsSectionTitle = styled.p`
   @media (max-width: 1200px) {
     max-width: unset;
   }
+
+  @media (max-width: 500px) {
+    font-size: 25px;
+  }
 `;
 
 export const CardsList = styled.div`

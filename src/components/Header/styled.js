@@ -60,6 +60,10 @@ export const Title = styled.h1`
   @media (max-width: 700px) {
     font-size: 50px;
   }
+
+  @media (max-width: 500px) {
+    font-size: 35px;
+  }
 `;
 
 export const Quote = styled.p`
@@ -72,6 +76,10 @@ export const Quote = styled.p`
   font-weight: 300;
   line-height: 46.772px;
   background-color: transparent;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `;
 
 export const Logotype = styled.img`

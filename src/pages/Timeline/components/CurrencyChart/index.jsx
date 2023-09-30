@@ -6,6 +6,7 @@ import { Chart } from "chart.js/auto";
 
 import { chartOptions } from "./config";
 import { candlestickPlugin } from "./candlestickPlugin";
+import { ChartCanvas, ChartWrapper } from "./styled";
 
 class CurrencyChart extends Component {
   chartRef = React.createRef();
@@ -62,7 +63,11 @@ class CurrencyChart extends Component {
   }
 
   render() {
-    return <canvas ref={this.chartRef} />;
+    return (
+      <ChartWrapper>
+        <ChartCanvas ref={this.chartRef} />
+      </ChartWrapper>
+    );
   }
 }
 

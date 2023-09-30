@@ -20,13 +20,22 @@ export const UpdateInfoContainer = styled.section`
 export const Image = styled.img`
   user-select: none;
   animation: ${pulseAnimation} 2s ease-in-out infinite;
+
+  @media (max-width: 500px) {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 export const Text = styled.p`
   color: #d9d9d9;
   font-family: Poppins;
-  font-size: 32.914px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 300;
   line-height: 41.143px;
+
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 `;

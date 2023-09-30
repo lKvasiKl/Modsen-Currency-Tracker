@@ -3,7 +3,13 @@ import { NAVBAR_ITEMS } from "@constants/navigation";
 import { NavLink } from "react-router-dom";
 
 import Switch from "./Switch";
-import { NavbarContainer, Logotype, NavLinksContainer } from "./styled";
+import BurgerMenu from "./BurgerMenu";
+import {
+  NavbarContainer,
+  Logotype,
+  NavLinksContainer,
+  SwitchContainer,
+} from "./styled";
 
 const Navbar = () => {
   return (
@@ -25,7 +31,10 @@ const Navbar = () => {
           );
         })}
       </NavLinksContainer>
-      <Switch />
+      <SwitchContainer>
+        <Switch />
+      </SwitchContainer>
+      <BurgerMenu />
     </NavbarContainer>
   );
 };

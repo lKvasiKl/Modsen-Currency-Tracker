@@ -8,6 +8,7 @@ export const LinksAccordion = styled.button`
   padding: 15px 0;
   border-bottom: 1px solid #607d94;
   transition: 0.4s;
+  background-color: transparent;
 `;
 
 export const Title = styled.span`

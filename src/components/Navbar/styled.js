@@ -49,8 +49,16 @@ export const NavLinksContainer = styled.ul`
     gap: 30px;
   }
 
-  @media (max-width: 600px) {
-    gap: 15px;
+  @media (max-width: 650px) {
+    display: none;
+  }
+`;
+export const SwitchContainer = styled.div`
+  width: 100%;
+  max-width: 50px;
+
+  @media (max-width: 650px) {
+    display: none;
   }
 `;
 

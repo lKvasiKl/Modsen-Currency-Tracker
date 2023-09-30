@@ -1,5 +1,4 @@
 export const chartOptions = {
-  responsive: true,
   type: "bar",
   parsing: {
     xAxisKey: "x",
@@ -18,6 +17,8 @@ export const chartOptions = {
       ticks: {
         autoSkip: true,
         maxTicksLimit: 10,
+        maxRotation: 0,
+        minRotation: 0,
       },
     },
     y: {
