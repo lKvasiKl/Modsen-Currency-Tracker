@@ -6,6 +6,15 @@ export const Global = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: Poppins;
-        background-color: #000000;
     }
+
+    body {
+      background-color: #000000;
+    }
+`;
+
+export const OverflowHidden = createGlobalStyle`
+  body {
+    overflow: hidden;
+  }
 `;

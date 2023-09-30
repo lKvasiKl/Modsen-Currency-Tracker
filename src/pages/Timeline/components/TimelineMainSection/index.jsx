@@ -11,10 +11,11 @@ import CurrencyChart from "../CurrencyChart";
 import chartObserver from "../ChartObserver";
 import Notification from "../Notification";
 import { NOTIFICATION_TYPES } from "../../constants/notification";
+import { OverflowHidden } from "../../../../styled";
 
 import { Main, ChartSection, Button, ButtonContainer } from "./styled";
 
-const DAYS_IN_MONTH = 30;
+const DAYS_IN_MONTH = 12;
 const DISPLAY_TIME = 3000;
 const SUCCSESS_MESSAGE = "The chart can be successfully built!";
 const ERROR_MESSAGE = "The high price value cannot be less than the low.";
@@ -178,6 +179,7 @@ class TimelineMainSection extends Component {
             />,
             document.getElementById("root"),
           )}
+        {isModalOpen && <OverflowHidden />}
         {showNotification &&
           ReactDOM.createPortal(
             <Notification
