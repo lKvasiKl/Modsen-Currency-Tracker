@@ -11,8 +11,8 @@ export const CurrencyContainer = styled.div`
   cursor: ${(props) => (!props.$isChartCanBuild ? "pointer" : "arrow")};
   padding: 30px;
   border-radius: 8px;
-  border: 1px solid #474747;
-  background-color: #202025;
+  border: 1px solid ${({ theme }) => theme.colors.darkGray};
+  background-color: ${({ theme }) => theme.colors.borderGray};
   transition: transform 0.5s;
 
   &:hover {
@@ -42,13 +42,13 @@ export const TextContainer = styled.div`
 
 export const Title = styled.p`
   color: #d9d9d9;
-  font-size: 35px;
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-style: normal;
   font-weight: 400;
   line-height: 49.371px;
 
   @media (max-width: 600px) {
-    font-size: 25px;
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 
   @media (max-width: 500px) {
@@ -58,11 +58,10 @@ export const Title = styled.p`
 
 export const Description = styled.span`
   color: #d9d9d9;
-  font-size: 15px;
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-style: normal;
   font-weight: 300;
   line-height: 49.371px;
-  background-color: transparent;
   text-align: left;
 
   @media (max-width: 500px) {

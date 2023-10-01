@@ -29,13 +29,12 @@ export const Image = styled.img`
 
 export const Text = styled.p`
   color: #d9d9d9;
-  font-family: Poppins;
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-style: normal;
   font-weight: 300;
   line-height: 41.143px;
 
-  @media (max-width: 500px) {
-    font-size: 20px;
+  @media (max-width: 500px) {fontSize
+    font-size: ${({ theme }) => theme.fontSize.s};
   }
 `;

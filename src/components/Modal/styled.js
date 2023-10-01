@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 
 const CommonStyles = css`
-  background: transparent;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
 `;
 
 export const ModalContainer = styled.div`
@@ -24,15 +23,14 @@ export const ModalWindow = styled.div`
   width: fit-content;
   height: fit-content;
   position: relative;
-  background-color: #202025;
-  border: 1px solid #474747;
+  background-color: ${({ theme }) => theme.colors.borderGray};
+  border: 1px solid ${({ theme }) => theme.colors.darkGray};
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0px 0px 13px 0px #d9e7da33;
 `;
 
 export const CloseButton = styled.button`
-  ${CommonStyles}
   background: transparent;
   align-self: flex-end;
   cursor: pointer;
@@ -46,7 +44,4 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const Image = styled.img`
-  ${CommonStyles}
-  background-color: transparent;
-`;
+export const Image = styled.img``;

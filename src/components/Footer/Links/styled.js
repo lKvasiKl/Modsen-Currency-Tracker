@@ -6,9 +6,8 @@ export const LinksSection = styled.section`
 `;
 
 export const Title = styled.span`
-  color: #ffffff;
-  font-family: Poppins;
-  font-size: 28px;
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -21,16 +20,15 @@ export const LinksContainer = styled.div`
   gap: 17px;
 
   a {
-    color: #898989;
-    font-family: Poppins;
-    font-size: 24px;
+    color: ${({ theme }) => theme.colors.gray};
+    font-size: ${({ theme }) => theme.fontSize.m};
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
 
     &:hover {
-      color: #84dd37;
+      color: ${({ theme }) => theme.colors.green};
     }
   }
 `;

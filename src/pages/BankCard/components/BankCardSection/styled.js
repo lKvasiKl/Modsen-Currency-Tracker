@@ -7,8 +7,8 @@ export const Main = styled.main`
 `;
 
 export const Title = styled.h2`
-  color: #ffffff;
-  font-size: 38px;
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-style: normal;
   font-weight: 400;
   line-height: normal;

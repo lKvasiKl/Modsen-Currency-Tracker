@@ -1,14 +1,10 @@
 import styled, { css } from "styled-components";
 
 const CommonStyles = css`
-  background: transparent;
   color: #ffffff;
 `;
 
-export const Image = styled.img`
-  ${CommonStyles}
-  background-color: transparent;
-`;
+export const Image = styled.img``;
 
 export const Label = styled.label`
   ${CommonStyles}
@@ -28,9 +24,8 @@ export const InputContainer = styled.div`
 export const CurrencyInput = styled.input`
   ${CommonStyles}
   background: transparent;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.s};
   height: 50px;
-  color: #ffffff;
   border: none;
   outline: none;
 
@@ -62,7 +57,7 @@ export const CurrencySelectContainer = styled(CurrencyContainer)`
 export const Text = styled.span`
   ${CommonStyles}
   background: transparent;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.s};
   text-align: center;
 `;
 
@@ -72,10 +67,9 @@ export const ConvertButton = styled.button`
   margin: 25px;
   background: transparent;
   border-radius: 5px;
-  color: #ffffff;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.s};
   background-color: #3b71d3;
 
   &:hover {

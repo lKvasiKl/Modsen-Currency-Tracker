@@ -44,25 +44,23 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.h3`
-  font-family: Poppins;
-  font-size: 26px;
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   background: linear-gradient(
     90deg,
-    #00ce2c 0.18%,
-    #aedf23 49.3%,
-    #a3dc00 99.88%
+    ${({ theme }) => theme.colors.darkGreen} 0.18%,
+    ${({ theme }) => theme.colors.yellow} 49.3%,
+    ${({ theme }) => theme.colors.lightGreen} 99.88%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
 
 export const Quote = styled.p`
-  color: #ffffff;
-  font-family: Poppins;
-  font-size: 24px;
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-style: normal;
   font-weight: 300;
   line-height: 150%;
@@ -95,9 +93,9 @@ export const MobileLinksContainer = styled.div`
 `;
 
 export const Copyright = styled.p`
-  color: #898989;
+  color: ${({ theme }) => theme.colors.gray};
   font-family: Inter;
-  font-size: 24px;
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -106,6 +104,6 @@ export const Copyright = styled.p`
 
   @media (max-width: 650px) {
     text-align: center;
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSize.s};
   }
 `;

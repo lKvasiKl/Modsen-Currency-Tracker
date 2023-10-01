@@ -3,48 +3,45 @@ import styled from "styled-components";
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  background: transparent;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   padding-top: 10px;
 `;
 
 export const Label = styled.label`
   background: transparent;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.s};
 `;
 
 export const InputContainer = styled.div`
-  background: transparent;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   height: 35px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #474747;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   align-items: center;
   margin-bottom: 15px;
 `;
 
 export const Input = styled.input`
-  background: transparent;
-  color: #ffffff;
-  background: transparent;
-  font-size: 20px;
+  color: ${({ theme }) => theme.textColor};
+  background-color: transparent;
+  font-size: ${({ theme }) => theme.fontSize.s};
   height: 30px;
   border: none;
   outline: none;
 `;
 
 export const Button = styled.button`
-  background-color: #00ce2c;
-  color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.darkGreen};
+  color: ${({ theme }) => theme.textColor};
   height: 50px;
   margin: 20px 0;
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.s};
 
   &:hover {
-    background-color: #aedf23;
+    background-color: ${({ theme }) => theme.colors.yellow};
   }
 `;

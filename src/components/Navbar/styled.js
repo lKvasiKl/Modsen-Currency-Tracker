@@ -5,12 +5,8 @@ export const NavbarContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
   height: 103px;
-  background-color: #000000;
+  background-color: ${({ theme }) => theme.backgroundColor};
   padding: 0px 100px;
-
-  img {
-    background-color: transparent;
-  }
 
   @media (max-width: 1200px) {
     padding: 0px 30px;
@@ -28,17 +24,17 @@ export const NavLinksContainer = styled.ul`
   width: 657px;
 
   a {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSize.s};
     font-weight: 300;
     text-decoration: none;
-    color: white;
+    color: ${({ theme }) => theme.textColor};
 
     &:hover {
-      color: #84dd37;
+      color: ${({ theme }) => theme.colors.green};
     }
 
     &.active {
-      color: #84dd37;
+      color: ${({ theme }) => theme.colors.green};
       text-decoration: underline;
       text-underline-offset: 5px;
     }

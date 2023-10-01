@@ -3,15 +3,15 @@ import styled, { keyframes } from "styled-components";
 const animate = keyframes`
   0%, 100% {
     transform: scale(0.2);
-    background-color: #00ce2c;
+    background-color: ${({ theme }) => theme.colors.darkGreen};
   }
   40% {
     transform: scale(1);
-    background-color: #aedf23;
+    background-color: ${({ theme }) => theme.colors.yellow};
   }
   50% {
     transform: scale(1);
-    background-color: #a3dc00;
+    background-color: ${({ theme }) => theme.colors.lightGreen};
   }
 `;
 
@@ -24,7 +24,7 @@ export const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: ${({ theme }) => theme.backgroundColor};
 
   .loader {
     div {

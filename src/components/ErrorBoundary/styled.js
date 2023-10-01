@@ -6,21 +6,20 @@ export const ErrorBoundaryContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: Poppins;
   font-weight: bolder;
   gap: 10px;
 
   a {
-    color: #84dd37;
+    color: ${({ theme }) => theme.colors.green};
   }
 `;
 
 export const ErrorTitle = styled.h1`
   background: linear-gradient(
     90deg,
-    #00ce2c 0.18%,
-    #aedf23 49.3%,
-    #a3dc00 99.88%
+    ${({ theme }) => theme.colors.darkGreen} 0.18%,
+    ${({ theme }) => theme.colors.yellow} 49.3%,
+    ${({ theme }) => theme.colors.lightGreen} 99.88%
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -28,12 +27,12 @@ export const ErrorTitle = styled.h1`
 `;
 
 export const Error = styled.p`
-  color: #d10708;
+  color: ${({ theme }) => theme.colors.red};
   max-width: 800px;
   word-wrap: break-word;
 `;
 
 export const Text = styled.p`
-  color: #84dd37;
-  font-size: 30px;
+  color: ${({ theme }) => theme.colors.green};
+  font-size: ${({ theme }) => theme.fontSize.l};
 `;

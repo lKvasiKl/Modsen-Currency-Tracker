@@ -13,18 +13,15 @@ export const LinksAccordion = styled.button`
 
 export const Title = styled.span`
   display: flex;
-  color: #ffffff;
-  font-family: Poppins;
-  font-size: 24px;
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.24px;
 `;
 
-export const Image = styled.img`
-  background-color: transparent;
-`;
+export const Image = styled.img``;
 
 export const LinksContainer = styled.div`
   display: none;
@@ -33,16 +30,15 @@ export const LinksContainer = styled.div`
 
   a {
     padding-top: 10px;
-    color: #898989;
-    font-family: Poppins;
-    font-size: 24px;
+    color: ${({ theme }) => theme.colors.gray};
+    font-size: ${({ theme }) => theme.fontSize.m};
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
 
     &:hover {
-      color: #84dd37;
+      color: ${({ theme }) => theme.colors.green};
     }
   }
 `;

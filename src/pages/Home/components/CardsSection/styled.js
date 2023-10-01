@@ -15,13 +15,12 @@ export const CardsSectionContainer = styled.section`
 export const CardsSectionTitle = styled.p`
   max-width: 520px;
   flex-shrink: 0;
-  color: #ffffff;
-  font-family: Poppins;
-  font-size: 32px;
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.fontSize.m};
   font-style: normal;
   font-weight: 300;
   line-height: 41.143px;
-  border-bottom: 2px solid #474747;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.darkGray};
   padding-bottom: 25px;
   margin-bottom: 50px;
 
@@ -30,7 +29,7 @@ export const CardsSectionTitle = styled.p`
   }
 
   @media (max-width: 500px) {
-    font-size: 25px;
+    font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
 
