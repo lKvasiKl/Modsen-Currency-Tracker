@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const DateContainer = styled.div`
   display: flex;
-  background-color: transparent;
   align-items: center;
   gap: 15px;
   justify-content: center;
@@ -11,7 +10,7 @@ export const DateContainer = styled.div`
 export const Button = styled.button`
   background-color: transparent;
   cursor: pointer;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   height: 25px;
   width: 25px;
   border: none;
@@ -19,12 +18,12 @@ export const Button = styled.button`
   font-weight: bold;
 
   &:hover {
-    background-color: #474747;
+    background-color: ${({ theme }) => theme.colors.darkGray};
   }
 `;
 
 export const DateTitle = styled.p`
-  font-size: 26px;
-  background-color: transparent;
+  font-size: ${({ theme }) => theme.fontSize.m};
+  color: ${({ theme }) => theme.textColor};
   margin: 10px 0;
 `;

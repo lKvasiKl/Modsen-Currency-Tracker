@@ -19,12 +19,19 @@ const CACHE_CURRENCY_RATES_KEY = process.env.REACT_APP_CACHE_CURRENCY_RATES_KEY;
 const CACHE_LAST_UPDATE_KEY = process.env.REACT_APP_CACHE_LAST_UPDATE_KEY;
 
 const CurrentRate = () => {
-  const [rates, setRates] = useState({});
+  const [rates, setRates] = useState({
+    expirationDate: new Date().getTime() + CACHE_LIFETIME,
+    data: {},
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [targetCurrency, setTargetCurrency] = useState(CURRENCY_DEFAULT);
 
   const handleCardClick = ({ id, imgPath }) => {
+    if (Object.keys(rates.data).length === 0) {
+      return;
+    }
+
     setIsModalOpen((prevSatate) => !prevSatate);
     setExchangeAmount(rates.data[id].value);
     setTargetCurrency({
@@ -39,7 +46,10 @@ const CurrentRate = () => {
       const currencies = QUOTES_CARD_DATA.map((quote) => quote.id);
       const response = await getCurriencies(currencies);
 
-      setRates(response);
+      setRates({
+        expirationDate: currentTime + CACHE_LIFETIME,
+        data: response,
+      });
 
       saveCache(CACHE_LAST_UPDATE_KEY, currentTime);
       saveCache(CACHE_CURRENCY_RATES_KEY, {

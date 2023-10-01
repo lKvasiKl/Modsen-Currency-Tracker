@@ -15,7 +15,7 @@ export const BurgerLine = styled.div`
   width: 30px;
   height: 4px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.textColor};
   transition: all 0.3s ease-in-out;
   transform-origin: center;
   border-radius: 4px;
@@ -41,7 +41,7 @@ export const BurgerMenuItems = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   list-style-type: none;
   z-index: 1;
   transition: all 0.3s ease-in-out;
@@ -50,8 +50,8 @@ export const BurgerMenuItems = styled.ul`
   position: absolute;
   width: 100%;
   left: 0;
-  top: 12%;
-  background-color: #000000;
+  top: 10%;
+  background-color: ${({ theme }) => theme.backgroundColor};
   padding-bottom: 15px;
 
   li {
@@ -59,17 +59,17 @@ export const BurgerMenuItems = styled.ul`
   }
 
   a {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSize.s};
     font-weight: 300;
     text-decoration: none;
-    color: white;
+    color: ${({ theme }) => theme.textColor};
 
     &:hover {
-      color: #84dd37;
+      color: ${({ theme }) => theme.colors.green};
     }
 
     &.active {
-      color: #84dd37;
+      color: ${({ theme }) => theme.colors.green};
       text-decoration: underline;
       text-underline-offset: 5px;
     }

@@ -24,7 +24,7 @@ export const Input = styled.input`
   height: 65px;
   width: 100%;
   padding-left: 20px;
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-style: normal;
   font-weight: 400;
   color: #9e9e9e;
@@ -35,7 +35,6 @@ export const Input = styled.input`
 
 export const Image = styled.img`
   margin-right: 20px;
-  background-color: transparent;
   align-self: center;
 `;
 
@@ -47,7 +46,7 @@ export const SearchList = styled.ul`
   transform: translateX(-50%);
   list-style: none;
   overflow-y: auto;
-  border: 1px solid #474747;
+  border: 1px solid ${({ theme }) => theme.colors.darkGray};
   border-radius: 5px;
   z-index: 1;
 
@@ -56,13 +55,13 @@ export const SearchList = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: #202025;
-    border-right: 1px solid #474747;
-    border-bottom: 1px solid #474747;
+    background: ${({ theme }) => theme.colors.borderGray};
+    border-right: 1px solid ${({ theme }) => theme.colors.darkGray};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #474747;
+    background-color: ${({ theme }) => theme.colors.darkGray};
 
     &:hover {
       background-color: #303036;
@@ -73,7 +72,7 @@ export const SearchList = styled.ul`
 export const SearchListItem = styled.li`
   padding: 10px 25px;
   background-color: #1b2028;
-  border-bottom: 1px solid #474747;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   cursor: pointer;
   display: flex;
   gap: 20px;

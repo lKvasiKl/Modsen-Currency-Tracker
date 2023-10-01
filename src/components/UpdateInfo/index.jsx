@@ -8,7 +8,11 @@ const CACHE_LAST_UPDATE_KEY = process.env.REACT_APP_CACHE_LAST_UPDATE_KEY;
 
 const UpdateInfo = () => {
   const milliseconds = getCache(CACHE_LAST_UPDATE_KEY);
-  const timeString = formatTime(milliseconds);
+  let timeString = formatTime(new Date().getTime());
+
+  if (Object.keys(milliseconds).length !== 0) {
+    timeString = formatTime(milliseconds);
+  }
 
   return (
     <UpdateInfoContainer>

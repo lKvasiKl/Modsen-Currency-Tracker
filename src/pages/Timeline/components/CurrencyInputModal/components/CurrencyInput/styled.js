@@ -2,25 +2,23 @@ import styled from "styled-components";
 
 export const Label = styled.label`
   padding-left: 25px;
-  background: transparent;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
 `;
 
 export const InputContainer = styled.div`
-  background: transparent;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   display: flex;
   height: 50px;
-  border-bottom: 1px solid #474747;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   align-items: center;
   margin: 0 25px 15px 25px;
 `;
 
 export const Input = styled.input`
   background: transparent;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.s};
   height: 50px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   border: none;
   outline: none;
 

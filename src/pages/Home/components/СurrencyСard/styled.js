@@ -4,13 +4,13 @@ export const CardContainer = styled.div`
   display: flex;
   width: 100%;
   max-width: 520px;
-  height: fit-contnet;
-  padding: 30px 100px 30px 32px;
+  height: fit-content;
+  padding: 30px;
   align-items: center;
   gap: 30px;
   border-radius: 8px;
-  border: 1px solid #474747;
-  background-color: #202025;
+  border: 1px solid ${({ theme }) => theme.colors.darkGray};
+  background-color: ${({ theme }) => theme.colors.borderGray};
   margin-bottom: 56px;
   transition: ${({ onClick }) => (onClick ? "transform 0.5s" : "none")};
 
@@ -23,11 +23,11 @@ export const CardContainer = styled.div`
 
   @media (max-width: 1200px) {
     max-width: unset;
-    padding: 0 0 0 30px;
   }
 
   @media (max-width: 500px) {
     height: 100px;
+    padding: 0 0 0 30px;
   }
 `;
 
@@ -46,28 +46,26 @@ export const CardContent = styled.div`
 
 export const CardTitle = styled.p`
   color: #d9d9d9;
-  font-family: Poppins;
-  font-size: 29px;
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-style: normal;
   font-weight: 400;
   line-height: 49.371px;
-  background-color: transparent;
 
   @media (max-width: 500px) {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fontSize.s};
+    line-height: normal;
   }
 `;
 
 export const CurrencyRate = styled.span`
   color: #a7b2c3;
-  font-family: Poppins;
-  font-size: 32px;
+  font-size: ${({ theme }) => theme.fontSize.l};
   font-style: normal;
   font-weight: 300;
   line-height: 41.143px;
-  background-color: transparent;
 
   @media (max-width: 500px) {
-    font-size: 25px;
+    font-size: ${({ theme }) => theme.fontSize.m};
+    line-height: normal;
   }
 `;

@@ -8,7 +8,7 @@ export const NotificationContainer = styled.span`
   background-color: ${(props) => props.color};
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  color: #ffffff;
+  color: ${({ theme }) => theme.textColor};
   z-index: 1;
   padding: 15px 0;
 `;

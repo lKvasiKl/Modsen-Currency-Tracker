@@ -16,7 +16,7 @@ const getCurriencies = async (currencies) => {
 
   const response = await request(options);
 
-  return response;
+  return response.data;
 };
 
 export default getCurriencies;

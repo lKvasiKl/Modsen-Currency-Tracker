@@ -8,8 +8,8 @@ export const SelectButton = styled.button`
   padding: 10px 20px;
   background: transparent;
   border: none;
-  color: #ffffff;
-  font-size: 20px;
+  color: ${({ theme }) => theme.textColor};
+  font-size: ${({ theme }) => theme.fontSize.s};
   cursor: pointer;
 
   &:hover {
@@ -25,7 +25,6 @@ export const ButtonContentContainer = styled.div`
 `;
 
 export const ArrowIcon = styled.img`
-  background-color: transparent;
   transition: transform 0.3s;
 
   transform: ${(props) =>
@@ -48,13 +47,13 @@ export const SelectList = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: #202025;
-    border-right: 1px solid #474747;
-    border-bottom: 1px solid #474747;
+    background: ${({ theme }) => theme.colors.borderGray};
+    border-right: 1px solid ${({ theme }) => theme.colors.darkGray};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #474747;
+    background-color: ${({ theme }) => theme.colors.darkGray};
 
     &:hover {
       background-color: #303036;
@@ -64,10 +63,10 @@ export const SelectList = styled.ul`
 
 export const SelectsItem = styled.li`
   padding: 10px 25px;
-  background-color: #202025;
-  border-bottom: 1px solid #474747;
-  border-right: 1px solid #474747;
-  border-left: 1px solid #474747;
+  background-color: ${({ theme }) => theme.colors.borderGray};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
+  border-right: 1px solid ${({ theme }) => theme.colors.darkGray};
+  border-left: 1px solid ${({ theme }) => theme.colors.darkGray};
   cursor: pointer;
   display: flex;
   gap: 20px;
