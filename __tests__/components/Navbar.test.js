@@ -13,13 +13,13 @@ test("Navbar renders correctly", () => {
     </MemoryRouter>,
   );
 
-  expect(screen.getByTestId("navLogo")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-logo")).toBeInTheDocument();
 
-  expect(screen.getByTestId("navHome")).toBeInTheDocument();
-  expect(screen.getByTestId("navTimeline")).toBeInTheDocument();
-  expect(screen.getByTestId("navBankCard")).toBeInTheDocument();
-  expect(screen.getByTestId("navContato")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-Home")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-Timeline")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-BankCard")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-Contato")).toBeInTheDocument();
 
-  expect(screen.getByTestId("navSwitch")).toBeInTheDocument();
-  expect(screen.getByTestId("navBurgerMenu")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-switch")).toBeInTheDocument();
+  expect(screen.getByTestId("nav-burger-menu")).toBeInTheDocument();
 });

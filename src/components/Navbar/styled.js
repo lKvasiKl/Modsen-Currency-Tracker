@@ -51,6 +51,7 @@ export const NavLinksContainer = styled.ul`
 `;
 export const SwitchContainer = styled.div`
   width: 100%;
+  display: contents;
   max-width: 50px;
 
   @media (max-width: 650px) {

@@ -38,7 +38,7 @@ const Select = ({
 
   return (
     <>
-      <SelectButton onClick={toggleMenu}>
+      <SelectButton data-cy="to-currency" onClick={toggleMenu}>
         <ButtonContentContainer>
           <Image alt={`${id} icon`} height="40px" src={imgPath} width="40px" />
           <Text>{id}</Text>
@@ -56,7 +56,11 @@ const Select = ({
           const { id, imgPath } = listItem;
 
           return (
-            <SelectsItem key={id} onClick={handleCurrencyClick(listItem)}>
+            <SelectsItem
+              data-cy={`select-option-${id}`}
+              key={id}
+              onClick={handleCurrencyClick(listItem)}
+            >
               <Image
                 alt={`${id} icon`}
                 height="40px"

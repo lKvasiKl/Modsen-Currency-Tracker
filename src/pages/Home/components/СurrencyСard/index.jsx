@@ -10,7 +10,7 @@ import {
 
 const CurrencyCard = ({ imgPath, title, rateValue, onClick }) => {
   return (
-    <CardContainer onClick={onClick}>
+    <CardContainer data-cy="currency-card" onClick={onClick}>
       <Image alt="Currency icon" height="80px" src={imgPath} width="80px" />
       <CardContent>
         <CardTitle>{title}</CardTitle>

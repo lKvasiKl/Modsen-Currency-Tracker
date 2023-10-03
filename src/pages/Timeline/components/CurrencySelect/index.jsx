@@ -16,6 +16,7 @@ class CurrencySelect extends Component {
   render() {
     return (
       <Select
+        data-cy="currency-select"
         value={this.props.selectedCurrency.title}
         onChange={this.handleSelectChange}
       >

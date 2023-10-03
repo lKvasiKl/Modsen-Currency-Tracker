@@ -9,9 +9,12 @@ const Modal = ({ children, onClose }) => {
   };
 
   return (
-    <ModalContainer>
+    <ModalContainer data-cy="currency-modal">
       <ModalWindow>
-        <CloseButton onClick={handleCloseButtonClick}>
+        <CloseButton
+          data-cy="close-modal-button"
+          onClick={handleCloseButtonClick}
+        >
           <Image alt="Close icon" height="25px" src={close} width="25px" />
         </CloseButton>
         {children}

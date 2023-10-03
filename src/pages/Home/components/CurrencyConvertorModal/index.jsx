@@ -59,6 +59,7 @@ const CurrencyConvertorModal = ({
       <Label>Amount</Label>
       <InputContainer>
         <CurrencyInput
+          data-cy="amount-input"
           min="0"
           type="number"
           value={exchangeAmount}
@@ -79,9 +80,14 @@ const CurrencyConvertorModal = ({
           setSelectedCurrency={setSelectedCurrency}
         />
       </CurrencySelectContainer>
-      <ConvertButton onClick={handleConvertButtonClick}>Convert</ConvertButton>
-      <Text>
-        {convertedCurrencyValue &&
+      <ConvertButton
+        data-cy="convert-button"
+        onClick={handleConvertButtonClick}
+      >
+        Convert
+      </ConvertButton>
+      <Text data-cy="converted-result">
+        {convertedCurrencyValue !== "" &&
           formatConvertedCurrency(
             exchangeAmount,
             fromCurrency,

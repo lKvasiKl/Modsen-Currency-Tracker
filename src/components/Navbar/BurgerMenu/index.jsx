@@ -19,7 +19,7 @@ const BurgerMenu = () => {
 
   return (
     <>
-      <BurgerMenuContainer data-cy="navBurgerMenu" onClick={handleToggleMenu}>
+      <BurgerMenuContainer data-cy="nav-burger-menu" onClick={handleToggleMenu}>
         <BurgerLine $isOpen={isOpen} />
         <BurgerLine $isOpen={isOpen} />
         <BurgerLine $isOpen={isOpen} />

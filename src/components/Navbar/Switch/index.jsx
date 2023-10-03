@@ -17,9 +17,10 @@ const Switch = () => {
   const isLightTheme = theme === "light";
 
   return (
-    <ToggleSwitch data-cy="navSwitch">
+    <ToggleSwitch>
       <ToggleSwitchInput
         checked={isLightTheme}
+        data-cy="nav-switch"
         type="checkbox"
         onChange={handleToggleClick}
       />
