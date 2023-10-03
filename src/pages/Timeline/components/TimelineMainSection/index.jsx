@@ -162,10 +162,16 @@ class TimelineMainSection extends Component {
           />
           {isChartCanBuild && (
             <ButtonContainer>
-              <Button onClick={this.handleBuildChartButtonClick}>
+              <Button
+                data-cy="build-chart-button"
+                onClick={this.handleBuildChartButtonClick}
+              >
                 Build chart
               </Button>
-              <Button onClick={this.handleClearChartDataButtonClick}>
+              <Button
+                data-cy="clear-chart-data-button"
+                onClick={this.handleClearChartDataButtonClick}
+              >
                 Clear chart data
               </Button>
             </ButtonContainer>

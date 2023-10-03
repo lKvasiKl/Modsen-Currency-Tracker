@@ -16,17 +16,20 @@ const Navbar = () => {
     <NavbarContainer>
       <Logotype
         alt="Application logotype"
+        data-cy="nav-logo"
         height="40px"
         src={logotype}
         width="41.19px"
       />
-      <NavLinksContainer>
+      <NavLinksContainer data-cy="nav-links-container">
         {Object.keys(NAVBAR_ITEMS).map((itemName) => {
           const { path } = NAVBAR_ITEMS[itemName];
 
           return (
             <li key={itemName}>
-              <NavLink to={path}>{itemName}</NavLink>
+              <NavLink data-cy={`nav-${itemName}`} to={path}>
+                {itemName}
+              </NavLink>
             </li>
           );
         })}

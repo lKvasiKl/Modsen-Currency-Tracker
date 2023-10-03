@@ -11,10 +11,14 @@ class DatePicker extends Component {
 
   render() {
     return (
-      <DateContainer>
-        <Button onClick={this.handleUpdateDate("prev")}>{"<"}</Button>
+      <DateContainer data-cy="date-picker">
+        <Button data-cy="prev-date" onClick={this.handleUpdateDate("prev")}>
+          {"<"}
+        </Button>
         <DateTitle>{formatDate(this.props.currentDate)}</DateTitle>
-        <Button onClick={this.handleUpdateDate("next")}>{">"}</Button>
+        <Button data-cy="next-date" onClick={this.handleUpdateDate("next")}>
+          {">"}
+        </Button>
       </DateContainer>
     );
   }

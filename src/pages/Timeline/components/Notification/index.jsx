@@ -8,7 +8,9 @@ class Notification extends Component {
     const { color, message } = this.props;
 
     return (
-      <NotificationContainer color={color}>{message}</NotificationContainer>
+      <NotificationContainer color={color} data-cy="notification">
+        {message}
+      </NotificationContainer>
     );
   }
 }

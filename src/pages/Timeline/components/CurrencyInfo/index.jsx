@@ -22,12 +22,13 @@ class CurrencyInfo extends Component {
     return (
       <CurrencyContainer
         $isChartCanBuild={this.props.isChartCanBuild}
+        data-cy="currency-info"
         onClick={this.handleCurrencyInfoClick}
       >
         <Image alt={`${id} icon`} height="80px" src={imgPath} width="80px" />
         <TextContainer>
-          <Title>{title}</Title>
-          <Description>{id}</Description>
+          <Title data-cy="currency-info-text">{title}</Title>
+          <Description data-cy="currency-info-id">{id}</Description>
         </TextContainer>
       </CurrencyContainer>
     );

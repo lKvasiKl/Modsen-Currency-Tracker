@@ -14,7 +14,7 @@ export const NAVBAR_ITEMS = {
     path: "/timeline",
     element: <Timeline />,
   },
-  "Bank card": {
+  BankCard: {
     path: "/bank-card",
     element: <BankCard />,
   },

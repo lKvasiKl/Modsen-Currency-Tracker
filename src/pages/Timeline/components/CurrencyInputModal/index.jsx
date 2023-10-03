@@ -103,7 +103,12 @@ class CurrencyInputModal extends Component {
           value={this.state.inputValue.closePriceInput}
           onChange={this.handleInputChange}
         />
-        <Button onClick={this.handleAddPriceButtonClick}>Add Price</Button>
+        <Button
+          data-cy="add-price-button"
+          onClick={this.handleAddPriceButtonClick}
+        >
+          Add Price
+        </Button>
       </Modal>
     );
   }

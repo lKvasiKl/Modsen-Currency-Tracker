@@ -13,18 +13,12 @@ const formatTime = (milliseconds) => {
 
 const formatRateValue = (rates, id, rateValue) => {
   if (rates && rates.data && rates.data[id]) {
-    const value = `$ ${rates.data[id].value.toFixed(DECIMAL_PLACES)}`;
+    const value = `$ ${Number(rates.data[id].value.toFixed(DECIMAL_PLACES))}`;
 
-    return formatDecimalTrimZeros(value);
+    return value;
   } else {
     return rateValue ? rateValue : "Loading...";
   }
-};
-
-const formatDecimalTrimZeros = (str) => {
-  const REGEX_TRAILING_ZEROS_AFTER_DECIMAL = /\.?0+$/;
-
-  return String(str).replace(REGEX_TRAILING_ZEROS_AFTER_DECIMAL, "");
 };
 
 const formatConvertedCurrency = (
@@ -34,7 +28,7 @@ const formatConvertedCurrency = (
   toCurrency,
 ) => {
   if (exchangeAmount) {
-    return `${formatDecimalTrimZeros(
+    return `${Number(
       exchangeAmount.toFixed(DECIMAL_PLACES),
     )} ${fromCurrency} = ${convertedCurrencyValue} ${toCurrency}`;
   } else {
@@ -50,10 +44,4 @@ const formatDate = (date) => {
   return `${day}.${month}.${year}`;
 };
 
-export {
-  formatTime,
-  formatRateValue,
-  formatDecimalTrimZeros,
-  formatConvertedCurrency,
-  formatDate,
-};
+export { formatTime, formatRateValue, formatConvertedCurrency, formatDate };

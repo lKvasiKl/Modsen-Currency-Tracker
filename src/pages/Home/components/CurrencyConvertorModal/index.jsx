@@ -4,10 +4,7 @@ import convert from "@assets/icons/convert.svg";
 import { convertCurrency } from "@utils/convertingFunctions";
 import { CURRENCY_DEFAULT } from "@constants/currency";
 import { Modal } from "@components";
-import {
-  formatDecimalTrimZeros,
-  formatConvertedCurrency,
-} from "@utils/formatingFunctions";
+import { formatConvertedCurrency } from "@utils/formatingFunctions";
 
 import Select from "./components/Select";
 import {
@@ -54,7 +51,7 @@ const CurrencyConvertorModal = ({
       rates,
     );
 
-    setConvertedCurrencyValue(formatDecimalTrimZeros(value));
+    setConvertedCurrencyValue(Number(value));
   };
 
   return (
@@ -62,6 +59,7 @@ const CurrencyConvertorModal = ({
       <Label>Amount</Label>
       <InputContainer>
         <CurrencyInput
+          data-cy="amount-input"
           min="0"
           type="number"
           value={exchangeAmount}
@@ -82,9 +80,14 @@ const CurrencyConvertorModal = ({
           setSelectedCurrency={setSelectedCurrency}
         />
       </CurrencySelectContainer>
-      <ConvertButton onClick={handleConvertButtonClick}>Convert</ConvertButton>
-      <Text>
-        {convertedCurrencyValue &&
+      <ConvertButton
+        data-cy="convert-button"
+        onClick={handleConvertButtonClick}
+      >
+        Convert
+      </ConvertButton>
+      <Text data-cy="converted-result">
+        {convertedCurrencyValue !== "" &&
           formatConvertedCurrency(
             exchangeAmount,
             fromCurrency,

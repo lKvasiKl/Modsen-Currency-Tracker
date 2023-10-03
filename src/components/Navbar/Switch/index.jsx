@@ -20,6 +20,7 @@ const Switch = () => {
     <ToggleSwitch>
       <ToggleSwitchInput
         checked={isLightTheme}
+        data-cy="nav-switch"
         type="checkbox"
         onChange={handleToggleClick}
       />
