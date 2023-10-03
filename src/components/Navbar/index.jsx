@@ -16,6 +16,7 @@ const Navbar = () => {
     <NavbarContainer>
       <Logotype
         alt="Application logotype"
+        data-cy="navLogo"
         height="40px"
         src={logotype}
         width="41.19px"
@@ -26,7 +27,9 @@ const Navbar = () => {
 
           return (
             <li key={itemName}>
-              <NavLink to={path}>{itemName}</NavLink>
+              <NavLink data-cy={`nav${itemName}`} to={path}>
+                {itemName}
+              </NavLink>
             </li>
           );
         })}
