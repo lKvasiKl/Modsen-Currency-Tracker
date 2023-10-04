@@ -14,6 +14,9 @@ const INITIAL_INPUT_STATE = {
   lowPriceInput: "0",
   closePriceInput: "0",
 };
+const MIN_INPUT_VALUE = 0;
+const MAX_INPUT_VALUE = 1000000;
+const ERROR_TEXT = `The price must be more then ${MIN_INPUT_VALUE} and less then ${MAX_INPUT_VALUE}.`;
 
 class CurrencyInputModal extends Component {
   state = {
@@ -72,7 +75,12 @@ class CurrencyInputModal extends Component {
   handleBlur = (event) => {
     const { name, value } = event.target;
 
-    if (isNaN(value) || value < 0 || value > 1000000 || value.trim() === "") {
+    if (
+      isNaN(value) ||
+      value < MIN_INPUT_VALUE ||
+      value > MAX_INPUT_VALUE ||
+      value.trim() === ""
+    ) {
       this.setState((prevState) => ({
         inputValue: {
           ...prevState.inputValue,
@@ -97,9 +105,7 @@ class CurrencyInputModal extends Component {
           currentDate={currentDate}
           onChange={this.handleUpdateDate}
         />
-        {isError && (
-          <Error>The price must be more then 0 and less then 1000000</Error>
-        )}
+        {isError && <Error>{ERROR_TEXT}</Error>}
         <CurrencyInput
           label="Open price"
           name="openPriceInput"
