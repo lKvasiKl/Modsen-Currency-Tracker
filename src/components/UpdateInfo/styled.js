@@ -13,7 +13,7 @@ export const UpdateInfoContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 57px 0;
+  padding: 57px 10px;
   gap: 18px;
 `;
 
