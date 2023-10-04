@@ -6,13 +6,13 @@ import { formatDate } from "@utils/formatingFunctions";
 
 import DatePicker from "./components/DatePicker";
 import CurrencyInput from "./components/CurrencyInput";
-import { Button } from "./styled";
+import { Button, Error } from "./styled";
 
 const INITIAL_INPUT_STATE = {
-  openPriceInput: 0,
-  highPriceInput: 0,
-  lowPriceInput: 0,
-  closePriceInput: 0,
+  openPriceInput: "0",
+  highPriceInput: "0",
+  lowPriceInput: "0",
+  closePriceInput: "0",
 };
 
 class CurrencyInputModal extends Component {
@@ -33,6 +33,7 @@ class CurrencyInputModal extends Component {
           lowPriceInput: cachedData.lowPrice,
           closePriceInput: cachedData.closePrice,
         },
+        isError: false,
       });
     } else {
       this.setState({ inputValue: INITIAL_INPUT_STATE });
@@ -62,9 +63,24 @@ class CurrencyInputModal extends Component {
     this.setState((prevState) => ({
       inputValue: {
         ...prevState.inputValue,
-        [name]: Number(value),
+        [name]: value,
       },
+      isError: false,
     }));
+  };
+
+  handleBlur = (event) => {
+    const { name, value } = event.target;
+
+    if (isNaN(value) || value < 0 || value > 1000000 || value.trim() === "") {
+      this.setState((prevState) => ({
+        inputValue: {
+          ...prevState.inputValue,
+          [name]: "0",
+        },
+        isError: true,
+      }));
+    }
   };
 
   handleAddPriceButtonClick = () => {
@@ -73,35 +89,44 @@ class CurrencyInputModal extends Component {
   };
 
   render() {
+    const { currentDate, inputValue, isError } = this.state;
+
     return (
       <Modal onClose={this.handleCloseModal}>
         <DatePicker
-          currentDate={this.state.currentDate}
+          currentDate={currentDate}
           onChange={this.handleUpdateDate}
         />
+        {isError && (
+          <Error>The price must be more then 0 and less then 1000000</Error>
+        )}
         <CurrencyInput
           label="Open price"
           name="openPriceInput"
-          value={this.state.inputValue.openPriceInput}
+          value={inputValue.openPriceInput}
           onChange={this.handleInputChange}
+          onBlur={this.handleBlur}
         />
         <CurrencyInput
           label="High price"
           name="highPriceInput"
-          value={this.state.inputValue.highPriceInput}
+          value={inputValue.highPriceInput}
           onChange={this.handleInputChange}
+          onBlur={this.handleBlur}
         />
         <CurrencyInput
           label="Low price"
           name="lowPriceInput"
-          value={this.state.inputValue.lowPriceInput}
+          value={inputValue.lowPriceInput}
           onChange={this.handleInputChange}
+          onBlur={this.handleBlur}
         />
         <CurrencyInput
           label="Close price"
           name="closePriceInput"
-          value={this.state.inputValue.closePriceInput}
+          value={inputValue.closePriceInput}
           onChange={this.handleInputChange}
+          onBlur={this.handleBlur}
         />
         <Button
           data-cy="add-price-button"

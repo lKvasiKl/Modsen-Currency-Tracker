@@ -9,18 +9,18 @@ class CurrencyInput extends Component {
   };
 
   render() {
-    const { label, name, value } = this.props;
+    const { label, name, value, onBlur } = this.props;
 
     return (
       <>
         <Label>{label}</Label>
         <InputContainer>
           <Input
-            min="0"
             name={name}
             type="number"
             value={value}
             onChange={this.handleInputChange}
+            onBlur={onBlur}
           />
         </InputContainer>
       </>
@@ -31,8 +31,9 @@ class CurrencyInput extends Component {
 CurrencyInput.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };
 
 export default CurrencyInput;

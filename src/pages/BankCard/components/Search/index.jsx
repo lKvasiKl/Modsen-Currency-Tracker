@@ -16,8 +16,8 @@ class Search extends Component {
     searchInputValue: "",
   };
 
-  handleInputCurrenciesSearch = (e) => {
-    const inputValue = e.target.value.toLowerCase();
+  handleInputCurrenciesSearch = (event) => {
+    const inputValue = event.target.value.toLowerCase();
     const { currencies, setSearchCurrencies } = this.props;
 
     let searchResults = [];
@@ -32,7 +32,7 @@ class Search extends Component {
 
     setSearchCurrencies(searchResults);
 
-    this.setState({ searchInputValue: e.target.value });
+    this.setState({ searchInputValue: event.target.value });
   };
 
   handleSearchCurrencyClick = (id) => () => {

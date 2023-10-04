@@ -14,3 +14,11 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.yellow};
   }
 `;
+
+export const Error = styled.p`
+  margin-bottom: 10px;
+  align-self: center;
+  width: 250px;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.red};
+`;
