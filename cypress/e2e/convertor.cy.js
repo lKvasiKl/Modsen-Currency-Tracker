@@ -1,5 +1,3 @@
-/* eslint-disable cypress/no-unnecessary-waiting */
-
 describe("Currency Converter Module", () => {
   beforeEach(() => {
     cy.visit("/");

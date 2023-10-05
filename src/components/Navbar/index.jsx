@@ -2,7 +2,7 @@ import logotype from "@assets/icons/logotype.svg";
 import { NAVBAR_ITEMS } from "@constants/navigation";
 import { NavLink } from "react-router-dom";
 
-import Switch from "./Switch";
+import ThemeToggle from "./ThemeToggle";
 import BurgerMenu from "./BurgerMenu";
 import {
   NavbarContainer,
@@ -19,7 +19,7 @@ const Navbar = () => {
         data-cy="nav-logo"
         height="40px"
         src={logotype}
-        width="41.19px"
+        width="40px"
       />
       <NavLinksContainer data-cy="nav-links-container">
         {Object.keys(NAVBAR_ITEMS).map((itemName) => {
@@ -35,7 +35,7 @@ const Navbar = () => {
         })}
       </NavLinksContainer>
       <SwitchContainer>
-        <Switch />
+        <ThemeToggle />
       </SwitchContainer>
       <BurgerMenu />
     </NavbarContainer>

@@ -5,7 +5,7 @@ import { ToggleSwitch, ToggleSwitchInput, ToggleSwitchSlider } from "./styled";
 
 const CACHE_THEME_KEY = process.env.REACT_APP_CACHE_THEME_KEY;
 
-const Switch = () => {
+const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   const handleToggleClick = () => {
@@ -18,15 +18,10 @@ const Switch = () => {
 
   return (
     <ToggleSwitch>
-      <ToggleSwitchInput
-        checked={isLightTheme}
-        data-cy="nav-switch"
-        type="checkbox"
-        onChange={handleToggleClick}
-      />
+      <ToggleSwitchInput checked={isLightTheme} data-cy="nav-switch" type="checkbox" onChange={handleToggleClick} />
       <ToggleSwitchSlider />
     </ToggleSwitch>
   );
 };
 
-export default Switch;
+export default ThemeToggle;

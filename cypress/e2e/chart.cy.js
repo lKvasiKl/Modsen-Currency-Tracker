@@ -1,5 +1,3 @@
-/* eslint-disable cypress/no-unnecessary-waiting */
-
 beforeEach(() => {
   cy.visit("/timeline");
 });
@@ -11,15 +9,11 @@ describe("Check timeline currency select", () => {
     cy.get("[data-cy=currency-info-id]").invoke("text").should("eq", "EUR");
 
     cy.get("[data-cy=currency-select]").select("Bitcoin");
-    cy.get("[data-cy=currency-info-text]")
-      .invoke("text")
-      .should("eq", "Bitcoin");
+    cy.get("[data-cy=currency-info-text]").invoke("text").should("eq", "Bitcoin");
     cy.get("[data-cy=currency-info-id]").invoke("text").should("eq", "BTC");
 
     cy.get("[data-cy=currency-select]").select("Canadian Dollar");
-    cy.get("[data-cy=currency-info-text]")
-      .invoke("text")
-      .should("eq", "Canadian Dollar");
+    cy.get("[data-cy=currency-info-text]").invoke("text").should("eq", "Canadian Dollar");
     cy.get("[data-cy=currency-info-id]").invoke("text").should("eq", "CAD");
   });
 });

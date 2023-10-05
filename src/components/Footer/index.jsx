@@ -17,9 +17,9 @@ import {
 } from "./styled";
 import MobileLinks from "./MobileLinks";
 
-const Footer = () => {
-  const { title, quote, footerSections, copyright } = FOOTER_DATA;
+const { title, quote, footerSections, copyright } = FOOTER_DATA;
 
+const Footer = () => {
   return (
     <FooterConatiner>
       <FooterWrapper>
@@ -29,7 +29,7 @@ const Footer = () => {
               alt="Application logotype"
               height="40px"
               src={logotype}
-              width="45.534px"
+              width="45px"
             />
             <Text>{title}</Text>
           </Title>

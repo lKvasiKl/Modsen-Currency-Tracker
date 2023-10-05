@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { NAVBAR_ITEMS } from "@constants/navigation";
 
-import Switch from "../Switch";
+import ThemeToggle from "../ThemeToggle";
 
 import { BurgerMenuContainer, BurgerLine, BurgerMenuItems } from "./styled";
 
@@ -37,7 +37,7 @@ const BurgerMenu = () => {
               </li>
             );
           })}
-          <Switch />
+          <ThemeToggle />
         </BurgerMenuItems>
       )}
     </>

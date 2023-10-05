@@ -3,7 +3,7 @@ import { NAVBAR_ITEMS } from "@constants/navigation";
 import { Suspense } from "react";
 import { Loader } from "@components";
 import AppContainer from "@layouts/AppContainer";
-import NotFound from "@pages/NotFound";
+import NotFound from "@components/NotFound";
 
 const Router = () => {
   return (
