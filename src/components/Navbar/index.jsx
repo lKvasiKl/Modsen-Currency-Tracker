@@ -1,9 +1,10 @@
-import logotype from "@assets/icons/logotype.svg";
-import { NAVBAR_ITEMS } from "@constants/navigation";
 import { NavLink } from "react-router-dom";
 
+import logotype from "@assets/icons/logotype.svg";
+import { NAVBAR_ITEMS } from "@constants/navigation";
 import ThemeToggle from "./ThemeToggle";
 import BurgerMenu from "./BurgerMenu";
+
 import {
   NavbarContainer,
   Logotype,

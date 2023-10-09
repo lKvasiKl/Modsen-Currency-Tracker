@@ -1,8 +1,8 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 
-import BankCardSection from "./components/BankCardSection";
+import { BankCardSection } from "@components";
 
-class BankCard extends Component {
+class BankCard extends PureComponent {
   render() {
     return <BankCardSection />;
   }

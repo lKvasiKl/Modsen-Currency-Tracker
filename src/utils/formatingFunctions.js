@@ -1,4 +1,4 @@
-const DECIMAL_PLACES = process.env.REACT_APP_DECIMAL_PLACES;
+import { ENV_VARIABLES } from "@constants/envVariables";
 
 const formatTime = (milliseconds) => {
   const date = new Date(milliseconds);
@@ -13,7 +13,9 @@ const formatTime = (milliseconds) => {
 
 const formatRateValue = (rates, id, rateValue) => {
   if (rates && rates.data && rates.data[id]) {
-    const value = `$ ${Number(rates.data[id].value.toFixed(DECIMAL_PLACES))}`;
+    const value = `$ ${Number(
+      rates.data[id].value.toFixed(ENV_VARIABLES.decimalPlaces),
+    )}`;
 
     return value;
   } else {
@@ -29,7 +31,7 @@ const formatConvertedCurrency = (
 ) => {
   if (exchangeAmount) {
     return `${Number(
-      exchangeAmount.toFixed(DECIMAL_PLACES),
+      exchangeAmount.toFixed(ENV_VARIABLES.decimalPlaces),
     )} ${fromCurrency} = ${convertedCurrencyValue} ${toCurrency}`;
   } else {
     return "";

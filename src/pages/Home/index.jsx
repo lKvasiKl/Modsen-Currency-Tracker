@@ -1,4 +1,4 @@
-import CurrentRate from "./components/CurrentRate";
+import { CurrentRate } from "@components";
 
 const Home = () => {
   return <CurrentRate />;

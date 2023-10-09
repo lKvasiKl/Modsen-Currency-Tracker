@@ -14,6 +14,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
+      "@styled": path.resolve(__dirname, "src/styled"),
       "@assets": path.resolve(__dirname, "src/assets"),
       "@components": path.resolve(__dirname, "src/components"),
       "@constants": path.resolve(__dirname, "src/constants"),

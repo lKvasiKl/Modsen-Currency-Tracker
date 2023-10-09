@@ -1,9 +1,11 @@
-const DECIMAL_PLACES = process.env.REACT_APP_DECIMAL_PLACES;
+import { ENV_VARIABLES } from "@constants/envVariables";
 
 const convertCurrency = (amount, fromCurrency, toCurrency, rates) => {
   const exchangeRate =
     rates.data[toCurrency].value / rates.data[fromCurrency].value;
-  const convertedAmount = (amount * exchangeRate).toFixed(DECIMAL_PLACES);
+  const convertedAmount = (amount * exchangeRate).toFixed(
+    ENV_VARIABLES.decimalPlaces,
+  );
 
   return Number(convertedAmount);
 };

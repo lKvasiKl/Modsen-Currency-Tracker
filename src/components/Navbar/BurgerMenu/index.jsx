@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { NAVBAR_ITEMS } from "@constants/navigation";
 
+import { NAVBAR_ITEMS } from "@constants/navigation";
 import ThemeToggle from "../ThemeToggle";
 
 import { BurgerMenuContainer, BurgerLine, BurgerMenuItems } from "./styled";

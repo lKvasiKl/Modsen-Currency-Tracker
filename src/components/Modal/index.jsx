@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import close from "@assets/icons/close.svg";
 
 import { CloseButton, Image, ModalWindow, ModalContainer } from "./styled";

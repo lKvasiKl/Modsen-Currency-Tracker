@@ -7,3 +7,7 @@ export { default as Loader } from "./Loader";
 export { default as Modal } from "./Modal";
 export { default as ErrorBoundary } from "./ErrorBoundary";
 export { default as NotFound } from "./NotFound";
+export { default as BankCardSection } from "./BankCardSection";
+export { default as ContactInfo } from "./ContactInfo";
+export { default as CurrentRate } from "./CurrentRate";
+export { default as TimelineMainSection } from "./TimelineMainSection";

@@ -1,7 +1,9 @@
-import { Route, Routes } from "react-router-dom";
-import { NAVBAR_ITEMS } from "@constants/navigation";
 import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+
+import { NAVBAR_ITEMS } from "@constants/navigation";
 import { Loader } from "@components";
+import { URLS } from "@constants/routesURL";
 import AppContainer from "@layouts/AppContainer";
 import NotFound from "@components/NotFound";
 
@@ -16,7 +18,7 @@ const Router = () => {
             return <Route element={element} key={path} path={path} />;
           })}
         </Route>
-        <Route element={<NotFound />} path="*" />
+        <Route element={<NotFound />} path={URLS.notFound} />
       </Routes>
     </Suspense>
   );

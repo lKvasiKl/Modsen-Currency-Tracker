@@ -1,8 +1,8 @@
 import logotype from "@assets/icons/logotype.svg";
-
-import { FOOTER_DATA } from "../../constants/footer";
-
+import { FOOTER_DATA } from "@constants/footer";
 import FooterLinks from "./Links";
+import MobileLinks from "./MobileLinks";
+
 import {
   FooterConatiner,
   InfoContainer,
@@ -15,7 +15,6 @@ import {
   LinksContainer,
   MobileLinksContainer,
 } from "./styled";
-import MobileLinks from "./MobileLinks";
 
 const { title, quote, footerSections, copyright } = FOOTER_DATA;
 

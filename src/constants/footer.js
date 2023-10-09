@@ -16,5 +16,8 @@ export const FOOTER_DATA = {
       links: ["Ideas", "Streams"],
     },
   ],
-  copyright: "Startsup © 2023-2024, All Rights Reserved",
+  get copyright() {
+    const currentYear = new Date().getFullYear();
+    return `Startsup © ${currentYear}-${currentYear + 1}, All Rights Reserved`;
+  },
 };

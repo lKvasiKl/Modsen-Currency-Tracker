@@ -21,10 +21,12 @@ export const Title = styled.span`
   letter-spacing: -0.24px;
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  transform: ${(props) => (props.$isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+`;
 
 export const LinksContainer = styled.div`
-  display: none;
+  display: ${(props) => (props.$isOpen ? "flex" : "none")};
   overflow: hidden;
   flex-direction: column;
 

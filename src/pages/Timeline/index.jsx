@@ -1,8 +1,8 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 
-import TimelineMainSection from "./components/TimelineMainSection";
+import { TimelineMainSection } from "@components";
 
-class Timeline extends Component {
+class Timeline extends PureComponent {
   render() {
     return <TimelineMainSection />;
   }

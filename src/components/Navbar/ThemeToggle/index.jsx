@@ -1,9 +1,8 @@
 import { useTheme } from "@hooks/useTheme";
 import { saveCache } from "@utils/cachingFunctions";
+import { ENV_VARIABLES } from "@constants/envVariables";
 
 import { ToggleSwitch, ToggleSwitchInput, ToggleSwitchSlider } from "./styled";
-
-const CACHE_THEME_KEY = process.env.REACT_APP_CACHE_THEME_KEY;
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -11,14 +10,19 @@ const ThemeToggle = () => {
   const handleToggleClick = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    saveCache(CACHE_THEME_KEY, newTheme);
+    saveCache(ENV_VARIABLES.cacheThemeKey, newTheme);
   };
 
   const isLightTheme = theme === "light";
 
   return (
     <ToggleSwitch>
-      <ToggleSwitchInput checked={isLightTheme} data-cy="nav-switch" type="checkbox" onChange={handleToggleClick} />
+      <ToggleSwitchInput
+        checked={isLightTheme}
+        data-cy="nav-switch"
+        type="checkbox"
+        onChange={handleToggleClick}
+      />
       <ToggleSwitchSlider />
     </ToggleSwitch>
   );

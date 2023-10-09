@@ -10,9 +10,9 @@ import {
   SectionContainer,
 } from "./styled";
 
-const Header = () => {
-  const { title, quote } = HEADER_DATA;
+const { title, quote } = HEADER_DATA;
 
+const Header = () => {
   return (
     <StyledHeader>
       <SectionContainer>
@@ -22,9 +22,9 @@ const Header = () => {
         </TextContainer>
         <Logotype
           alt="Application logotype"
-          height="312.737px"
+          height="300px"
           src={logotype}
-          width="299.43px"
+          width="300px"
         />
       </SectionContainer>
     </StyledHeader>

@@ -1,21 +1,21 @@
 import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
+
 import { getCache, saveCache } from "@utils/cachingFunctions";
+import { ENV_VARIABLES } from "@constants/envVariables";
 
 export const ThemeContext = createContext({ theme: "dark" });
-
-const CACHE_THEME_KEY = process.env.REACT_APP_CACHE_THEME_KEY;
 
 const AppThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    const cachedTheme = getCache(CACHE_THEME_KEY);
+    const cachedTheme = getCache(ENV_VARIABLES.cacheThemeKey);
 
     if (Object.entries(cachedTheme).length !== 0) {
       setTheme(cachedTheme);
     } else {
-      saveCache(CACHE_THEME_KEY, "dark");
+      saveCache(ENV_VARIABLES.cacheThemeKey, "dark");
     }
   }, []);
 

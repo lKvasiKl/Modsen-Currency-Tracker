@@ -1,4 +1,4 @@
-import ContactInfo from "./components/ContactInfo";
+import { ContactInfo } from "@components";
 
 const Contato = () => {
   return <ContactInfo />;

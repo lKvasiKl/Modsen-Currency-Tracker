@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Global } from "../../styled";
+import { Global } from "@styled";
 
 import { ErrorBoundaryContainer, Error, ErrorTitle, Text } from "./styled";
 

@@ -1,13 +1,12 @@
 import circle from "@assets/icons/circle.svg";
 import { formatTime } from "@utils/formatingFunctions";
 import { getCache } from "@utils/cachingFunctions";
+import { ENV_VARIABLES } from "@constants/envVariables";
 
 import { UpdateInfoContainer, Image, Text } from "./styled";
 
-const CACHE_LAST_UPDATE_KEY = process.env.REACT_APP_CACHE_LAST_UPDATE_KEY;
-
 const UpdateInfo = () => {
-  const milliseconds = getCache(CACHE_LAST_UPDATE_KEY);
+  const milliseconds = getCache(ENV_VARIABLES.cacheLastUpdateKey);
   let timeString = formatTime(new Date().getTime());
 
   if (Object.keys(milliseconds).length !== 0) {
