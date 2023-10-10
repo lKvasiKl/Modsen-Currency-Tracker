@@ -10,5 +10,5 @@ export const NotificationContainer = styled.span`
   transition: transform 0.3s ease-in-out;
   color: ${({ theme }) => theme.textColor};
   z-index: 1;
-  padding: 15px 0;
+  padding: ${({ theme }) => theme.space.fifteen}px 0;
 `;

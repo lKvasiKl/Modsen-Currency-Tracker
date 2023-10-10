@@ -17,24 +17,25 @@ const movePupil = keyframes`
 `;
 
 export const ErrorPage = styled.main`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: ${({ theme }) => theme.space.ten}px;
 
   a {
     color: ${({ theme }) => theme.colors.lightGreen};
     text-decoration: none;
     border: 1px solid ${({ theme }) => theme.colors.darkGreen};
-    font-size: ${({ theme }) => theme.fontSize.xs};
-    font-weight: 200;
-    padding: 12px 24px;
+    font-size: ${({ theme }) => theme.font.fontSize.XS}px;
+    font-weight: ${({ theme }) => theme.font.fontWeight.XXS};
+    padding: ${({ theme }) => theme.space.twelve}px
+      ${({ theme }) => theme.space.twentyFour}px;
     border-radius: 15px;
     box-shadow: 0px 7px 0px -2px ${({ theme }) => theme.colors.darkGreen};
     transition: all 0.3s ease-in-out;
-    margin-top: 15px;
+    margin-top: ${({ theme }) => theme.space.fifteen}px;
 
     &:hover {
       box-shadow: none;
@@ -45,9 +46,9 @@ export const ErrorPage = styled.main`
 `;
 
 export const EyesContainer = styled.div`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   justify-content: center;
-  gap: 2px;
+  gap: ${({ theme }) => theme.space.two}px;
 `;
 
 export const Eye = styled.div`
@@ -74,8 +75,8 @@ export const Pupil = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.font.fontSize.XL}px;
+  font-weight: ${({ theme }) => theme.font.fontWeight.M};
   text-align: center;
   background: linear-gradient(
     90deg,
@@ -88,8 +89,8 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  margin-top: 10px;
-  font-size: ${({ theme }) => theme.fontSize.l};
-  font-weight: 200;
+  margin-top: ${({ theme }) => theme.space.ten}px;
+  font-size: ${({ theme }) => theme.font.fontSize.L}px;
+  font-weight: ${({ theme }) => theme.font.fontWeight.XXS};
   color: ${({ theme }) => theme.colors.red};
 `;

@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   width: 100%;
   max-width: 520px;
   height: fit-content;
-  padding: 30px;
+  padding: ${({ theme }) => theme.space.thirty}px;
   align-items: center;
-  gap: 30px;
+  gap: ${({ theme }) => theme.space.thirty}px;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.darkGray};
   background-color: ${({ theme }) => theme.colors.borderGray};
-  margin-bottom: 56px;
+  margin-bottom: ${({ theme }) => theme.space.fiftySix}px;
   transition: ${({ onClick }) => (onClick ? "transform 0.5s" : "none")};
 
   &:hover {
@@ -21,51 +21,51 @@ export const CardContainer = styled.div`
       onClick ? "0px 0px 25px 4px #84dd3770" : ""};
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${({ theme }) => theme.media.XL}px) {
     max-width: unset;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
     height: 100px;
-    padding: 0 0 0 30px;
+    padding-right: ${({ theme }) => theme.space.thirty}px;
   }
 `;
 
 export const Image = styled.img`
   user-select: none;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
     width: 50px;
     height: 50px;
   }
 `;
 
 export const CardContent = styled.div`
-  display: block;
+  ${({ theme }) => theme.display.block};
 `;
 
 export const CardTitle = styled.p`
-  color: #d9d9d9;
-  font-size: ${({ theme }) => theme.fontSize.l};
+  color: ${({ theme }) => theme.colors.cardLightGray};
+  font-size: ${({ theme }) => theme.font.fontSize.L}px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.font.fontWeight.S};
   line-height: 49.371px;
 
-  @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.s};
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+    font-size: ${({ theme }) => theme.font.fontSize.S}px;
     line-height: normal;
   }
 `;
 
 export const CurrencyRate = styled.span`
-  color: #a7b2c3;
-  font-size: ${({ theme }) => theme.fontSize.l};
+  color: ${({ theme }) => theme.colors.lightBlue};
+  font-size: ${({ theme }) => theme.font.fontSize.L}px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: ${({ theme }) => theme.font.fontWeight.XS};
   line-height: 41.143px;
 
-  @media (max-width: 500px) {
-    font-size: ${({ theme }) => theme.fontSize.m};
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+    font-size: ${({ theme }) => theme.font.fontSize.M}px;
     line-height: normal;
   }
 `;

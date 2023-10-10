@@ -9,6 +9,7 @@ import {
   QUOTES_CARD_DATA,
   CURRENCY_DEFAULT,
 } from "@constants/currency";
+import { ENV_VARIABLES } from "@constants/envVariables";
 import CardsSection from "./CardsSection";
 import CurrencyConvertorModal from "./CurrencyConvertorModal";
 

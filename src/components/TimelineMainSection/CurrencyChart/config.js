@@ -1,3 +1,5 @@
+import { COLORS } from "@constants/styles/colors";
+
 export const chartOptions = {
   type: "bar",
   parsing: {
@@ -11,7 +13,7 @@ export const chartOptions = {
         text: "Date",
       },
       grid: {
-        color: "#474747",
+        color: COLORS.darkGray,
         borderWidth: 1,
       },
       ticks: {
@@ -27,7 +29,7 @@ export const chartOptions = {
         text: "Values",
       },
       grid: {
-        color: "#474747",
+        color: COLORS.darkGray,
         borderWidth: 1,
       },
       beginAtZero: true,

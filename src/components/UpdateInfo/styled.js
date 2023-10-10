@@ -10,31 +10,32 @@ const pulseAnimation = keyframes`
 `;
 
 export const UpdateInfoContainer = styled.section`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   align-items: center;
   justify-content: center;
-  padding: 57px 10px;
-  gap: 18px;
+  padding: ${({ theme }) => theme.space.fiftySix}px
+    ${({ theme }) => theme.space.ten}px;
+  gap: ${({ theme }) => theme.space.eighteen}px;
 `;
 
 export const Image = styled.img`
   user-select: none;
   animation: ${pulseAnimation} 2s ease-in-out infinite;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
     width: 35px;
     height: 35px;
   }
 `;
 
 export const Text = styled.p`
-  color: #d9d9d9;
-  font-size: ${({ theme }) => theme.fontSize.l};
+  color: ${({ theme }) => theme.colors.cardLightGray};
+  font-size: ${({ theme }) => theme.font.fontSize.L}px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: ${({ theme }) => theme.font.fontWeight.XS};
   line-height: 41.143px;
 
-  @media (max-width: 500px) {fontSize
-    font-size: ${({ theme }) => theme.fontSize.s};
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+    font-size: ${({ theme }) => theme.font.fontSize.S}px;
   }
 `;

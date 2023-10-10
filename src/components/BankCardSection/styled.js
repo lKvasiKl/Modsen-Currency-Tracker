@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.display.flexColumn};
   align-items: center;
 `;
 
 export const Title = styled.h2`
   color: ${({ theme }) => theme.textColor};
-  font-size: ${({ theme }) => theme.fontSize.l};
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 110px;
+  font-size: ${({ theme }) => theme.font.fontSize.L}px;
+  font-weight: ${({ theme }) => theme.font.fontWeight.S};
+  margin-top: ${({ theme }) => theme.space.oneHundredTen}px;
+  ${({ theme }) => theme.font.fontNormal};
   text-align: center;
 
-  @media (max-width: 650px) {
-    padding: 0 20px;
+  @media (max-width: ${({ theme }) => theme.media.S}px) {
+    padding: 0 ${({ theme }) => theme.space.twenty}px;
   }
 `;

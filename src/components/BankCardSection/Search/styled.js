@@ -5,36 +5,36 @@ export const SearchWrapper = styled.div`
   max-width: 450px;
   width: 100%;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
     max-width: 350px;
   }
 `;
 
 export const SearchContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  ${({ theme }) => theme.display.flexRow};
   height: 65px;
   border-radius: 5px;
-  background-color: #1b2028;
-  margin: 25px 0 80px 0;
-  gap: 20px;
+  background-color: ${({ theme }) => theme.colors.darkBlue};
+  margin-top: ${({ theme }) => theme.space.twentyFive}px;
+  margin-bottom: ${({ theme }) => theme.space.eighty}px;
+  gap: ${({ theme }) => theme.space.twenty}px;
 `;
 
 export const Input = styled.input`
   height: 65px;
   width: 100%;
-  padding-left: 20px;
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  padding-left: ${({ theme }) => theme.space.twenty}px;
+  font-size: ${({ theme }) => theme.font.fontSize.XS}px;
   font-style: normal;
-  font-weight: 400;
-  color: #9e9e9e;
+  font-weight: ${({ theme }) => theme.font.fontWeight.S};
+  color: ${({ theme }) => theme.colors.lightGray};
   background-color: transparent;
   outline: none;
   border: none;
 `;
 
 export const Image = styled.img`
-  margin-right: 20px;
+  margin-right: ${({ theme }) => theme.space.twenty}px;
   align-self: center;
 `;
 
@@ -64,22 +64,23 @@ export const SearchList = styled.ul`
     background-color: ${({ theme }) => theme.colors.darkGray};
 
     &:hover {
-      background-color: #303036;
+      background-color: ${({ theme }) => theme.colors.purpuleBlue};
     }
   }
 `;
 
 export const SearchListItem = styled.li`
-  padding: 10px 25px;
-  background-color: #1b2028;
+  padding: ${({ theme }) => theme.space.ten}px
+    ${({ theme }) => theme.space.twentyFive}px;
+  background-color: ${({ theme }) => theme.colors.darkBlue};
   border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   cursor: pointer;
-  display: flex;
-  gap: 20px;
+  ${({ theme }) => theme.display.flex};
+  gap: ${({ theme }) => theme.space.twenty}px;
   align-items: center;
-  color: #9e9e9e;
+  color: ${({ theme }) => theme.colors.lightGray};
 
   &:hover {
-    background-color: #303036;
+    background-color: ${({ theme }) => theme.colors.purpuleBlue};
   }
 `;

@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const ToggleSwitch = styled.label`
   position: relative;
-  display: inline-block;
+  ${({ theme }) => theme.display.inlineBlock};
   width: 100%;
   max-width: 50px;
   height: 25px;
-  margin: 0 0.75rem;
+  margin: 0 ${({ theme }) => theme.space.twelve}px;
 `;
 
 export const ToggleSwitchSlider = styled.span`
@@ -34,7 +34,7 @@ export const ToggleSwitchSlider = styled.span`
 `;
 
 export const ToggleSwitchInput = styled.input`
-  display: none;
+  ${({ theme }) => theme.display.none};
 
   &:checked + ${ToggleSwitchSlider} {
     background-color: ${({ theme }) => theme.colors.green};

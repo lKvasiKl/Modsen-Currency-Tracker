@@ -14,3 +14,5 @@ export const INITIAL_INPUT_STATE = {
 export const MIN_INPUT_VALUE = 0;
 export const MAX_INPUT_VALUE = 1000000;
 export const ERROR_TEXT = `The price must be more then ${MIN_INPUT_VALUE} and less then ${MAX_INPUT_VALUE}.`;
+export const CHART_ITEMS_LEFT_TEXT =
+  "There are {remainingChartItems} values left before the chart can be built.";

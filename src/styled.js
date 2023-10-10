@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
     * {
-        margin: 0;
-        padding: 0;
+        margin: ${({ theme }) => theme.space.zero};
+        padding: ${({ theme }) => theme.space.zero};
         box-sizing: border-box;
-        font-family: Poppins;
+        font-family: ${({ theme }) => theme.font.fontFamily.popins};
     }
 
     body {

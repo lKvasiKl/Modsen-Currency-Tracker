@@ -1,18 +1,16 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.display.flexColumn};
   align-items: center;
 `;
 
 export const Title = styled.h2`
   text-align: center;
-  font-size: ${({ theme }) => theme.fontSize.xl};
-  padding: 30px 0;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.font.fontSize.XL}px;
+  padding: ${({ theme }) => theme.space.thirty}px 0;
+  font-weight: ${({ theme }) => theme.font.fontWeight.L};
+  ${({ theme }) => theme.font.fontNormal};
   background: linear-gradient(
     90deg,
     ${({ theme }) => theme.colors.darkGreen} 0.18%,
@@ -24,25 +22,26 @@ export const Title = styled.h2`
 `;
 
 export const ContactInfoWrapper = styled.div`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   justify-content: space-between;
   border: 1px solid ${({ theme }) => theme.textColor};
   max-width: 800px;
   height: fit-content;
-  margin: 0 20px 170px 20px;
-  padding: 30px;
-  gap: 50px;
+  matgin-left: ${({ theme }) => theme.space.twenty}px;
+  margin-bottom: ${({ theme }) => theme.space.oneHundredSeventy}px;
+  matgin-right: ${({ theme }) => theme.space.twenty}px;
+  padding: ${({ theme }) => theme.space.thirty}px;
+  gap: ${({ theme }) => theme.space.fifty}px;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.media.L}px) {
     flex-direction: column;
   }
 `;
 
 export const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.display.flexColumn};
 
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.media.L}px) {
     flex-direction: column;
     order: -1;
   }
@@ -50,27 +49,25 @@ export const InfoContainer = styled.div`
 
 export const InnerTitle = styled.h3`
   text-align: left;
-  font-size: ${({ theme }) => theme.fontSize.m};
-  padding-top: 10px;
-  padding-bottom: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.font.fontSize.M}px;
+  padding-top: ${({ theme }) => theme.space.ten}px;
+  padding-bottom: ${({ theme }) => theme.space.fifteen}px;
+  font-weight: ${({ theme }) => theme.font.fontWeight.L};
+  ${({ theme }) => theme.font.fontNormal};
   color: ${({ theme }) => theme.textColor};
 `;
 
 export const ContactContainer = styled.div`
-  display: flex;
-  gap: 10px;
+  ${({ theme }) => theme.display.flex};
+  gap: ${({ theme }) => theme.space.ten}px;
 `;
 
 export const Link = styled.a`
   text-align: left;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  font-style: normal;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  ${({ theme }) => theme.font.fontNormal};
   color: ${({ theme }) => theme.colors.gray};
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.font.fontWeight.S};
   text-decoration: none;
 
   &:hover {
@@ -80,8 +77,7 @@ export const Link = styled.a`
 
 export const Text = styled.p`
   text-align: left;
-  font-size: ${({ theme }) => theme.fontSize.s};
-  font-style: normal;
-  line-height: normal;
+  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  ${({ theme }) => theme.font.fontNormal};
   color: ${({ theme }) => theme.colors.gray};
 `;

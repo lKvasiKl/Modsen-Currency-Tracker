@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const ErrorBoundaryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.display.flexColumn};
   align-items: center;
   justify-content: center;
   height: 100vh;
   font-weight: bolder;
-  gap: 10px;
+  gap: ${({ theme }) => theme.space.ten}px;
 
   a {
     color: ${({ theme }) => theme.colors.green};
@@ -34,5 +33,5 @@ export const Error = styled.p`
 
 export const Text = styled.p`
   color: ${({ theme }) => theme.colors.green};
-  font-size: ${({ theme }) => theme.fontSize.l};
+  font-size: ${({ theme }) => theme.font.fontSize.L}px;
 `;

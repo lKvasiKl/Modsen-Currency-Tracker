@@ -6,8 +6,8 @@ export const BurgerMenuContainer = styled.div`
   position: relative;
   cursor: pointer;
 
-  @media (min-width: 651px) {
-    display: none;
+  @media (min-width: ${({ theme }) => theme.media.S + 1}px) {
+    ${({ theme }) => theme.display.none};
   }
 `;
 
@@ -38,7 +38,7 @@ export const BurgerLine = styled.div`
 `;
 
 export const BurgerMenuItems = styled.ul`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   align-items: center;
   flex-direction: column;
   color: ${({ theme }) => theme.textColor};
@@ -52,15 +52,15 @@ export const BurgerMenuItems = styled.ul`
   left: 0;
   top: 10%;
   background-color: ${({ theme }) => theme.backgroundColor};
-  padding-bottom: 15px;
+  padding-bottom: ${({ theme }) => theme.space.fifteen}px;
 
   li {
-    padding-bottom: 15px;
+    padding-bottom: ${({ theme }) => theme.space.fifteen}px;
   }
 
   a {
-    font-size: ${({ theme }) => theme.fontSize.s};
-    font-weight: 300;
+    font-size: ${({ theme }) => theme.font.fontSize.S}px;
+    font-weight: ${({ theme }) => theme.font.fontWeight.XS};
     text-decoration: none;
     color: ${({ theme }) => theme.textColor};
 

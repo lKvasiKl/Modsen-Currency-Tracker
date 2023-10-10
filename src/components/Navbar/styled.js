@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const NavbarContainer = styled.nav`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   align-items: center;
   justify-content: space-between;
   height: 103px;
   background-color: ${({ theme }) => theme.backgroundColor};
-  padding: 0px 100px;
+  padding: 0 ${({ theme }) => theme.space.oneHundred}px;
 
-  @media (max-width: 1200px) {
-    padding: 0px 30px;
+  @media (max-width: ${({ theme }) => theme.media.XL}px) {
+    padding: 0 ${({ theme }) => theme.space.thirty}px;
   }
 `;
 
@@ -18,14 +18,14 @@ export const Logotype = styled.img`
 `;
 
 export const NavLinksContainer = styled.ul`
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   justify-content: space-between;
   list-style-type: none;
   width: 657px;
 
   a {
-    font-size: ${({ theme }) => theme.fontSize.s};
-    font-weight: 300;
+    font-size: ${({ theme }) => theme.font.fontSize.S}px;
+    font-weight: ${({ theme }) => theme.font.fontWeight.XS};
     text-decoration: none;
     color: ${({ theme }) => theme.textColor};
 
@@ -40,13 +40,13 @@ export const NavLinksContainer = styled.ul`
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${({ theme }) => theme.media.L}px) {
     justify-content: center;
-    gap: 30px;
+    gap: ${({ theme }) => theme.space.thirty}px;
   }
 
-  @media (max-width: 650px) {
-    display: none;
+  @media (max-width: ${({ theme }) => theme.media.S}px) {
+    ${({ theme }) => theme.display.none};
   }
 `;
 export const SwitchContainer = styled.div`
@@ -54,15 +54,15 @@ export const SwitchContainer = styled.div`
   display: contents;
   max-width: 50px;
 
-  @media (max-width: 650px) {
-    display: none;
+  @media (max-width: ${({ theme }) => theme.media.S}px) {
+    ${({ theme }) => theme.display.none};
   }
 `;
 
 export const ToggleSwitchLabel = styled.label`
   position: relative;
-  display: inline-block;
+  ${({ theme }) => theme.display.inlineBlock};
   width: 50px;
   height: 25px;
-  margin: 0 0.75rem;
+  margin: 0 ${({ theme }) => theme.space.twelve}px;
 `;

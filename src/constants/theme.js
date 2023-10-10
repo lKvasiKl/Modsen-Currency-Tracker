@@ -1,33 +1,36 @@
+import { COLORS } from "./styles/colors";
+import { FONT } from "./styles/fonts";
+import { MEDIA } from "./styles/media";
+import { SPACES } from "./styles/spaces";
+import { DISPLAY } from "./styles/display";
+
 const BASE_THEME = {
   colors: {
-    green: "#84dd37",
-    darkGreen: "#00ce2c",
-    lightGreen: "#a3dc00",
-    yellow: "#aedf23",
-    red: "#d10708",
-    gray: "#898989",
-    borderGray: "#202025",
-    darkGray: "#474747",
+    ...COLORS,
   },
-  fontSize: {
-    xs: "16px",
-    s: "20px",
-    m: "24px",
-    l: "32px",
-    xl: "50px",
-    xxl: "76px",
+  font: {
+    ...FONT,
+  },
+  media: {
+    ...MEDIA,
+  },
+  space: {
+    ...SPACES,
+  },
+  display: {
+    ...DISPLAY,
   },
 };
 
 export const THEME = {
   light: {
     ...BASE_THEME,
-    backgroundColor: "#FFFFFF",
-    textColor: "#000000",
+    backgroundColor: COLORS.white,
+    textColor: COLORS.black,
   },
   dark: {
     ...BASE_THEME,
-    backgroundColor: "#000000",
-    textColor: "#FFFFFF",
+    backgroundColor: COLORS.black,
+    textColor: COLORS.white,
   },
 };

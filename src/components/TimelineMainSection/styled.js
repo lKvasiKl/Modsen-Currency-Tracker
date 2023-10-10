@@ -1,23 +1,22 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
+  ${({ theme }) => theme.display.flexColumn};
   align-items: center;
 `;
 
 export const ChartSection = styled.section`
   width: 100%;
   max-width: 1140px;
-  margin-bottom: 50px;
-  padding: 0 30px;
+  margin-bottom: ${({ theme }) => theme.space.fifty}px;
+  padding: 0 ${({ theme }) => theme.space.thirty}px;
 `;
 
 export const ButtonContainer = styled.div`
-  display: flex;
-  margin-bottom: 50px;
+  ${({ theme }) => theme.display.flex};
+  margin-bottom: ${({ theme }) => theme.space.fifty}px;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
     flex-direction: column;
   }
 `;
@@ -28,17 +27,17 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.darkGreen};
   color: ${({ theme }) => theme.textColor};
   height: 50px;
-  margin: 20px;
+  margin: ${({ theme }) => theme.space.twenty}px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: ${({ theme }) => theme.font.fontSize.S}px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.yellow};
   }
 
-  @media (max-width: 500px) {
-    margin: 0 0 20px 0;
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+    margin-bottom: ${({ theme }) => theme.space.twenty}px;
   }
 `;

@@ -18,7 +18,7 @@ class CurrencyInfo extends PureComponent {
 
   render() {
     const { id, imgPath, title } = this.props.selectedCurrency;
-    const { isChartCanBuild } = this.props.isChartCanBuild;
+    const { isChartCanBuild } = this.props;
 
     return (
       <CurrencyContainer

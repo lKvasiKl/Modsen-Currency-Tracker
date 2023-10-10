@@ -1,7 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-import convert from "@assets/icons/convert.svg";
 import { convertCurrency } from "@utils/convertingFunctions";
 import { CURRENCY_DEFAULT } from "@constants/currency";
 import { Modal } from "@components";
@@ -66,7 +65,6 @@ const CurrencyConvertorModal = ({
           value={exchangeAmount}
           onChange={handleInputChange}
         />
-        <Image alt="Convert icon" height="35px" src={convert} width="35px" />
       </InputContainer>
       <Label>From:</Label>
       <CurrencyContainer>

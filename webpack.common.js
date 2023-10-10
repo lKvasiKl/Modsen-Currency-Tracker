@@ -50,6 +50,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
       filename: "index.html",
+      favicon: "./public/favicon.svg",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[hash].css",

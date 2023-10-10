@@ -21,7 +21,7 @@ export const LoaderContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  ${({ theme }) => theme.display.flex};
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.backgroundColor};
@@ -33,8 +33,8 @@ export const LoaderContainer = styled.div`
       border-radius: 50%;
       transform: scale(0);
       animation: ${animate} 1.5s ease-in-out infinite;
-      display: inline-block;
-      margin: 0.5rem;
+      ${({ theme }) => theme.display.inlineBlock};
+      margin: ${({ theme }) => theme.space.eight}px;
 
       &:nth-child(1) {
         animation-delay: 0s;

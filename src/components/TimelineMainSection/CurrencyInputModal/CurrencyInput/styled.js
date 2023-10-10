@@ -1,24 +1,28 @@
 import styled from "styled-components";
 
+import { COLORS } from "@constants/styles/colors";
+
 export const Label = styled.label`
-  padding-left: 25px;
-  color: ${({ theme }) => theme.textColor};
+  padding-left: ${({ theme }) => theme.space.twentyFive}px;
+  color: ${COLORS.white};
 `;
 
 export const InputContainer = styled.div`
-  color: ${({ theme }) => theme.textColor};
-  display: flex;
+  color: ${COLORS.white};
+  ${({ theme }) => theme.display.flex};
   height: 50px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
   align-items: center;
-  margin: 0 25px 15px 25px;
+  margin-left: ${({ theme }) => theme.space.twentyFive}px;
+  margin-bottom: ${({ theme }) => theme.space.fifteen}px;
+  margin-right: ${({ theme }) => theme.space.twentyFive}px;
 `;
 
 export const Input = styled.input`
   background: transparent;
-  font-size: ${({ theme }) => theme.fontSize.s};
+  font-size: ${({ theme }) => theme.font.fontSize.S}px;
   height: 50px;
-  color: ${({ theme }) => theme.textColor};
+  color: ${COLORS.white};
   border: none;
   outline: none;
 
@@ -27,6 +31,6 @@ export const Input = styled.input`
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;
-    margin: 0;
+    margin: ${({ theme }) => theme.space.zero};
   }
 `;
