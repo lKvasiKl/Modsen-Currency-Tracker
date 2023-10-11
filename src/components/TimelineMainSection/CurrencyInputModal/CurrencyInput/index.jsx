@@ -1,9 +1,9 @@
-import { PureComponent } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
 import { Label, InputContainer, Input } from "./styled";
 
-class CurrencyInput extends PureComponent {
+class CurrencyInput extends Component {
   handleInputChange = (event) => {
     this.props.onChange(event);
   };

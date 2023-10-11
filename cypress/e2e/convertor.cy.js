@@ -38,6 +38,6 @@ describe("Currency Converter Module", () => {
     cy.get("[data-cy=select-option-BTC]").click();
     cy.get("[data-cy=convert-button]").click();
 
-    cy.get("[data-cy=converted-result]").should("not.exist");
+    cy.get("[data-cy=converted-result]").should("not.have.descendants");
   });
 });

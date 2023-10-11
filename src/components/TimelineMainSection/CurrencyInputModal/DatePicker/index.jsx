@@ -1,4 +1,4 @@
-import { PureComponent } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
 import { formatDate } from "@utils/formatingFunctions";
@@ -6,7 +6,7 @@ import { DATE } from "@constants/timeline";
 
 import { Button, DateContainer, DateTitle } from "./styled";
 
-class DatePicker extends PureComponent {
+class DatePicker extends Component {
   handleUpdateDate = (direction) => () => {
     this.props.onChange(direction);
   };

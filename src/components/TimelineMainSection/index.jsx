@@ -76,12 +76,17 @@ class TimelineMainSection extends Component {
 
     const currencyData = getCache(selectedCurrencyId);
 
+    const highPrice = Number(inputValue.highPriceInput);
+    const lowPrice = Number(inputValue.lowPriceInput);
+    const openPrice = Number(inputValue.openPriceInput);
+    const closePrice = Number(inputValue.closePriceInput);
+
     if (
-      inputValue.highPriceInput < inputValue.lowPriceInput ||
-      inputValue.highPriceInput < inputValue.openPriceInput ||
-      inputValue.highPriceInput < inputValue.closePriceInput ||
-      inputValue.lowPriceInput > inputValue.openPriceInput ||
-      inputValue.lowPriceInput > inputValue.closePriceInput
+      highPrice < lowPrice ||
+      highPrice < openPrice ||
+      highPrice < closePrice ||
+      lowPrice > openPrice ||
+      lowPrice > closePrice
     ) {
       this.setState({
         notification: {
