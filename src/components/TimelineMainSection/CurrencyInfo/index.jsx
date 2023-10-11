@@ -1,6 +1,8 @@
 import { PureComponent } from "react";
 import PropTypes from "prop-types";
 
+import { IMAGE_SIZE } from "@constants/styles/image";
+
 import {
   CurrencyContainer,
   Description,
@@ -26,7 +28,7 @@ class CurrencyInfo extends PureComponent {
         data-cy="currency-info"
         onClick={this.handleCurrencyInfoClick}
       >
-        <Image alt={`${id} icon`} height="80px" src={imgPath} width="80px" />
+        <Image alt={`${id} icon`} src={imgPath} {...IMAGE_SIZE.XL} />
         <TextContainer>
           <Title data-cy="currency-info-text">{title}</Title>
           <Description data-cy="currency-info-id">{id}</Description>

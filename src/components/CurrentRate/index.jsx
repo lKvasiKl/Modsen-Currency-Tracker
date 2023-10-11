@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { OverflowHidden } from "@styled";
@@ -24,18 +24,21 @@ const CurrentRate = () => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [targetCurrency, setTargetCurrency] = useState(CURRENCY_DEFAULT);
 
-  const handleCardClick = ({ id, imgPath }) => {
-    if (Object.keys(rates.data).length === 0) {
-      return;
-    }
+  const handleCardClick = useCallback(
+    ({ id, imgPath }) => {
+      if (Object.keys(rates.data).length === 0) {
+        return;
+      }
 
-    setIsModalOpen((prevSatate) => !prevSatate);
-    setExchangeAmount(rates.data[id].value);
-    setTargetCurrency({
-      id,
-      imgPath,
-    });
-  };
+      setIsModalOpen((prevSatate) => !prevSatate);
+      setExchangeAmount(rates.data[id].value);
+      setTargetCurrency({
+        id,
+        imgPath,
+      });
+    },
+    [rates.data],
+  );
 
   const getRatesValue = async () => {
     const currentTime = new Date().getTime();

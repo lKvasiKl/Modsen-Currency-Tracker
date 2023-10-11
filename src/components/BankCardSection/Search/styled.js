@@ -34,6 +34,7 @@ export const Input = styled.input`
 `;
 
 export const Image = styled.img`
+  user-select: none;
   margin-right: ${({ theme }) => theme.space.twenty}px;
   align-self: center;
 `;

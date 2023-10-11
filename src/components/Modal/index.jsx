@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import close from "@assets/icons/close.svg";
 import useClickOutside from "@hooks/useClickOutside";
+import { IMAGE_SIZE } from "@constants/styles/image";
 
 import { CloseButton, Image, ModalWindow, ModalContainer } from "./styled";
 
@@ -22,7 +23,7 @@ const Modal = ({ children, onClose }) => {
           data-cy="close-modal-button"
           onClick={handleCloseButtonClick}
         >
-          <Image alt="Close icon" height="25px" src={close} width="25px" />
+          <Image alt="Close icon" src={close} {...IMAGE_SIZE.S} />
         </CloseButton>
         {children}
       </ModalWindow>

@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 
 import { formatRateValue } from "@utils/formatingFunctions";
@@ -5,21 +6,27 @@ import CurrencyCard from "../CurrencyCard";
 
 import { CardsList, CardsSectionContainer, CardsSectionTitle } from "./styled";
 
-const CardsSection = ({ title, cardsArray, onClick, rates }) => {
+const CardsSection = React.memo(({ title, cardsArray, onClick, rates }) => {
   const handleCardClick = (id, imgPath) => () => {
     onClick({ id, imgPath });
   };
+
+  const formattedRateValues = useMemo(() => {
+    return cardsArray.map(({ id, rateValue }) =>
+      formatRateValue(rates, id, rateValue),
+    );
+  }, [cardsArray, rates]);
 
   return (
     <CardsSectionContainer>
       <CardsSectionTitle>{title}</CardsSectionTitle>
       <CardsList>
-        {cardsArray.map(({ id, imgPath, title, rateValue }) => {
+        {cardsArray.map(({ id, imgPath, title }, index) => {
           return (
             <CurrencyCard
               imgPath={imgPath}
               key={title}
-              rateValue={formatRateValue(rates, id, rateValue)}
+              rateValue={formattedRateValues[index]}
               title={title}
               onClick={onClick && handleCardClick(id, imgPath)}
             />
@@ -28,7 +35,7 @@ const CardsSection = ({ title, cardsArray, onClick, rates }) => {
       </CardsList>
     </CardsSectionContainer>
   );
-};
+});
 
 CardsSection.propTypes = {
   title: PropTypes.string.isRequired,

@@ -43,4 +43,6 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  user-select: none;
+`;

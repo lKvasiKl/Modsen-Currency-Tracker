@@ -1,7 +1,8 @@
-import { PureComponent } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 import search from "@assets/icons/search.svg";
+import { IMAGE_SIZE } from "@constants/styles/image";
 
 import {
   SearchWrapper,
@@ -53,7 +54,7 @@ class Search extends PureComponent {
             value={searchInputValue}
             onChange={this.handleInputCurrenciesSearch}
           />
-          <Image alt="Search icon" height="24px" src={search} width="24px" />
+          <Image alt="Search icon" src={search} {...IMAGE_SIZE.S} />
         </SearchContainer>
         {searchInputValue.length > 0 && (
           <SearchList>
@@ -83,4 +84,4 @@ Search.propTypes = {
   onCurrencySelection: PropTypes.func.isRequired,
 };
 
-export default Search;
+export default React.memo(Search);

@@ -6,7 +6,9 @@ const CommonStyles = css`
   color: ${COLORS.white};
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  user-select: none;
+`;
 
 export const Label = styled.label`
   ${CommonStyles}

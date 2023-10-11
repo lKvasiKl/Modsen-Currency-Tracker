@@ -1,17 +1,19 @@
 import styled, { keyframes } from "styled-components";
 
+import { COLORS } from "@constants/styles/colors";
+
 const animate = keyframes`
   0%, 100% {
     transform: scale(0.2);
-    background-color: ${({ theme }) => theme.colors.darkGreen};
+    background-color: ${COLORS.darkGreen};
   }
   40% {
     transform: scale(1);
-    background-color: ${({ theme }) => theme.colors.yellow};
+    background-color: ${COLORS.yellow};
   }
   50% {
     transform: scale(1);
-    background-color: ${({ theme }) => theme.colors.lightGreen};
+    background-color: ${COLORS.lightGreen};
   }
 `;
 

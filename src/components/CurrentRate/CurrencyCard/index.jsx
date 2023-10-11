@@ -1,4 +1,7 @@
+import React from "react";
 import PropTypes from "prop-types";
+
+import { IMAGE_SIZE } from "@constants/styles/image";
 
 import {
   CardContainer,
@@ -8,17 +11,17 @@ import {
   CurrencyRate,
 } from "./styled";
 
-const CurrencyCard = ({ imgPath, title, rateValue, onClick }) => {
+const CurrencyCard = React.memo(({ imgPath, title, rateValue, onClick }) => {
   return (
     <CardContainer data-cy="currency-card" onClick={onClick}>
-      <Image alt="Currency icon" height="80px" src={imgPath} width="80px" />
+      <Image alt="Currency icon" src={imgPath} {...IMAGE_SIZE.XL} />
       <CardContent>
         <CardTitle>{title}</CardTitle>
         <CurrencyRate>{rateValue}</CurrencyRate>
       </CardContent>
     </CardContainer>
   );
-};
+});
 
 CurrencyCard.propTypes = {
   imgPath: PropTypes.string.isRequired,

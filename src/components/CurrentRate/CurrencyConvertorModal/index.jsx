@@ -5,6 +5,7 @@ import { convertCurrency } from "@utils/convertingFunctions";
 import { CURRENCY_DEFAULT } from "@constants/currency";
 import { Modal } from "@components";
 import { formatConvertedCurrency } from "@utils/formatingFunctions";
+import { IMAGE_SIZE } from "@constants/styles/image";
 import Select from "./Select";
 
 import {
@@ -25,8 +26,8 @@ const CurrencyConvertorModal = ({
   setExchangeAmount,
   rates,
 }) => {
-  const { id, imgPath } = targetCurrency;
-  const fromCurrency = id;
+  const { id: currencyShortName, imgPath } = targetCurrency;
+  const fromCurrency = currencyShortName;
 
   const [convertedCurrencyValue, setConvertedCurrencyValue] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState(CURRENCY_DEFAULT);
@@ -68,8 +69,12 @@ const CurrencyConvertorModal = ({
       </InputContainer>
       <Label>From:</Label>
       <CurrencyContainer>
-        <Image alt={`${id} icon`} height="40px" src={imgPath} width="40px" />
-        <Text>{id}</Text>
+        <Image
+          alt={`${currencyShortName} icon`}
+          src={imgPath}
+          {...IMAGE_SIZE.M}
+        />
+        <Text>{currencyShortName}</Text>
       </CurrencyContainer>
       <Label>To:</Label>
       <CurrencySelectContainer>

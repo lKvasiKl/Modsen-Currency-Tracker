@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { URLS } from "@constants/routesURL";
 import { Global } from "@styled";
+import { DESCRIPTION, LINK_TEXT, TITLE } from "./config";
 
 import {
   ErrorPage,
@@ -26,10 +27,10 @@ const NotFound = () => {
           </Eye>
         </EyesContainer>
 
-        <Title>Looks Like You&apos;re Lost</Title>
-        <Description>404 Error</Description>
+        <Title>{TITLE}</Title>
+        <Description>{DESCRIPTION}</Description>
 
-        <Link to={URLS.home}>Back To Home</Link>
+        <Link to={URLS.home}>{LINK_TEXT}</Link>
       </ErrorPage>
     </>
   );
