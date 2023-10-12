@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
+import { flexColumn } from "@constants/styles/mixins";
+
 export const Main = styled.main`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
   align-items: center;
 `;

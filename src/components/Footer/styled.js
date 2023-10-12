@@ -1,36 +1,45 @@
 import styled from "styled-components";
 
+import {
+  displayFlex,
+  flexRow,
+  fontNormal,
+  flexColumn,
+  fontNormal150,
+  displayNone,
+} from "@constants/styles/mixins";
+
 export const FooterConatiner = styled.footer`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   @media (max-width: ${({ theme }) => theme.media.S}px) {
+    padding: 0 ${({ theme }) => theme.space.L}px;
     align-items: unset;
-    padding: 0 ${({ theme }) => theme.space.thirty}px;
   }
 `;
 
 export const FooterWrapper = styled.section`
-  ${({ theme }) => theme.display.flexRow};
-  gap: ${({ theme }) => theme.space.oneHundredFive}px;
+  ${flexRow}
+  gap: ${({ theme }) => theme.space.XL105}px;
 
   @media (max-width: ${({ theme }) => theme.media.XL}px) {
+    gap: ${({ theme }) => theme.space.L35}px;
     flex-direction: column;
-    gap: ${({ theme }) => theme.space.thirtyFive}px;
   }
 `;
 
 export const InfoContainer = styled.div`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
+  gap: ${({ theme }) => theme.space.M}px;
   max-width: 482px;
-  gap: ${({ theme }) => theme.space.twentyFive}px;
 `;
 
 export const Title = styled.div`
-  ${({ theme }) => theme.display.flex};
-  gap: ${({ theme }) => theme.space.ten}px;
+  ${displayFlex}
+  gap: ${({ theme }) => theme.space.XXS}px;
 
   @media (max-width: ${({ theme }) => theme.media.XL}px) {
     justify-content: center;
@@ -42,9 +51,9 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.h3`
+  ${fontNormal}
   font-size: ${({ theme }) => theme.font.fontSize.M}px;
   font-weight: ${({ theme }) => theme.font.fontWeight.L};
-  ${({ theme }) => theme.font.fontNormal};
   background: linear-gradient(
     90deg,
     ${({ theme }) => theme.colors.darkGreen} 0.18%,
@@ -56,50 +65,49 @@ export const Text = styled.h3`
 `;
 
 export const Quote = styled.p`
+  ${fontNormal150}
   color: ${({ theme }) => theme.textColor};
   font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-  line-height: 150%;
 
   @media (max-width: ${({ theme }) => theme.media.XL}px) {
     text-align: justify;
   }
 
   @media (max-width: ${({ theme }) => theme.media.S}px) {
-    ${({ theme }) => theme.display.none};
+    ${displayNone}
   }
 `;
 
 export const LinksContainer = styled.div`
-  ${({ theme }) => theme.display.flex};
-  gap: ${({ theme }) => theme.space.seventyNine}px;
+  ${displayFlex}
+  gap: ${({ theme }) => theme.space.XL79}px;
 
   @media (max-width: ${({ theme }) => theme.media.S}px) {
-    ${({ theme }) => theme.display.none};
+    ${displayNone}
   }
 `;
 
 export const MobileLinksContainer = styled.div`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
 
   @media (min-width: ${({ theme }) => theme.media.S + 1}px) {
-    ${({ theme }) => theme.display.none};
+    ${displayNone}
   }
 `;
 
 export const Copyright = styled.p`
+  ${fontNormal150}
   color: ${({ theme }) => theme.colors.gray};
   font-family: ${({ theme }) => theme.font.fontFamily.inter};
   font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.S};
-  line-height: 150%;
-  padding-top: ${({ theme }) => theme.space.fiftyFive}px;
-  padding-bottom: ${({ theme }) => theme.space.fourty}px;
+  padding-top: ${({ theme }) => theme.space.XL55}px;
+  padding-bottom: ${({ theme }) => theme.space.L40}px;
   user-select: none;
 
   @media (max-width: ${({ theme }) => theme.media.S}px) {
-    text-align: center;
     font-size: ${({ theme }) => theme.font.fontSize.S}px;
+    text-align: center;
+  }
 `;

@@ -5,12 +5,12 @@ import { COLORS } from "@constants/styles/colors";
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.darkGreen};
   color: ${COLORS.white};
-  height: 50px;
-  margin: ${({ theme }) => theme.space.twenty}px;
+  margin: ${({ theme }) => theme.space.S}px;
+  font-size: ${({ theme }) => theme.font.fontSize.S}px;
   border-radius: 25px;
   border: none;
+  height: 50px;
   cursor: pointer;
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.yellow};
@@ -18,11 +18,11 @@ export const Button = styled.button`
 `;
 
 export const Text = styled.p`
-  margin-bottom: ${({ theme }) => theme.space.ten}px;
+  margin-bottom: ${({ theme }) => theme.space.XXS}px;
+  color: ${COLORS.white};
   align-self: center;
   width: 250px;
   text-align: center;
-  color: ${COLORS.white};
 `;
 
 export const Error = styled(Text)`

@@ -1,3 +1,6 @@
+import logotype from "@assets/icons/logotype.svg";
+import { IMAGE_SIZE } from "@constants/styles/image";
+
 export const FOOTER_DATA = {
   title: "Modsen Currency Tracker",
   quote:
@@ -20,4 +23,10 @@ export const FOOTER_DATA = {
     const currentYear = new Date().getFullYear();
     return `Startsup © ${currentYear}-${currentYear + 1}, All Rights Reserved`;
   },
+};
+
+export const IMAGE_CONFIG = {
+  alt: "Application logotype",
+  src: logotype,
+  ...IMAGE_SIZE.M,
 };

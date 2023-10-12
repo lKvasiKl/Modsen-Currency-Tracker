@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { displayFlex, displayNone } from "@constants/styles/mixins";
+
 export const BurgerMenuContainer = styled.div`
   width: 30px;
   height: 30px;
@@ -7,15 +9,15 @@ export const BurgerMenuContainer = styled.div`
   cursor: pointer;
 
   @media (min-width: ${({ theme }) => theme.media.S + 1}px) {
-    ${({ theme }) => theme.display.none};
+    ${displayNone}
   }
 `;
 
 export const BurgerLine = styled.div`
+  background-color: ${({ theme }) => theme.textColor};
   width: 30px;
   height: 4px;
   position: absolute;
-  background-color: ${({ theme }) => theme.textColor};
   transition: all 0.3s ease-in-out;
   transform-origin: center;
   border-radius: 4px;
@@ -26,8 +28,8 @@ export const BurgerLine = styled.div`
   }
 
   &:nth-of-type(2) {
-    top: 50%;
     opacity: ${({ $isOpen }) => ($isOpen ? 0 : 1)};
+    top: 50%;
   }
 
   &:nth-of-type(3) {
@@ -38,31 +40,31 @@ export const BurgerLine = styled.div`
 `;
 
 export const BurgerMenuItems = styled.ul`
-  ${({ theme }) => theme.display.flex};
-  align-items: center;
-  flex-direction: column;
+  ${displayFlex}
   color: ${({ theme }) => theme.textColor};
+  height: ${({ $isOpen }) => ($isOpen ? "0" : "auto")};
+  background-color: ${({ theme }) => theme.backgroundColor};
+  padding-bottom: ${({ theme }) => theme.space.XS}px;
   list-style-type: none;
   z-index: 1;
+  align-items: center;
+  flex-direction: column;
   transition: all 0.3s ease-in-out;
-  height: ${({ $isOpen }) => ($isOpen ? "0" : "auto")};
   overflow: hidden;
   position: absolute;
   width: 100%;
   left: 0;
   top: 10%;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  padding-bottom: ${({ theme }) => theme.space.fifteen}px;
 
   li {
-    padding-bottom: ${({ theme }) => theme.space.fifteen}px;
+    padding-bottom: ${({ theme }) => theme.space.XS}px;
   }
 
   a {
     font-size: ${({ theme }) => theme.font.fontSize.S}px;
     font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-    text-decoration: none;
     color: ${({ theme }) => theme.textColor};
+    text-decoration: none;
 
     &:hover {
       color: ${({ theme }) => theme.colors.green};

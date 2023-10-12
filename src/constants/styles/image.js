@@ -1,4 +1,8 @@
 export const IMAGE_SIZE = {
+  XXL: {
+    width: "300px",
+    height: "300px",
+  },
   XL: {
     width: "80px",
     height: "80px",

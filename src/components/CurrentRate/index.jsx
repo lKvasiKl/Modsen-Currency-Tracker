@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 
 import { OverflowHidden } from "@styled";
 import getCurriencies from "@services/currencyService";
-import { getCache, saveCache, isCacheValid } from "@utils/cachingFunctions";
+import { getCache, saveCache, isCacheValid } from "@utils/dataCaching";
+import usePortal from "@hooks/usePortal";
+import { ENV_VARIABLES } from "@constants/envVariables";
+import CardsSection from "./CardsSection";
+import CurrencyConvertorModal from "./CurrencyConvertorModal";
 import {
   STOCKS_CARD_DATA,
   QUOTES_CARD_DATA,
   CURRENCY_DEFAULT,
 } from "@constants/currency";
-import { ENV_VARIABLES } from "@constants/envVariables";
-import CardsSection from "./CardsSection";
-import CurrencyConvertorModal from "./CurrencyConvertorModal";
 
 import { Main } from "./styled";
 
@@ -21,8 +21,10 @@ const CurrentRate = () => {
     data: {},
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [exchangeAmount, setExchangeAmount] = useState(0);
+  const [exchangeAmount, setExchangeAmount] = useState("");
   const [targetCurrency, setTargetCurrency] = useState(CURRENCY_DEFAULT);
+
+  const modalPortal = usePortal();
 
   const handleCardClick = useCallback(
     ({ id, imgPath }) => {
@@ -31,7 +33,7 @@ const CurrentRate = () => {
       }
 
       setIsModalOpen((prevSatate) => !prevSatate);
-      setExchangeAmount(rates.data[id].value);
+      setExchangeAmount(String(rates.data[id].value));
       setTargetCurrency({
         id,
         imgPath,
@@ -69,15 +71,20 @@ const CurrentRate = () => {
 
   return (
     <Main>
-      <CardsSection cardsArray={STOCKS_CARD_DATA} title="Stocks" />
       <CardsSection
+        $isInteractive={false}
+        cardsArray={STOCKS_CARD_DATA}
+        title="Stocks"
+      />
+      <CardsSection
+        $isInteractive={true}
         cardsArray={QUOTES_CARD_DATA}
         rates={rates}
         title="Quotes"
         onClick={handleCardClick}
       />
       {isModalOpen &&
-        createPortal(
+        modalPortal(
           <CurrencyConvertorModal
             exchangeAmount={exchangeAmount}
             rates={rates}
@@ -85,7 +92,6 @@ const CurrentRate = () => {
             setIsModalOpen={setIsModalOpen}
             targetCurrency={targetCurrency}
           />,
-          document.getElementById("root"),
         )}
       {isModalOpen && <OverflowHidden />}
     </Main>

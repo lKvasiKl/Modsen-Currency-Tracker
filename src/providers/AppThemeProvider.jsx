@@ -1,10 +1,9 @@
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
-import { getCache, saveCache } from "@utils/cachingFunctions";
+import { getCache, saveCache } from "@utils/dataCaching";
 import { ENV_VARIABLES } from "@constants/envVariables";
 
-export const ThemeContext = createContext({ theme: "dark" });
+const ThemeContext = createContext({ theme: "dark" });
 
 const AppThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("dark");
@@ -19,13 +18,10 @@ const AppThemeProvider = ({ children }) => {
     }
   }, []);
 
-  const value = {
-    theme,
-    setTheme,
-  };
-
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 
@@ -33,4 +29,4 @@ AppThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default AppThemeProvider;
+export { AppThemeProvider, ThemeContext };

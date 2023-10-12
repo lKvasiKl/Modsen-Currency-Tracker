@@ -2,8 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import arrow from "@assets/icons/arrow.svg";
-import { IMAGE_SIZE } from "@constants/styles/image";
+import { IMAGE_CONFIG } from "./config";
 
 import { LinksContainer, LinksAccordion, Title, Image } from "./styled";
 
@@ -19,13 +18,7 @@ const MobileLinks = ({ title, links }) => {
     <>
       <LinksAccordion onClick={handleAccordionButtonClick}>
         <Title>{title}</Title>
-        <Image
-          $isOpen={isOpen}
-          alt="Accordion arrow icon"
-          ref={imageRef}
-          src={arrow}
-          {...IMAGE_SIZE.XS}
-        />
+        <Image $isOpen={isOpen} ref={imageRef} {...IMAGE_CONFIG} />
       </LinksAccordion>
       <LinksContainer $isOpen={isOpen}>
         {links.map((link) => (

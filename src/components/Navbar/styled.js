@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
+import {
+  displayFlex,
+  displayNone,
+  displayInlineBlock,
+} from "@constants/styles/mixins";
+
 export const NavbarContainer = styled.nav`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
+  background-color: ${({ theme }) => theme.backgroundColor};
+  padding: 0 ${({ theme }) => theme.space.XXL}px;
   align-items: center;
   justify-content: space-between;
   height: 103px;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  padding: 0 ${({ theme }) => theme.space.oneHundred}px;
 
   @media (max-width: ${({ theme }) => theme.media.XL}px) {
-    padding: 0 ${({ theme }) => theme.space.thirty}px;
+    padding: 0 ${({ theme }) => theme.space.L}px;
   }
 `;
 
@@ -18,7 +24,7 @@ export const Logotype = styled.img`
 `;
 
 export const NavLinksContainer = styled.ul`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
   justify-content: space-between;
   list-style-type: none;
   width: 657px;
@@ -26,8 +32,8 @@ export const NavLinksContainer = styled.ul`
   a {
     font-size: ${({ theme }) => theme.font.fontSize.S}px;
     font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-    text-decoration: none;
     color: ${({ theme }) => theme.textColor};
+    text-decoration: none;
 
     &:hover {
       color: ${({ theme }) => theme.colors.green};
@@ -41,12 +47,12 @@ export const NavLinksContainer = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.media.L}px) {
+    gap: ${({ theme }) => theme.space.L}px;
     justify-content: center;
-    gap: ${({ theme }) => theme.space.thirty}px;
   }
 
   @media (max-width: ${({ theme }) => theme.media.S}px) {
-    ${({ theme }) => theme.display.none};
+    ${displayNone}
   }
 `;
 export const SwitchContainer = styled.div`
@@ -55,14 +61,14 @@ export const SwitchContainer = styled.div`
   max-width: 50px;
 
   @media (max-width: ${({ theme }) => theme.media.S}px) {
-    ${({ theme }) => theme.display.none};
+    ${displayNone}
   }
 `;
 
 export const ToggleSwitchLabel = styled.label`
-  position: relative;
-  ${({ theme }) => theme.display.inlineBlock};
+  ${displayInlineBlock}
+  margin: 0 ${({ theme }) => theme.space.XS12}px;
   width: 50px;
+  position: relative;
   height: 25px;
-  margin: 0 ${({ theme }) => theme.space.twelve}px;
 `;

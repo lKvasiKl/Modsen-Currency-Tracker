@@ -1,11 +1,12 @@
+import React, { useContext } from "react";
 import { ThemeProvider } from "styled-components";
 
-import { useTheme } from "@hooks/useTheme";
-import Router from "@routes";
+import { Router } from "@components";
+import { ThemeContext } from "@providers/AppThemeProvider";
 import { THEME } from "@constants/theme";
 
 const App = () => {
-  const { theme } = useTheme();
+  const { theme } = useContext(ThemeContext);
 
   return (
     <ThemeProvider theme={THEME[theme]}>

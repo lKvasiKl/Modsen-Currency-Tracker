@@ -1,9 +1,4 @@
-import {
-  formatTime,
-  formatRateValue,
-  formatConvertedCurrency,
-  formatDate,
-} from "@utils/formatingFunctions";
+import { formatTime, formatRateValue, formatDate } from "@utils/dateFormatting";
 
 const RATES = {
   expirationDate: 1696271776724,
@@ -60,40 +55,6 @@ describe("formatRateValue", () => {
     const result = formatRateValue(WITHOUT_RATES_DATA, id);
 
     expect(result).toBe("Loading...");
-  });
-});
-
-describe("formatConvertedCurrency", () => {
-  it("should format converted currency correctly", () => {
-    const exchangeAmount = 150;
-    const fromCurrency = "USD";
-    const convertedCurrencyValue = 141.85052;
-    const toCurrency = "EUR";
-
-    const result = formatConvertedCurrency(
-      exchangeAmount,
-      fromCurrency,
-      convertedCurrencyValue,
-      toCurrency,
-    );
-
-    expect(result).toBe("150 USD = 141.85052 EUR");
-  });
-
-  it("should handle empty exchange amount", () => {
-    const exchangeAmount = 0;
-    const fromCurrency = "USD";
-    const convertedCurrencyValue = 141.85052;
-    const toCurrency = "EUR";
-
-    const result = formatConvertedCurrency(
-      exchangeAmount,
-      fromCurrency,
-      convertedCurrencyValue,
-      toCurrency,
-    );
-
-    expect(result).toBe("");
   });
 });
 

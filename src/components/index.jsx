@@ -11,3 +11,4 @@ export { default as BankCardSection } from "./BankCardSection";
 export { default as ContactInfo } from "./ContactInfo";
 export { default as CurrentRate } from "./CurrentRate";
 export { default as TimelineMainSection } from "./TimelineMainSection";
+export { default as Router } from "./Router";

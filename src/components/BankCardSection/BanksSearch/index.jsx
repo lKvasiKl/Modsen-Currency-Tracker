@@ -1,8 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-import search from "@assets/icons/search.svg";
-import { IMAGE_SIZE } from "@constants/styles/image";
+import { IMAGE_CONFIG, INPUT_PLACEHOLDER, NOT_FOUND_TEXT } from "./config";
 
 import {
   SearchWrapper,
@@ -13,7 +12,7 @@ import {
   SearchListItem,
 } from "./styled";
 
-class Search extends PureComponent {
+class BanksSearch extends PureComponent {
   state = {
     searchInputValue: "",
   };
@@ -50,11 +49,11 @@ class Search extends PureComponent {
       <SearchWrapper>
         <SearchContainer>
           <Input
-            placeholder="Сurrency search..."
+            placeholder={INPUT_PLACEHOLDER}
             value={searchInputValue}
             onChange={this.handleInputCurrenciesSearch}
           />
-          <Image alt="Search icon" src={search} {...IMAGE_SIZE.S} />
+          <Image {...IMAGE_CONFIG} />
         </SearchContainer>
         {searchInputValue.length > 0 && (
           <SearchList>
@@ -68,7 +67,7 @@ class Search extends PureComponent {
                 </SearchListItem>
               ))
             ) : (
-              <SearchListItem>Not found</SearchListItem>
+              <SearchListItem>{NOT_FOUND_TEXT}</SearchListItem>
             )}
           </SearchList>
         )}
@@ -77,11 +76,11 @@ class Search extends PureComponent {
   }
 }
 
-Search.propTypes = {
+BanksSearch.propTypes = {
   currencies: PropTypes.array.isRequired,
   setSearchCurrencies: PropTypes.func.isRequired,
   searchCurrencies: PropTypes.array.isRequired,
   onCurrencySelection: PropTypes.func.isRequired,
 };
 
-export default React.memo(Search);
+export default React.memo(BanksSearch);

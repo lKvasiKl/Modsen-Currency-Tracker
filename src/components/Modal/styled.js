@@ -1,14 +1,16 @@
 import styled, { css } from "styled-components";
 
+import { displayFlex, flexColumn } from "@constants/styles/mixins";
+
 const CommonStyles = css`
   color: ${({ theme }) => theme.textColor};
 `;
 
 export const ModalContainer = styled.div`
   ${CommonStyles}
+  ${displayFlex}
   height: 100vh;
   width: 100vw;
-  ${({ theme }) => theme.display.flex};
   position: fixed;
   top: 0;
   left: 0;
@@ -18,15 +20,15 @@ export const ModalContainer = styled.div`
 
 export const ModalWindow = styled.div`
   ${CommonStyles}
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
+  background-color: ${({ theme }) => theme.colors.borderGray};
+  border: 1px solid ${({ theme }) => theme.colors.darkGray};
+  padding: ${({ theme }) => theme.space.XXS}px;
+  box-shadow: 0px 0px 13px 0px ${({ theme }) => theme.colors.prodigalGreen};
   width: fit-content;
   height: fit-content;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.borderGray};
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
   border-radius: 10px;
-  padding: ${({ theme }) => theme.space.ten}px;
-  box-shadow: 0px 0px 13px 0px #d9e7da33;
 `;
 
 export const CloseButton = styled.button`

@@ -1,10 +1,8 @@
 import { useMemo } from "react";
 
-import logotype from "@assets/icons/logotype.svg";
-import { FOOTER_DATA } from "@constants/footer";
-import { IMAGE_SIZE } from "@constants/styles/image";
 import FooterLinks from "./Links";
 import MobileLinks from "./MobileLinks";
+import { FOOTER_DATA, IMAGE_CONFIG } from "./config";
 
 import {
   FooterConatiner,
@@ -39,11 +37,7 @@ const Footer = () => {
       <FooterWrapper>
         <InfoContainer>
           <Title>
-            <Image
-              alt="Application logotype"
-              src={logotype}
-              {...IMAGE_SIZE.M}
-            />
+            <Image {...IMAGE_CONFIG} />
             <Text>{title}</Text>
           </Title>
           <Quote>{quote}</Quote>

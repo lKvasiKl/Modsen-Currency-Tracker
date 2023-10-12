@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Global } from "@styled";
+import { ERROR_TEXT, ERROR_TITLE } from "./config";
 
 import { ErrorBoundaryContainer, Error, ErrorTitle, Text } from "./styled";
 
@@ -25,9 +26,9 @@ class ErrorBoundary extends React.Component {
       return (
         <ErrorBoundaryContainer>
           <Global />
-          <ErrorTitle>An error has occured</ErrorTitle>
+          <ErrorTitle>{ERROR_TITLE}</ErrorTitle>
           <Error>{error && error.toString()}</Error>
-          <Text>{"(╯°□°）╯︵ ┻━┻"}</Text>
+          <Text>{ERROR_TEXT}</Text>
         </ErrorBoundaryContainer>
       );
     }

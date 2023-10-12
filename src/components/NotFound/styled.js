@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import { displayFlex } from "@constants/styles/mixins";
+
 const movePupil = keyframes`
     0%,
     100% {
@@ -17,25 +19,25 @@ const movePupil = keyframes`
 `;
 
 export const ErrorPage = styled.main`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
+  gap: ${({ theme }) => theme.space.XXS}px;
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme }) => theme.space.ten}px;
 
   a {
     color: ${({ theme }) => theme.colors.lightGreen};
-    text-decoration: none;
     border: 1px solid ${({ theme }) => theme.colors.darkGreen};
     font-size: ${({ theme }) => theme.font.fontSize.XS}px;
     font-weight: ${({ theme }) => theme.font.fontWeight.XXS};
-    padding: ${({ theme }) => theme.space.twelve}px
-      ${({ theme }) => theme.space.twentyFour}px;
-    border-radius: 15px;
+    padding: ${({ theme }) => theme.space.XS12}px;
+    ${({ theme }) => theme.space.S24}px;
     box-shadow: 0px 7px 0px -2px ${({ theme }) => theme.colors.darkGreen};
+    margin-top: ${({ theme }) => theme.space.XS}px;
     transition: all 0.3s ease-in-out;
-    margin-top: ${({ theme }) => theme.space.fifteen}px;
+    text-decoration: none;
+    border-radius: 15px;
 
     &:hover {
       box-shadow: none;
@@ -46,14 +48,12 @@ export const ErrorPage = styled.main`
 `;
 
 export const EyesContainer = styled.div`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
+  gap: ${({ theme }) => theme.space.XXS2}px;
   justify-content: center;
-  gap: ${({ theme }) => theme.space.two}px;
 `;
 
 export const Eye = styled.div`
-  width: 80px;
-  height: 80px;
   background: linear-gradient(
     35deg,
     ${({ theme }) => theme.colors.darkGreen} 0.18%,
@@ -62,34 +62,36 @@ export const Eye = styled.div`
   );
   border-radius: 50%;
   display: grid;
+  width: 80px;
+  height: 80px;
   place-items: center;
 `;
 
 export const Pupil = styled.div`
-  width: 30px;
-  height: 30px;
   background-color: ${({ theme }) => theme.backgroundColor};
-  border-radius: 50%;
   animation: ${movePupil} 2s infinite ease-in-out;
-  transform-origin: center center;
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+  transform-origin: center;
 `;
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.font.fontSize.XL}px;
   font-weight: ${({ theme }) => theme.font.fontWeight.M};
-  text-align: center;
   background: linear-gradient(
     90deg,
-    #00ce2c 0.18%,
+    ${({ theme }) => theme.colors.green} 0.18%,
     ${({ theme }) => theme.colors.yellow} 49.3%,
     ${({ theme }) => theme.colors.lightGreen} 99.88%
   );
+  text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
 
 export const Description = styled.p`
-  margin-top: ${({ theme }) => theme.space.ten}px;
+  margin-top: ${({ theme }) => theme.space.XXS}px;
   font-size: ${({ theme }) => theme.font.fontSize.L}px;
   font-weight: ${({ theme }) => theme.font.fontWeight.XXS};
   color: ${({ theme }) => theme.colors.red};

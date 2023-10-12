@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import arrow from "@assets/icons/arrow.svg";
 import { QUOTES_CARD_DATA } from "@constants/currency";
 import { IMAGE_SIZE } from "@constants/styles/image";
 import { Text, Image } from "../styled";
+import { IMAGE_CONFIG } from "./config";
 
 import {
   SelectButton,
@@ -41,12 +41,7 @@ const Select = React.memo(
             <Image alt={`${id} icon`} src={imgPath} {...IMAGE_SIZE.M} />
             <Text>{id}</Text>
           </ButtonContentContainer>
-          <ArrowIcon
-            $isOpen={isOpen}
-            alt="Arrow icon"
-            src={arrow}
-            {...IMAGE_SIZE.XS}
-          />
+          <ArrowIcon $isOpen={isOpen} {...IMAGE_CONFIG} />
         </SelectButton>
         <SelectList $isOpen={isOpen}>
           {QUOTES_CARD_DATA.map((listItem) => {

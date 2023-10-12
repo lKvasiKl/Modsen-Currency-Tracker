@@ -1,30 +1,32 @@
 import styled from "styled-components";
 
+import { displayFlex, flexColumn } from "@constants/styles/mixins";
+
 export const Form = styled.form`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
   color: ${({ theme }) => theme.textColor};
-  padding-top: ${({ theme }) => theme.space.ten}px;
+  padding-top: ${({ theme }) => theme.space.XXS}px;
 `;
 
 export const Label = styled.label`
-  background: transparent;
   font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  background: transparent;
 `;
 
 export const InputContainer = styled.div`
+  ${displayFlex}
   color: ${({ theme }) => theme.textColor};
-  height: 35px;
-  ${({ theme }) => theme.display.flex};
-  justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
+  margin-bottom: ${({ theme }) => theme.space.XS}px;
+  height: 35px;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.space.fifteen}px;
 `;
 
 export const Input = styled.input`
   color: ${({ theme }) => theme.textColor};
-  background-color: transparent;
   font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  background-color: transparent;
   height: 30px;
   border: none;
   outline: none;
@@ -33,12 +35,12 @@ export const Input = styled.input`
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.darkGreen};
   color: ${({ theme }) => theme.textColor};
+  margin: ${({ theme }) => theme.space.S}px 0;
+  font-size: ${({ theme }) => theme.font.fontSize.S}px;
   height: 50px;
-  margin: ${({ theme }) => theme.space.twenty}px 0;
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.yellow};

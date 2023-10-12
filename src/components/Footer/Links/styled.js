@@ -1,21 +1,22 @@
 import styled from "styled-components";
 
+import { flexColumn, fontNormal150 } from "@constants/styles/mixins";
+
 export const LinksSection = styled.section`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
 `;
 
 export const Title = styled.span`
+  ${fontNormal150}
   color: ${({ theme }) => theme.textColor};
   font-size: ${({ theme }) => theme.font.fontSize.L}px;
-  font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.S};
-  line-height: 150%;
 `;
 
 export const LinksContainer = styled.div`
-  ${({ theme }) => theme.display.flexColumn};
-  padding-top: ${({ theme }) => theme.space.fourty}px;
-  gap: ${({ theme }) => theme.space.seventeen}px;
+  ${flexColumn}
+  padding-top: ${({ theme }) => theme.space.L40}px;
+  gap: ${({ theme }) => theme.space.S17}px;
 
   a {
     color: ${({ theme }) => theme.colors.gray};

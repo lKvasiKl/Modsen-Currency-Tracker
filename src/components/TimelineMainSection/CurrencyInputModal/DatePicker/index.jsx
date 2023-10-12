@@ -1,8 +1,8 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 
-import { formatDate } from "@utils/formatingFunctions";
-import { DATE } from "@constants/timeline";
+import { formatDate } from "@utils/dateFormatting";
+import { ADJACENT_DATE } from "../config";
 
 import { Button, DateContainer, DateTitle } from "./styled";
 
@@ -12,13 +12,15 @@ class DatePicker extends Component {
   };
 
   render() {
+    const { prevDate, nextDate } = ADJACENT_DATE;
+
     return (
       <DateContainer data-cy="date-picker">
-        <Button data-cy="prev-date" onClick={this.handleUpdateDate(DATE.prev)}>
+        <Button data-cy="prev-date" onClick={this.handleUpdateDate(prevDate)}>
           {"<"}
         </Button>
         <DateTitle>{formatDate(this.props.currentDate)}</DateTitle>
-        <Button data-cy="next-date" onClick={this.handleUpdateDate(DATE.next)}>
+        <Button data-cy="next-date" onClick={this.handleUpdateDate(nextDate)}>
           {">"}
         </Button>
       </DateContainer>

@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
 import { COLORS } from "@constants/styles/colors";
+import { displayFlex } from "@constants/styles/mixins";
 
 export const DateContainer = styled.div`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
+  gap: ${({ theme }) => theme.space.XS}px;
   align-items: center;
-  gap: ${({ theme }) => theme.space.fifteen}px;
   justify-content: center;
 `;
 
 export const Button = styled.button`
+  color: ${COLORS.white};
   background-color: transparent;
   cursor: pointer;
-  color: ${COLORS.white};
   height: 25px;
   width: 25px;
   border: none;
@@ -25,7 +26,7 @@ export const Button = styled.button`
 `;
 
 export const DateTitle = styled.p`
+  color: ${COLORS.white};
   font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  color: ${COLORS.white}
-  margin: ${({ theme }) => theme.space.ten}px 0;
+  margin: ${({ theme }) => theme.space.XXS}px 0;
 `;

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { displayFlex, flexRow } from "@constants/styles/mixins";
+
 export const SearchWrapper = styled.div`
   position: relative;
   max-width: 450px;
@@ -11,19 +13,19 @@ export const SearchWrapper = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-  ${({ theme }) => theme.display.flexRow};
+  ${flexRow}
   height: 65px;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.darkBlue};
-  margin-top: ${({ theme }) => theme.space.twentyFive}px;
-  margin-bottom: ${({ theme }) => theme.space.eighty}px;
-  gap: ${({ theme }) => theme.space.twenty}px;
+  margin-top: ${({ theme }) => theme.space.M}px;
+  margin-bottom: ${({ theme }) => theme.space.XL80}px;
+  gap: ${({ theme }) => theme.space.S}px;
 `;
 
 export const Input = styled.input`
   height: 65px;
   width: 100%;
-  padding-left: ${({ theme }) => theme.space.twenty}px;
+  padding-left: ${({ theme }) => theme.space.S}px;
   font-size: ${({ theme }) => theme.font.fontSize.XS}px;
   font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.S};
@@ -35,11 +37,12 @@ export const Input = styled.input`
 
 export const Image = styled.img`
   user-select: none;
-  margin-right: ${({ theme }) => theme.space.twenty}px;
+  margin-right: ${({ theme }) => theme.space.S}px;
   align-self: center;
 `;
 
 export const SearchList = styled.ul`
+  border: 1px solid ${({ theme }) => theme.colors.darkGray};
   width: 100%;
   position: absolute;
   top: 55%;
@@ -47,7 +50,6 @@ export const SearchList = styled.ul`
   transform: translateX(-50%);
   list-style: none;
   overflow-y: auto;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
   border-radius: 5px;
   z-index: 1;
 
@@ -71,15 +73,15 @@ export const SearchList = styled.ul`
 `;
 
 export const SearchListItem = styled.li`
-  padding: ${({ theme }) => theme.space.ten}px
-    ${({ theme }) => theme.space.twentyFive}px;
+  ${displayFlex}
+  padding: ${({ theme }) => theme.space.XXS}px ${({ theme }) =>
+    theme.space.M}px;
   background-color: ${({ theme }) => theme.colors.darkBlue};
   border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
-  cursor: pointer;
-  ${({ theme }) => theme.display.flex};
-  gap: ${({ theme }) => theme.space.twenty}px;
-  align-items: center;
+  gap: ${({ theme }) => theme.space.S}px;
   color: ${({ theme }) => theme.colors.lightGray};
+  cursor: pointer;
+  align-items: center;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.purpuleBlue};

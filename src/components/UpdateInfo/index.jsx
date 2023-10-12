@@ -1,8 +1,7 @@
-import circle from "@assets/icons/circle.svg";
-import { formatTime } from "@utils/formatingFunctions";
-import { getCache } from "@utils/cachingFunctions";
+import { formatTime } from "@utils/dateFormatting";
+import { getCache } from "@utils/dataCaching";
 import { ENV_VARIABLES } from "@constants/envVariables";
-import { IMAGE_SIZE } from "@constants/styles/image";
+import { IMAGE_CONFIG, LAST_UPDATE_TEXT } from "./config";
 
 import { UpdateInfoContainer, Image, Text } from "./styled";
 
@@ -16,8 +15,10 @@ const UpdateInfo = () => {
 
   return (
     <UpdateInfoContainer>
-      <Image alt="Last update circle" src={circle} {...IMAGE_SIZE.L} />
-      <Text>Last updated at {timeString}</Text>
+      <Image {...IMAGE_CONFIG} />
+      <Text>
+        {LAST_UPDATE_TEXT} {timeString}
+      </Text>
     </UpdateInfoContainer>
   );
 };

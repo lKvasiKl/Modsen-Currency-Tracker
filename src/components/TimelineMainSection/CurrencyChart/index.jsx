@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Chart } from "chart.js/auto";
 
-import { getCache } from "@utils/cachingFunctions";
-import { getBarColors } from "@utils/chartHelpersFunctions";
+import { getCache } from "@utils/dataCaching";
+import { getBarColors } from "@utils/chartHelpers";
 import { chartOptions } from "./config";
 import { candlestickPlugin } from "./candlestickPlugin";
 

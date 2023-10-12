@@ -18,8 +18,4 @@ export const FONT = {
     XS: 300,
     XXS: 200,
   },
-  fontNormal: {
-    "line-height": "normal",
-    "font-style": "normal",
-  },
 };

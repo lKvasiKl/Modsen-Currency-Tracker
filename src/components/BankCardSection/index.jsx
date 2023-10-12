@@ -1,9 +1,10 @@
 import { PureComponent } from "react";
 
 import { QUOTES_CARD_DATA } from "@constants/currency";
-import Search from "./Search";
+import BanksSearch from "./BanksSearch";
 import MapboxMap from "./Map";
 import { BANKS_LIST } from "./constants/map";
+import { CARD_SECTION_TITLE } from "./config";
 
 import { Main, Title } from "./styled";
 
@@ -39,8 +40,8 @@ class BankCardSection extends PureComponent {
 
     return (
       <Main>
-        <Title>Search currency in the bank</Title>
-        <Search
+        <Title>{CARD_SECTION_TITLE}</Title>
+        <BanksSearch
           currencies={currencies}
           searchCurrencies={searchCurrencies}
           setSearchCurrencies={this.setSearchCurrencies}

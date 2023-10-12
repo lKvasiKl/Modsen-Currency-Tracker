@@ -1,7 +1,8 @@
-import { getBarColors } from "@utils/chartHelpersFunctions";
+import { getBarColors } from "@utils/chartHelpers";
+import { COLORS } from "@constants/styles/colors";
 
-const GREEN_COLOR = "#16C782";
-const RED_COLOR = "#EA3943";
+const GREEN_COLOR = COLORS.successGreen;
+const RED_COLOR = COLORS.errorRed;
 
 describe("getBarColors", () => {
   it("should return GREEN_COLOR when openPrice is less than closePrice", () => {

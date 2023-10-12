@@ -2,9 +2,8 @@ import { Component } from "react";
 import PropTypes from "prop-types";
 
 import { Modal } from "@components";
-import { getCache } from "@utils/cachingFunctions";
-import { formatDate } from "@utils/formatingFunctions";
-import { DATE } from "@constants/timeline";
+import { getCache } from "@utils/dataCaching";
+import { formatDate } from "@utils/dateFormatting";
 import DatePicker from "./DatePicker";
 import CurrencyInput from "./CurrencyInput";
 import { MAX_CHART_ITEMS } from "../config";
@@ -15,6 +14,8 @@ import {
   MAX_INPUT_VALUE,
   ERROR_TEXT,
   CHART_ITEMS_LEFT_TEXT,
+  ADD_BUTTON_TEXT,
+  ADJACENT_DATE,
 } from "./config";
 
 import { Button, Text, Error } from "./styled";
@@ -66,8 +67,10 @@ class CurrencyInputModal extends Component {
   };
 
   handleUpdateDate = (direction) => {
+    const { prevDate } = ADJACENT_DATE;
+
     const { currentDate } = this.state;
-    const offset = direction === DATE.prev ? -1 : 1;
+    const offset = direction === prevDate ? -1 : 1;
     const updatedDate = new Date(currentDate);
     updatedDate.setDate(updatedDate.getDate() + offset);
     this.setState({ currentDate: updatedDate });
@@ -144,7 +147,7 @@ class CurrencyInputModal extends Component {
           data-cy="add-price-button"
           onClick={this.handleAddPriceButtonClick}
         >
-          Add Price
+          {ADD_BUTTON_TEXT}
         </Button>
       </Modal>
     );

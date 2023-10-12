@@ -1,22 +1,20 @@
 import { Component } from "react";
-import ReactDOM from "react-dom";
 
 import { CURRENCY_DEFAULT } from "@constants/currency";
-import { formatDate } from "@utils/formatingFunctions";
-import { getCache, saveCache, removeCache } from "@utils/cachingFunctions";
+import { formatDate } from "@utils/dateFormatting";
+import { getCache, saveCache, removeCache } from "@utils/dataCaching";
 import { OverflowHidden } from "@styled";
-import { NOTIFICATION_TYPES } from "@constants/timeline";
 import CurrencySelect from "./CurrencySelect";
 import CurrencyInfo from "./CurrencyInfo";
 import observer from "../Observer";
-import CurrencyInputModal from "./CurrencyInputModal";
 import CurrencyChart from "./CurrencyChart";
-import Notification from "./Notification";
+import PortalContainer from "./PortalContainer";
 import {
   MAX_CHART_ITEMS,
   DISPLAY_TIME,
   SUCCSESS_MESSAGE,
   ERROR_MESSAGE,
+  NOTIFICATION_TYPES,
 } from "./config";
 
 import { Main, ChartSection, Button, ButtonContainer } from "./styled";
@@ -188,24 +186,15 @@ class TimelineMainSection extends Component {
             <CurrencyChart id={selectedCurrency.id} />
           </ChartSection>
         )}
-        {isModalOpen &&
-          ReactDOM.createPortal(
-            <CurrencyInputModal
-              id={selectedCurrency.id}
-              onAddPrice={this.handleAddPrice}
-              onClose={this.handleCloseModal}
-            />,
-            document.getElementById("root"),
-          )}
+        <PortalContainer
+          isModalOpen={isModalOpen}
+          selectedCurrency={selectedCurrency}
+          handleAddPrice={this.handleAddPrice}
+          handleCloseModal={this.handleCloseModal}
+          showNotification={showNotification}
+          notification={notification}
+        />
         {isModalOpen && <OverflowHidden />}
-        {showNotification &&
-          ReactDOM.createPortal(
-            <Notification
-              color={notification.backgroundColor}
-              message={notification.message}
-            />,
-            document.getElementById("root"),
-          )}
       </Main>
     );
   }

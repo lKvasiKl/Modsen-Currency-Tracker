@@ -1,5 +1,4 @@
-import logotype from "@assets/icons/logotype.svg";
-import { HEADER_DATA } from "@constants/header";
+import { HEADER_DATA, IMAGE_CONFIG } from "./config";
 
 import {
   Logotype,
@@ -20,12 +19,7 @@ const Header = () => {
           <Title>{title}</Title>
           <Quote>{quote}</Quote>
         </TextContainer>
-        <Logotype
-          alt="Application logotype"
-          height="300px"
-          src={logotype}
-          width="300px"
-        />
+        <Logotype {...IMAGE_CONFIG} />
       </SectionContainer>
     </StyledHeader>
   );

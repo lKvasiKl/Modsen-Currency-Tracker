@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
+import { flexColumn } from "@constants/styles/mixins";
+
 export const ErrorBoundaryContainer = styled.div`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
+  gap: ${({ theme }) => theme.space.XXS}px;
   align-items: center;
   justify-content: center;
   height: 100vh;
   font-weight: bolder;
-  gap: ${({ theme }) => theme.space.ten}px;
 
   a {
     color: ${({ theme }) => theme.colors.green};

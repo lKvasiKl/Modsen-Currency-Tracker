@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const Select = styled.select`
-  background-color: transparent;
-  max-width: 400px;
   color: ${({ theme }) => theme.textColor};
   font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  padding-right: ${({ theme }) => theme.space.M}px;
+  margin-bottom: ${({ theme }) => theme.space.XXL155}px;
+  cursor: pointer;
   border: none;
   outline: none;
-  padding-right: ${({ theme }) => theme.space.twentyFive}px;
-  cursor: pointer;
-  margin-bottom: ${({ theme }) => theme.space.oneHundredFiftyFive}px;
+  background-color: transparent;
+  max-width: 400px;
 `;
 
 export const Option = styled.option`

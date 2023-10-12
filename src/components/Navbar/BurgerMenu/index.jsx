@@ -17,12 +17,14 @@ const BurgerMenu = () => {
     setIsOpen(false);
   };
 
+  const burgerLineElements = Array.from({ length: 3 }, (_, index) => (
+    <BurgerLine $isOpen={isOpen} key={index} />
+  ));
+
   return (
     <>
       <BurgerMenuContainer data-cy="nav-burger-menu" onClick={handleToggleMenu}>
-        <BurgerLine $isOpen={isOpen} />
-        <BurgerLine $isOpen={isOpen} />
-        <BurgerLine $isOpen={isOpen} />
+        {burgerLineElements}
       </BurgerMenuContainer>
       {isOpen && (
         <BurgerMenuItems>

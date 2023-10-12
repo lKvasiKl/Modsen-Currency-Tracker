@@ -3,7 +3,7 @@ import {
   saveCache,
   removeCache,
   isCacheValid,
-} from "@utils/cachingFunctions";
+} from "@utils/dataCaching";
 
 beforeAll(() => {
   localStorage.clear();

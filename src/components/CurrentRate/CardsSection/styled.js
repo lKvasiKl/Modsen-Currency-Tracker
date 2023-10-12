@@ -1,39 +1,41 @@
 import styled from "styled-components";
 
+import { displayFlex, flexColumn } from "@constants/styles/mixins";
+
 export const CardsSectionContainer = styled.section`
-  ${({ theme }) => theme.display.flexColumn};
-  margin-bottom: ${({ theme }) => theme.space.eightySix}px;
+  ${flexColumn}
+  margin-bottom: ${({ theme }) => theme.space.XL86}px;
   width: 100%;
   max-width: 1140px;
 
   @media (max-width: ${({ theme }) => theme.media.XL}px) {
-    padding: 0 ${({ theme }) => theme.space.thirty}px;
+    padding: 0 ${({ theme }) => theme.space.L}px;
   }
 `;
 
 export const CardsSectionTitle = styled.p`
-  max-width: 520px;
-  flex-shrink: 0;
   color: ${({ theme }) => theme.textColor};
   font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-  line-height: 41.143px;
   border-bottom: 2px solid ${({ theme }) => theme.colors.darkGray};
-  padding-bottom: ${({ theme }) => theme.space.twentyFive}px;
-  margin-bottom: ${({ theme }) => theme.space.fifty}px;
+  padding-bottom: ${({ theme }) => theme.space.M}px;
+  margin-bottom: ${({ theme }) => theme.space.XL}px;
+  line-height: 41px;
+  font-style: normal;
+  max-width: 520px;
+  flex-shrink: 0;
 
   @media (max-width: ${({ theme }) => theme.media.XL}px) {
     max-width: unset;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
     font-size: ${({ theme }) => theme.font.fontSize.M}px;
   }
 `;
 
 export const CardsList = styled.div`
-  ${({ theme }) => theme.display.flex};
+  ${displayFlex}
   justify-content: space-between;
   flex-wrap: wrap;
 

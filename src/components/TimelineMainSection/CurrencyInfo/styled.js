@@ -1,24 +1,32 @@
 import styled from "styled-components";
 
+import { COLORS } from "@constants/styles/colors";
+import {
+  displayFlex,
+  flexColumn,
+  fontNormal49,
+} from "@constants/styles/mixins";
+
 export const CurrencyContainer = styled.div`
-  ${({ theme }) => theme.display.flex};
-  width: 100%;
-  max-width: 520px;
-  align-items: center;
-  gap: ${({ theme }) => theme.space.twentyFive}px;
-  margin-bottom: ${({ theme }) => theme.space.fifty}px;
-  border: none;
-  cursor: ${(props) => (!props.$isChartCanBuild ? "pointer" : "arrow")};
-  padding: ${({ theme }) => theme.space.thirty}px;
-  border-radius: 8px;
+  ${displayFlex}
+  gap: ${({ theme }) => theme.space.M}px;
+  margin-bottom: ${({ theme }) => theme.space.XL}px;
+  cursor: ${($isChartCanBuild) => (!$isChartCanBuild ? "pointer" : "arrow")};
+  padding: ${({ theme }) => theme.space.L}px;
   border: 1px solid ${({ theme }) => theme.colors.darkGray};
   background-color: ${({ theme }) => theme.colors.borderGray};
   transition: transform 0.5s;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 520px;
+  align-items: center;
 
   &:hover {
-    transform: ${(props) => (!props.$isChartCanBuild ? "scale(1.03)" : "none")};
-    box-shadow: ${(props) =>
-      !props.$isChartCanBuild ? "0px 0px 25px 4px #84dd3770" : "none"};
+    transform: ${({ $isChartCanBuild }) =>
+      !$isChartCanBuild ? "scale(1.03)" : "none"};
+    box-shadow: ${({ $isChartCanBuild }) =>
+      !$isChartCanBuild ? `0px 0px 25px 4px ${COLORS.shadowGreen}` : "none"};
+    cursor: pointer;
   }
 
   @media (max-width: ${({ theme }) => theme.media.XXS}px) {
@@ -36,15 +44,14 @@ export const Image = styled.img`
 `;
 
 export const TextContainer = styled.div`
-  ${({ theme }) => theme.display.flexColumn};
+  ${flexColumn}
 `;
 
 export const Title = styled.p`
+  ${fontNormal49}
   color: ${({ theme }) => theme.colors.cardLightGray};
   font-size: ${({ theme }) => theme.font.fontSize.L}px;
-  font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.S};
-  line-height: 49.371px;
 
   @media (max-width: ${({ theme }) => theme.media.XS}px) {
     font-size: ${({ theme }) => theme.font.fontSize.M}px;
@@ -56,11 +63,10 @@ export const Title = styled.p`
 `;
 
 export const Description = styled.span`
+  ${fontNormal49}
   color: ${({ theme }) => theme.colors.cardLightGray};
   font-size: ${({ theme }) => theme.font.fontSize.XS}px;
-  font-style: normal;
   font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-  line-height: 49.371px;
   text-align: left;
 
   @media (max-width: ${({ theme }) => theme.media.XXS}px) {

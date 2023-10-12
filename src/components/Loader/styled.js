@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 import { COLORS } from "@constants/styles/colors";
+import { displayFlex, displayInlineBlock } from "@constants/styles/mixins";
 
 const animate = keyframes`
   0%, 100% {
@@ -18,25 +19,25 @@ const animate = keyframes`
 `;
 
 export const LoaderContainer = styled.div`
+  ${displayFlex}
+  background-color: ${({ theme }) => theme.backgroundColor};
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  ${({ theme }) => theme.display.flex};
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.backgroundColor};
 
   .loader {
     div {
+      ${displayInlineBlock}
+      animation: ${animate} 1.5s ease-in-out infinite;
+      margin: ${({ theme }) => theme.space.XXS8}px;
       height: 20px;
       width: 20px;
       border-radius: 50%;
       transform: scale(0);
-      animation: ${animate} 1.5s ease-in-out infinite;
-      ${({ theme }) => theme.display.inlineBlock};
-      margin: ${({ theme }) => theme.space.eight}px;
 
       &:nth-child(1) {
         animation-delay: 0s;
