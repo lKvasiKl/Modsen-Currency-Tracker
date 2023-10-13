@@ -1,13 +1,15 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 import { NAVBAR_ITEMS } from "@constants/navigation";
+import useClickOutside from "@hooks/useClickOutside";
 import ThemeToggle from "../ThemeToggle";
 
 import { BurgerMenuContainer, BurgerLine, BurgerMenuItems } from "./styled";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const handleToggleMenu = () => {
     setIsOpen((prevState) => !prevState);
@@ -16,6 +18,8 @@ const BurgerMenu = () => {
   const handleCloseMenu = useCallback(() => {
     setIsOpen(false);
   }, [setIsOpen]);
+
+  useClickOutside(menuRef, handleCloseMenu);
 
   const BURGER_LINE_ELEMENTS = Array.from({ length: 3 }, (_, index) => (
     <BurgerLine $isOpen={isOpen} key={index} />
@@ -27,7 +31,7 @@ const BurgerMenu = () => {
         {BURGER_LINE_ELEMENTS}
       </BurgerMenuContainer>
       {isOpen && (
-        <BurgerMenuItems>
+        <BurgerMenuItems ref={menuRef}>
           {Object.keys(NAVBAR_ITEMS).map((itemName) => {
             const { path } = NAVBAR_ITEMS[itemName];
 
