@@ -28,7 +28,7 @@ export const ContactInfoWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.textColor};
   margin-left: ${({ theme }) => theme.space.S}px;
   margin-bottom: ${({ theme }) => theme.space.XXL170}px;
-  matgin-right: ${({ theme }) => theme.space.S}px;
+  margin-right: ${({ theme }) => theme.space.S}px;
   padding: ${({ theme }) => theme.space.L}px;
   gap: ${({ theme }) => theme.space.XL}px;
   justify-content: space-between;
