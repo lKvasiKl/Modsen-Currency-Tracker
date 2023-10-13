@@ -5,7 +5,7 @@ import MobileLinks from "./MobileLinks";
 import { FOOTER_DATA, IMAGE_CONFIG } from "./config";
 
 import {
-  FooterConatiner,
+  FooterContainer,
   InfoContainer,
   Title,
   Image,
@@ -18,22 +18,16 @@ import {
 } from "./styled";
 
 const { title, quote, footerSections, copyright } = FOOTER_DATA;
+const FOOTER_LINKS = footerSections.map((section) => (
+  <FooterLinks key={section.title} {...section} />
+));
+const MOBILE_LINKS = footerSections.map((section) => (
+  <MobileLinks key={section.title} {...section} />
+));
 
 const Footer = () => {
-  const footerLinks = useMemo(() => {
-    return footerSections.map((section) => (
-      <FooterLinks key={section.title} {...section} />
-    ));
-  }, [footerSections]);
-
-  const mobileLinks = useMemo(() => {
-    return footerSections.map((section) => (
-      <MobileLinks key={section.title} {...section} />
-    ));
-  }, [footerSections]);
-
   return (
-    <FooterConatiner>
+    <FooterContainer>
       <FooterWrapper>
         <InfoContainer>
           <Title>
@@ -42,11 +36,11 @@ const Footer = () => {
           </Title>
           <Quote>{quote}</Quote>
         </InfoContainer>
-        <LinksContainer>{footerLinks}</LinksContainer>
-        <MobileLinksContainer>{mobileLinks}</MobileLinksContainer>
+        <LinksContainer>{FOOTER_LINKS}</LinksContainer>
+        <MobileLinksContainer>{MOBILE_LINKS}</MobileLinksContainer>
       </FooterWrapper>
       <Copyright>{copyright}</Copyright>
-    </FooterConatiner>
+    </FooterContainer>
   );
 };
 

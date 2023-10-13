@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 
 import useClickOutside from "@hooks/useClickOutside";
@@ -6,7 +6,7 @@ import { IMAGE_CONFIG } from "./config";
 
 import { CloseButton, Image, ModalWindow, ModalContainer } from "./styled";
 
-const Modal = ({ children, onClose }) => {
+const Modal = React.memo(({ children, onClose }) => {
   const modalRef = useRef(null);
 
   useClickOutside(modalRef, onClose);
@@ -28,7 +28,7 @@ const Modal = ({ children, onClose }) => {
       </ModalWindow>
     </ModalContainer>
   );
-};
+});
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,

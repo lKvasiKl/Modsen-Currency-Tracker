@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 
 import { formatRateValue } from "@utils/dateFormatting";
@@ -8,11 +8,14 @@ import { CardsList, CardsSectionContainer, CardsSectionTitle } from "./styled";
 
 const CardsSection = React.memo(
   ({ title, cardsArray, onClick, rates, $isInteractive }) => {
-    const handleCardClick = (id, imgPath) => () => {
-      if (onClick) {
-        onClick({ id, imgPath });
-      }
-    };
+    const handleCardClick = useCallback(
+      (id, imgPath) => () => {
+        if (onClick) {
+          onClick({ id, imgPath });
+        }
+      },
+      [onClick],
+    );
 
     const formattedRateValues = useMemo(() => {
       return cardsArray.map(({ id, rateValue }) =>

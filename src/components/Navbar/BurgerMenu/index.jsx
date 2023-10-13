@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { NAVBAR_ITEMS } from "@constants/navigation";
@@ -13,18 +13,18 @@ const BurgerMenu = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const handleCloseMenu = () => {
+  const handleCloseMenu = useCallback(() => {
     setIsOpen(false);
-  };
+  }, [setIsOpen]);
 
-  const burgerLineElements = Array.from({ length: 3 }, (_, index) => (
+  const BURGER_LINE_ELEMENTS = Array.from({ length: 3 }, (_, index) => (
     <BurgerLine $isOpen={isOpen} key={index} />
   ));
 
   return (
     <>
       <BurgerMenuContainer data-cy="nav-burger-menu" onClick={handleToggleMenu}>
-        {burgerLineElements}
+        {BURGER_LINE_ELEMENTS}
       </BurgerMenuContainer>
       {isOpen && (
         <BurgerMenuItems>

@@ -9,7 +9,7 @@ import {
   displayNone,
 } from "@constants/styles/mixins";
 
-export const FooterConatiner = styled.footer`
+export const FooterContainer = styled.footer`
   ${displayFlex}
   justify-content: center;
   align-items: center;

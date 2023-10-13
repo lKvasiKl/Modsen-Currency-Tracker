@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
 
 import { convertCurrency } from "@utils/currencyConvertor";
@@ -34,9 +34,9 @@ const CurrencyConvertorModal = ({
   const [error, setError] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState(CURRENCY_DEFAULT);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
-  };
+  }, [setIsModalOpen]);
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value;

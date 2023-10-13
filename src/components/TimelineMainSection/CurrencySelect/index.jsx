@@ -5,6 +5,11 @@ import { QUOTES_CARD_DATA } from "@constants/currency";
 
 import { Option, Select } from "./styled";
 
+const CURRENCY_OPTION = QUOTES_CARD_DATA.map((listItem) => {
+  const { id, title } = listItem;
+  return <Option key={id}>{title}</Option>;
+});
+
 class CurrencySelect extends PureComponent {
   handleSelectChange = (event) => {
     const selectedCurrency = QUOTES_CARD_DATA.find(
@@ -23,11 +28,7 @@ class CurrencySelect extends PureComponent {
         value={title}
         onChange={this.handleSelectChange}
       >
-        {QUOTES_CARD_DATA.map((listItem) => {
-          const { id, title } = listItem;
-
-          return <Option key={id}>{title}</Option>;
-        })}
+        {CURRENCY_OPTION}
       </Select>
     );
   }

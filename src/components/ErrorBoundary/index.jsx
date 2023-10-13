@@ -10,6 +10,7 @@ class ErrorBoundary extends React.Component {
   state = {
     hasError: false,
     error: null,
+    errorInfo: null,
   };
 
   static getDerivedStateFromError(error) {
@@ -17,6 +18,12 @@ class ErrorBoundary extends React.Component {
       hasError: true,
       error,
     };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      errorInfo,
+    });
   }
 
   render() {
@@ -29,6 +36,7 @@ class ErrorBoundary extends React.Component {
           <ErrorTitle>{ERROR_TITLE}</ErrorTitle>
           <Error>{error && error.toString()}</Error>
           <Text>{ERROR_TEXT}</Text>
+          <Text>{errorInfo && errorInfo.componentStack}</Text>
         </ErrorBoundaryContainer>
       );
     }
