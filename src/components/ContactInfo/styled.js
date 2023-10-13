@@ -26,7 +26,7 @@ export const Title = styled.h2`
 export const ContactInfoWrapper = styled.div`
   ${displayFlex}
   border: 1px solid ${({ theme }) => theme.textColor};
-  matgin-left: ${({ theme }) => theme.space.S}px;
+  margin-left: ${({ theme }) => theme.space.S}px;
   margin-bottom: ${({ theme }) => theme.space.XXL170}px;
   matgin-right: ${({ theme }) => theme.space.S}px;
   padding: ${({ theme }) => theme.space.L}px;
