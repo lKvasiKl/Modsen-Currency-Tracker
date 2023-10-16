@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { URLS } from "@constants/routesURL";
+import { ROUTES } from "@constants/routes";
 import { Global } from "@styled";
 import { DESCRIPTION, LINK_TEXT, TITLE } from "./config";
 
@@ -13,24 +13,21 @@ import {
   Description,
 } from "./styled";
 
+const EYES = Array.from({ length: 2 }, (_, index) => (
+  <Eye key={index}>
+    <Pupil />
+  </Eye>
+));
+
 const NotFound = () => {
   return (
     <>
       <Global />
       <ErrorPage>
-        <EyesContainer>
-          <Eye>
-            <Pupil />
-          </Eye>
-          <Eye>
-            <Pupil />
-          </Eye>
-        </EyesContainer>
-
+        <EyesContainer>{EYES}</EyesContainer>
         <Title>{TITLE}</Title>
         <Description>{DESCRIPTION}</Description>
-
-        <Link to={URLS.home}>{LINK_TEXT}</Link>
+        <Link to={ROUTES.home}>{LINK_TEXT}</Link>
       </ErrorPage>
     </>
   );

@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { URLS } from "@constants/routesURL";
+import { ROUTES } from "@constants/routes";
 
 const Home = lazy(() => import("@pages/Home"));
 const Contato = lazy(() => import("@pages/Contato"));
@@ -8,19 +8,19 @@ const BankCard = lazy(() => import("@pages/BankCard"));
 
 export const NAVBAR_ITEMS = {
   Home: {
-    path: URLS.home,
+    path: ROUTES.home,
     element: <Home />,
   },
   Timeline: {
-    path: URLS.timeline,
+    path: ROUTES.timeline,
     element: <Timeline />,
   },
   BankCard: {
-    path: URLS.bankCard,
+    path: ROUTES.bankCard,
     element: <BankCard />,
   },
   Contato: {
-    path: URLS.contato,
+    path: ROUTES.contato,
     element: <Contato />,
   },
 };

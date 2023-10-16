@@ -1,4 +1,4 @@
-export const URLS = {
+export const ROUTES = {
   home: "/",
   timeline: "/timeline",
   bankCard: "/bank-card",
