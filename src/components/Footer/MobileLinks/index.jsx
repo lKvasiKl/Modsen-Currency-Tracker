@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -6,7 +6,7 @@ import { IMAGE_CONFIG } from "./config";
 
 import { LinksContainer, LinksAccordion, Title, Image } from "./styled";
 
-const MobileLinks = ({ title, links }) => {
+const MobileLinks = React.memo(({ title, links }) => {
   const [isOpen, setIsOpen] = useState(false);
   const imageRef = useRef(null);
 
@@ -27,7 +27,7 @@ const MobileLinks = ({ title, links }) => {
       </LinksContainer>
     </>
   );
-};
+});
 
 MobileLinks.propTypes = {
   title: PropTypes.string.isRequired,

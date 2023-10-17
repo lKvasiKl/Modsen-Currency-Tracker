@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import { NAVBAR_ITEMS } from "@constants/navigation";
@@ -12,7 +13,7 @@ import {
   SwitchContainer,
 } from "./styled";
 
-const Navbar = () => {
+const Navbar = React.memo(() => {
   return (
     <NavbarContainer>
       <Logotype data-cy="nav-logo" {...IMAGE_CONFIG} />
@@ -35,6 +36,6 @@ const Navbar = () => {
       <BurgerMenu />
     </NavbarContainer>
   );
-};
+});
 
 export default Navbar;

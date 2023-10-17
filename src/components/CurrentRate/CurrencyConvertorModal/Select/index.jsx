@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 
 import { QUOTES_CARD_DATA } from "@constants/currency";
@@ -24,15 +24,19 @@ const Select = React.memo(
       setIsOpen((prevState) => !prevState);
     };
 
-    const handleCurrencyClick = (currency) => () => {
-      setSelectedCurrency({
-        id: currency.id,
-        imgPath: currency.imgPath,
-        valueRate: currency.valueRate,
-      });
-      setIsOpen(false);
-      setConvertedCurrencyValue("");
-    };
+    const handleCurrencyClick = useCallback(
+      (currency) => () => {
+        setSelectedCurrency({
+          id: currency.id,
+          imgPath: currency.imgPath,
+          valueRate: currency.valueRate,
+        });
+
+        setIsOpen(false);
+        setConvertedCurrencyValue("");
+      },
+      [setSelectedCurrency, setConvertedCurrencyValue],
+    );
 
     return (
       <>

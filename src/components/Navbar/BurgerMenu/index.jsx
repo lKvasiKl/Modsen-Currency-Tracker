@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 import { NAVBAR_ITEMS } from "@constants/navigation";
@@ -7,7 +7,7 @@ import ThemeToggle from "../ThemeToggle";
 
 import { BurgerMenuContainer, BurgerLine, BurgerMenuItems } from "./styled";
 
-const BurgerMenu = () => {
+const BurgerMenu = React.memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -52,6 +52,6 @@ const BurgerMenu = () => {
       )}
     </>
   );
-};
+});
 
 export default BurgerMenu;

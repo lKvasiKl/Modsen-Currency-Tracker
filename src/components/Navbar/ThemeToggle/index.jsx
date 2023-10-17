@@ -9,7 +9,7 @@ import { ToggleSwitch, ToggleSwitchInput, ToggleSwitchSlider } from "./styled";
 
 const THEME_KEY = getEnvVariables(ENV_VARIABLE_KEYS.cacheThemeKey);
 
-const ThemeToggle = () => {
+const ThemeToggle = React.memo(() => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleToggleClick = () => {
@@ -31,6 +31,6 @@ const ThemeToggle = () => {
       <ToggleSwitchSlider />
     </ToggleSwitch>
   );
-};
+});
 
 export default ThemeToggle;

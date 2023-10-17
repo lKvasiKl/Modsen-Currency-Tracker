@@ -1,3 +1,5 @@
+import React from "react";
+
 import { formatTime } from "@utils/dateFormatting";
 import { getCache } from "@utils/dataCaching";
 import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
@@ -7,7 +9,7 @@ import { UpdateInfoContainer, Image, Text } from "./styled";
 
 const LAST_UPDATE_KEY = getEnvVariables(ENV_VARIABLE_KEYS.cacheLastUpdateKey);
 
-const UpdateInfo = () => {
+const UpdateInfo = React.memo(() => {
   const milliseconds = getCache(LAST_UPDATE_KEY);
   let timeString = formatTime(new Date().getTime());
 
@@ -23,6 +25,6 @@ const UpdateInfo = () => {
       </Text>
     </UpdateInfoContainer>
   );
-};
+});
 
 export default UpdateInfo;

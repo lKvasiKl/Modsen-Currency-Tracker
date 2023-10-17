@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import { Button, Form, Input, InputContainer, Label } from "./styled";
+import React from "react";
 
 const FormField = ({ label, type }) => {
   return (
@@ -18,7 +19,7 @@ FormField.propTypes = {
   type: PropTypes.string,
 };
 
-const ContactForm = () => {
+const ContactForm = React.memo(() => {
   return (
     <Form>
       <FormField label="Full Name" />
@@ -27,6 +28,6 @@ const ContactForm = () => {
       <Button>Contact Us</Button>
     </Form>
   );
-};
+});
 
 export default ContactForm;

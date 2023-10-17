@@ -1,3 +1,4 @@
+import React from "react";
 import { HEADER_DATA, IMAGE_CONFIG } from "./config";
 
 import {
@@ -11,7 +12,7 @@ import {
 
 const { title, quote } = HEADER_DATA;
 
-const Header = () => {
+const Header = React.memo(() => {
   return (
     <StyledHeader>
       <SectionContainer>
@@ -23,6 +24,6 @@ const Header = () => {
       </SectionContainer>
     </StyledHeader>
   );
-};
+});
 
 export default Header;

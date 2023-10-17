@@ -40,15 +40,18 @@ const CurrencyConvertorModal = ({
     setIsModalOpen(false);
   }, [setIsModalOpen]);
 
-  const handleInputChange = (event) => {
-    const inputValue = event.target.value;
-    if (inputValue >= 0 || inputValue === "") {
-      setExchangeAmount(inputValue);
-      setConvertedCurrencyValue("");
-    }
+  const handleInputChange = useCallback(
+    (event) => {
+      const inputValue = event.target.value;
+      if (inputValue >= 0 || inputValue === "") {
+        setExchangeAmount(inputValue);
+        setConvertedCurrencyValue("");
+      }
 
-    setError("");
-  };
+      setError("");
+    },
+    [setExchangeAmount, setConvertedCurrencyValue, setError],
+  );
 
   const handleConvertButtonClick = () => {
     if (!exchangeAmount) {

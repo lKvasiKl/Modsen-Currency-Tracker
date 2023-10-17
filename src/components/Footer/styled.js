@@ -25,7 +25,7 @@ const spaceL35 = ({ theme }) => theme.space.L35;
 const spaceL40 = ({ theme }) => theme.space.L40;
 const spaceXL55 = ({ theme }) => theme.space.XL55;
 const spaceXL79 = ({ theme }) => theme.space.XL79;
-const spaceXL105 = ({ theme }) => theme.space.XXL105;
+const spaceXL105 = ({ theme }) => theme.space.XL105;
 const fontSizeS = ({ theme }) => theme.font.fontSize.S;
 const fontSizeM = ({ theme }) => theme.font.fontSize.M;
 const fontWeightS = ({ theme }) => theme.font.fontWeight.S;
@@ -114,7 +114,7 @@ export const LinksContainer = styled.div`
 export const MobileLinksContainer = styled.div`
   ${flexColumn}
 
-  @media (min-width: ${maxMobileWidthS + 1}px) {
+  @media (min-width: ${maxMobileWidthS}px) {
     ${displayNone}
   }
 `;

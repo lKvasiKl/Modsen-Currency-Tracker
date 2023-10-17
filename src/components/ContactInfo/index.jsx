@@ -1,3 +1,4 @@
+import React from "react";
 import ContactForm from "./ContactForm";
 import { CONTACT_INFO } from "./config";
 
@@ -12,18 +13,18 @@ import {
   Text,
 } from "./styled";
 
-const ContactInfo = () => {
-  const {
-    title,
-    innerTitle,
-    emailText,
-    emailAddress,
-    phoneText,
-    phoneNumber,
-    based,
-    address,
-  } = CONTACT_INFO;
+const {
+  title,
+  innerTitle,
+  emailText,
+  emailAddress,
+  phoneText,
+  phoneNumber,
+  based,
+  address,
+} = CONTACT_INFO;
 
+const ContactInfo = React.memo(() => {
   return (
     <Main>
       <Title>{title}</Title>
@@ -45,6 +46,6 @@ const ContactInfo = () => {
       </ContactInfoWrapper>
     </Main>
   );
-};
+});
 
 export default ContactInfo;

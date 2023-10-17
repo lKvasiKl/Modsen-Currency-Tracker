@@ -91,7 +91,7 @@ export const ContactContainer = styled.div`
 export const Link = styled.a`
   ${normalFontStyle}
   font-size: ${fontSizeS}px;
-  color: ${greenColor};
+  color: ${grayColor};
   font-weight: ${fontWeightS};
   text-align: left;
   text-decoration: none;

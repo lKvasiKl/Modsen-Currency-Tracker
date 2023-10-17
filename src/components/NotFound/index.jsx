@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 import { ROUTES } from "@constants/routes";
@@ -19,7 +20,7 @@ const EYES = Array.from({ length: 2 }, (_, index) => (
   </Eye>
 ));
 
-const NotFound = () => {
+const NotFound = React.memo(() => {
   return (
     <>
       <Global />
@@ -31,6 +32,6 @@ const NotFound = () => {
       </ErrorPage>
     </>
   );
-};
+});
 
 export default NotFound;
