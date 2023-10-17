@@ -2,10 +2,12 @@ import React, { useContext } from "react";
 
 import { ThemeContext } from "@providers/AppThemeProvider";
 import { saveCache } from "@utils/dataCaching";
-import { ENV_VARIABLES } from "@constants/envVariables";
+import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
 import { THEME } from "./config";
 
 import { ToggleSwitch, ToggleSwitchInput, ToggleSwitchSlider } from "./styled";
+
+const THEME_KEY = getEnvVariables(ENV_VARIABLE_KEYS.cacheThemeKey);
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -13,7 +15,7 @@ const ThemeToggle = () => {
   const handleToggleClick = () => {
     const newTheme = theme === THEME.light ? THEME.dark : THEME.light;
     setTheme(newTheme);
-    saveCache(ENV_VARIABLES.cacheThemeKey, newTheme);
+    saveCache(THEME_KEY, newTheme);
   };
 
   const isLightTheme = theme === THEME.light;

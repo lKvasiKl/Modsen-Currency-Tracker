@@ -5,7 +5,7 @@ import { convertCurrency } from "@utils/currencyConvertor";
 import { CURRENCY_DEFAULT } from "@constants/currency";
 import { Modal } from "@components";
 import { IMAGE_SIZE } from "@constants/styles/image";
-import { ENV_VARIABLES } from "@constants/envVariables";
+import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
 import Select from "./Select";
 import { AMOUNT_LABEL, ERROR_MESSAGE, FROM_LABEL, TO_LABEL } from "./config";
 
@@ -19,6 +19,8 @@ import {
   Text,
   ConvertButton,
 } from "./styled";
+
+const DECIMAL_PLACES = getEnvVariables(ENV_VARIABLE_KEYS.decimalPlaces);
 
 const CurrencyConvertorModal = ({
   setIsModalOpen,
@@ -101,7 +103,7 @@ const CurrencyConvertorModal = ({
         {convertedCurrencyValue !== "" &&
           exchangeAmount &&
           `${Number(
-            Number(exchangeAmount).toFixed(ENV_VARIABLES.decimalPlaces),
+            Number(exchangeAmount).toFixed(DECIMAL_PLACES),
           )} ${fromCurrency} = ${convertedCurrencyValue} ${
             selectedCurrency.id
           }`}

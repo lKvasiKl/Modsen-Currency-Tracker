@@ -1,27 +1,49 @@
 import styled from "styled-components";
 
-import { COLORS } from "@constants/styles/colors";
 import {
   displayFlex,
-  fontNormal,
+  normalFontStyle,
   flexColumn,
   displayNone,
 } from "@constants/styles/mixins";
 
+const maxMobileWidthXXS = ({ theme }) => theme.media.XXS;
+const maxMobileWidthM = ({ theme }) => theme.media.M;
+const maxMobileWidthXL = ({ theme }) => theme.media.XL;
+
+const darkGreenColor = ({ theme }) => theme.colors.darkGreen;
+const yellowColor = ({ theme }) => theme.colors.yellow;
+const lightGreenColor = ({ theme }) => theme.colors.lightGreen;
+const cardLightGrayColor = ({ theme }) => theme.colors.cardLightGray;
+const shadowGrayColor = ({ theme }) => theme.colors.shadowGray;
+const emeraldGreenColor = ({ theme }) => theme.colors.emeraldGreen;
+const spaceXXS0 = ({ theme }) => theme.space.XXS0;
+const spaceL33 = ({ theme }) => theme.space.L33;
+const spaceXL58 = ({ theme }) => theme.space.XL58;
+const spaceXL70 = ({ theme }) => theme.space.XL70;
+const spaceXXL310 = ({ theme }) => theme.space.XXL310;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+const fontSizeM = ({ theme }) => theme.font.fontSize.M;
+const fontSizeL = ({ theme }) => theme.font.fontSize.L;
+const fontSizeXL = ({ theme }) => theme.font.fontSize.XL;
+const fontSizeXXL = ({ theme }) => theme.font.fontSize.XXL;
+const fontWeightXS = ({ theme }) => theme.font.fontWeight.XS;
+const fontWeightL = ({ theme }) => theme.font.fontWeight.L;
+
 export const StyledHeader = styled.header`
   ${displayFlex}
-  padding-top: ${({ theme }) => theme.space.L33}px;
-  padding-right: ${({ theme }) => theme.space.XXL310}px;
-  padding-bottom: ${({ theme }) => theme.space.XL58}px;
+  padding-top: ${spaceL33}px;
+  padding-right: ${spaceXXL310}px;
+  padding-bottom: ${spaceXL58}px;
   background: linear-gradient(
     253deg,
-    ${COLORS.shadowGray} 11.77%,
-    ${COLORS.emeraldGreen} 91.12%
+    ${shadowGrayColor} 12%,
+    ${emeraldGreenColor} 91%
   );
   justify-content: center;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
-    padding-right: ${({ theme }) => theme.space.XXS0};
+  @media (max-width: ${maxMobileWidthXL}px) {
+    padding-right: ${spaceXXS0};
   }
 `;
 
@@ -35,21 +57,21 @@ export const TextContainer = styled.div`
   align-items: flex-end;
   text-align: center;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
+  @media (max-width: ${maxMobileWidthXL}px) {
     align-items: center;
   }
 `;
 
 export const Title = styled.h1`
-  ${fontNormal}
-  font-size: ${({ theme }) => theme.font.fontSize.XXL}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.L};
-  padding-right: ${({ theme }) => theme.space.XL70}px;
+  ${normalFontStyle}
+  font-size: ${fontSizeXXL}px;
+  font-weight: ${fontWeightL};
+  padding-right: ${spaceXL70}px;
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.colors.darkGreen} 0.18%,
-    ${({ theme }) => theme.colors.yellow} 49.3%,
-    ${({ theme }) => theme.colors.lightGreen} 99.88%
+    ${darkGreenColor} 1%,
+    ${yellowColor} 49%,
+    ${lightGreenColor} 99%
   );
   flex-shrink: 0;
   text-align: right;
@@ -57,32 +79,32 @@ export const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
-    padding: ${({ theme }) => theme.space.XXS0};
+  @media (max-width: ${maxMobileWidthXL}px) {
+    padding: ${spaceXXS0};
     text-align: center;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.M}px) {
-    font-size: ${({ theme }) => theme.font.fontSize.XL}px;
+  @media (max-width: ${maxMobileWidthM}px) {
+    font-size: ${fontSizeXL}px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
-    font-size: ${({ theme }) => theme.font.fontSize.L}px;
+  @media (max-width: ${maxMobileWidthXXS}px) {
+    font-size: ${fontSizeL}px;
   }
 `;
 
 export const Quote = styled.p`
-  color: ${({ theme }) => theme.colors.cardLightGray};
-  font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.XS};
+  color: ${cardLightGrayColor};
+  font-size: ${fontSizeM}px;
+  font-weight: ${fontWeightXS};
   text-align: center;
   flex-shrink: 0;
   max-width: 400px;
   font-style: normal;
   line-height: 47px;
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
-    font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  @media (max-width: ${maxMobileWidthXXS}px) {
+    font-size: ${fontSizeS}px;
   }
 `;
 
@@ -90,7 +112,7 @@ export const Logotype = styled.img`
   flex-shrink: 0;
   user-select: none;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
+  @media (max-width: ${maxMobileWidthXL}px) {
     ${displayNone}
   }
 `;

@@ -2,47 +2,61 @@ import styled from "styled-components";
 
 import { displayFlex, flexRow } from "@constants/styles/mixins";
 
+const maxMobileWidthXXS = ({ theme }) => theme.media.XXS;
+
+const darkBlueBackground = ({ theme }) => theme.colors.darkBlue;
+const lightGrayColor = ({ theme }) => theme.colors.lightGray;
+const darkGrayColor = ({ theme }) => theme.colors.darkGray;
+const purpuleBlueColor = ({ theme }) => theme.colors.purpuleBlue;
+const spaceS = ({ theme }) => theme.space.S;
+const spaceM = ({ theme }) => theme.space.M;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+const spaceXL80 = ({ theme }) => theme.space.XL80;
+const fontSizeXS = ({ theme }) => theme.font.fontSize.XS;
+const fontWeightS = ({ theme }) => theme.font.fontWeight.S;
+const borderGrayBackground = ({ theme }) => theme.colors.borderGray;
+
 export const SearchWrapper = styled.div`
   position: relative;
   max-width: 450px;
   width: 100%;
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+  @media (max-width: ${maxMobileWidthXXS}px) {
     max-width: 350px;
   }
 `;
 
 export const SearchContainer = styled.div`
   ${flexRow}
+  background-color: ${darkBlueBackground};
+  margin-top: ${spaceM}px;
+  margin-bottom: ${spaceXL80}px;
+  gap: ${spaceS}px;
   height: 65px;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.colors.darkBlue};
-  margin-top: ${({ theme }) => theme.space.M}px;
-  margin-bottom: ${({ theme }) => theme.space.XL80}px;
-  gap: ${({ theme }) => theme.space.S}px;
 `;
 
 export const Input = styled.input`
+  padding-left: ${spaceS}px;
+  font-size: ${fontSizeXS}px;
+  font-weight: ${fontWeightS};
+  color: ${lightGrayColor};
+  font-style: normal;
   height: 65px;
   width: 100%;
-  padding-left: ${({ theme }) => theme.space.S}px;
-  font-size: ${({ theme }) => theme.font.fontSize.XS}px;
-  font-style: normal;
-  font-weight: ${({ theme }) => theme.font.fontWeight.S};
-  color: ${({ theme }) => theme.colors.lightGray};
   background-color: transparent;
   outline: none;
   border: none;
 `;
 
 export const Image = styled.img`
-  user-select: none;
-  margin-right: ${({ theme }) => theme.space.S}px;
+  margin-right: ${spaceS}px;
   align-self: center;
+  user-select: none;
 `;
 
 export const SearchList = styled.ul`
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
+  border: 1px solid ${darkGrayColor};
   width: 100%;
   position: absolute;
   top: 55%;
@@ -58,32 +72,31 @@ export const SearchList = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.borderGray};
-    border-right: 1px solid ${({ theme }) => theme.colors.darkGray};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
+    background: ${borderGrayBackground};
+    border-right: 1px solid ${darkGrayColor};
+    border-bottom: 1px solid ${darkGrayColor};
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.darkGray};
+    background-color: ${darkGrayColor};
 
     &:hover {
-      background-color: ${({ theme }) => theme.colors.purpuleBlue};
+      background-color: ${purpuleBlueColor};
     }
   }
 `;
 
 export const SearchListItem = styled.li`
   ${displayFlex}
-  padding: ${({ theme }) => theme.space.XXS}px ${({ theme }) =>
-    theme.space.M}px;
-  background-color: ${({ theme }) => theme.colors.darkBlue};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
-  gap: ${({ theme }) => theme.space.S}px;
-  color: ${({ theme }) => theme.colors.lightGray};
-  cursor: pointer;
-  align-items: center;
+  padding: ${spaceXXS}px ${spaceM}px;
+  background-color: ${darkBlueBackground};
+  border-bottom: 1px solid ${darkGrayColor};
+  gap: ${spaceS}px;
+  color: ${lightGrayColor};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.purpuleBlue};
+    background-color: ${purpuleBlueColor};
   }
+  cursor: pointer;
+  align-items: center;
 `;

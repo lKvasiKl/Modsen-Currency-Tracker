@@ -4,7 +4,7 @@ import { OverflowHidden } from "@styled";
 import getCurriencies from "@services/currencyService";
 import { getCache, saveCache, isCacheValid } from "@utils/dataCaching";
 import usePortal from "@hooks/usePortal";
-import { ENV_VARIABLES } from "@constants/envVariables";
+import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
 import CardsSection from "./CardsSection";
 import CurrencyConvertorModal from "./CurrencyConvertorModal";
 import {
@@ -15,9 +15,15 @@ import {
 
 import { Main } from "./styled";
 
+const CACHE_LIFE_TIME = getEnvVariables(ENV_VARIABLE_KEYS.cacheLifetime);
+const LUST_UPDATE_KEY = getEnvVariables(ENV_VARIABLE_KEYS.cacheLastUpdateKey);
+const CURRENCY_RATES_KEY = getEnvVariables(
+  ENV_VARIABLE_KEYS.cacheCurrencyRatesKey,
+);
+
 const CurrentRate = () => {
   const [rates, setRates] = useState({
-    expirationDate: new Date().getTime() + ENV_VARIABLES.cacheLifetime,
+    expirationDate: new Date().getTime() + CACHE_LIFE_TIME,
     data: {},
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -48,19 +54,19 @@ const CurrentRate = () => {
     const response = await getCurriencies(currencies);
 
     setRates({
-      expirationDate: currentTime + ENV_VARIABLES.cacheLifetime,
+      expirationDate: currentTime + CACHE_LIFE_TIME,
       data: response,
     });
 
-    saveCache(ENV_VARIABLES.cacheLastUpdateKey, currentTime);
-    saveCache(ENV_VARIABLES.cacheCurrencyRatesKey, {
-      expirationDate: currentTime + ENV_VARIABLES.cacheLifetime,
+    saveCache(LUST_UPDATE_KEY, currentTime);
+    saveCache(CURRENCY_RATES_KEY, {
+      expirationDate: currentTime + CACHE_LIFE_TIME,
       data: response,
     });
   };
 
   useEffect(() => {
-    const cachedRates = getCache(ENV_VARIABLES.cacheCurrencyRatesKey);
+    const cachedRates = getCache(CURRENCY_RATES_KEY);
 
     if (isCacheValid(cachedRates)) {
       setRates(cachedRates);

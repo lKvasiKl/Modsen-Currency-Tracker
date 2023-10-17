@@ -2,12 +2,20 @@ import styled from "styled-components";
 
 import { displayFlex } from "@constants/styles/mixins";
 
+const textColor = ({ theme }) => theme.textColor;
+const darkGrayColor = ({ theme }) => theme.colors.darkGray;
+const purpuleBlueColor = ({ theme }) => theme.colors.purpuleBlue;
+const borderGrayColor = ({ theme }) => theme.colors.borderGray;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+const spaceS = ({ theme }) => theme.space.S;
+const spaceM = ({ theme }) => theme.space.M;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+
 export const SelectButton = styled.button`
   ${displayFlex}
-  padding: ${({ theme }) => theme.space.XXS}px ${({ theme }) =>
-    theme.space.S}px;
-  color: ${({ theme }) => theme.textColor};
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  padding: ${spaceXXS}px ${spaceS}px;
+  color: ${textColor};
+  font-size: ${fontSizeS}px;
   cursor: pointer;
   background: transparent;
   align-items: center;
@@ -16,13 +24,13 @@ export const SelectButton = styled.button`
   border: none;
 
   &:hover {
-    background- ${({ theme }) => theme.colors.purpuleBlue};
+    background-color: ${purpuleBlueColor};
   }
 `;
 
 export const ButtonContentContainer = styled.div`
   ${displayFlex}
-  gap: ${({ theme }) => theme.space.S}px;
+  gap: ${spaceS}px;
   align-items: center;
   background: transparent;
 `;
@@ -50,32 +58,32 @@ export const SelectList = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.borderGray};
-    border-right: 1px solid ${({ theme }) => theme.colors.darkGray};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
+    background: ${borderGrayColor};
+    border-right: 1px solid ${darkGrayColor};
+    border-bottom: 1px solid ${darkGrayColor};
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.darkGray};
+    background-color: ${darkGrayColor};
 
     &:hover {
-      background-color: ${({ theme }) => theme.colors.purpuleBlue};
+      background-color: ${purpuleBlueColor};
     }
   }
 `;
 
 export const SelectsItem = styled.li`
-  padding: ${({ theme }) => theme.space.XXS}px ${({ theme }) => theme.space.M}px;
-  background-color: ${({ theme }) => theme.colors.borderGray};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
-  border-right: 1px solid ${({ theme }) => theme.colors.darkGray};
-  border-left: 1px solid ${({ theme }) => theme.colors.darkGray};
   ${displayFlex}
-  gap: ${({ theme }) => theme.space.S}px;
+  padding: ${spaceXXS}px ${spaceM}px;
+  background-color: ${borderGrayColor};
+  border-bottom: 1px solid ${darkGrayColor};
+  border-right: 1px solid ${darkGrayColor};
+  border-left: 1px solid ${darkGrayColor};
+  gap: ${spaceS}px;
   align-items: center;
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.purpuleBlue};
+    background-color: ${purpuleBlueColor};
   }
 `;

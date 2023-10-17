@@ -18,9 +18,12 @@ const animate = keyframes`
   }
 `;
 
+const backgroundColor = ({ theme }) => theme.backgroundColor;
+const spaceXXS8 = ({ theme }) => theme.space.XXS8;
+
 export const LoaderContainer = styled.div`
   ${displayFlex}
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: ${backgroundColor};
   position: fixed;
   top: 0;
   left: 0;
@@ -33,7 +36,7 @@ export const LoaderContainer = styled.div`
     div {
       ${displayInlineBlock}
       animation: ${animate} 1.5s ease-in-out infinite;
-      margin: ${({ theme }) => theme.space.XXS8}px;
+      margin: ${spaceXXS8}px;
       height: 20px;
       width: 20px;
       border-radius: 50%;

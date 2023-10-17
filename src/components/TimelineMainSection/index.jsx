@@ -8,7 +8,8 @@ import CurrencySelect from "./CurrencySelect";
 import CurrencyInfo from "./CurrencyInfo";
 import observer from "../Observer";
 import CurrencyChart from "./CurrencyChart";
-import PortalContainer from "./PortalContainer";
+import NotificationPortalContainer from "./NotificationPortalContainer";
+import ModalPortalContainer from "./ModalPortalContainer";
 import {
   MAX_CHART_ITEMS,
   DISPLAY_TIME,
@@ -186,11 +187,13 @@ class TimelineMainSection extends Component {
             <CurrencyChart id={selectedCurrency.id} />
           </ChartSection>
         )}
-        <PortalContainer
+        <ModalPortalContainer
           isModalOpen={isModalOpen}
           selectedCurrency={selectedCurrency}
           handleAddPrice={this.handleAddPrice}
           handleCloseModal={this.handleCloseModal}
+        />
+        <NotificationPortalContainer
           showNotification={showNotification}
           notification={notification}
         />

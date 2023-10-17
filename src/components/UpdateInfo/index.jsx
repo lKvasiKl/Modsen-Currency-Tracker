@@ -1,12 +1,14 @@
 import { formatTime } from "@utils/dateFormatting";
 import { getCache } from "@utils/dataCaching";
-import { ENV_VARIABLES } from "@constants/envVariables";
+import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
 import { IMAGE_CONFIG, LAST_UPDATE_TEXT } from "./config";
 
 import { UpdateInfoContainer, Image, Text } from "./styled";
 
+const LAST_UPDATE_KEY = getEnvVariables(ENV_VARIABLE_KEYS.cacheLastUpdateKey);
+
 const UpdateInfo = () => {
-  const milliseconds = getCache(ENV_VARIABLES.cacheLastUpdateKey);
+  const milliseconds = getCache(LAST_UPDATE_KEY);
   let timeString = formatTime(new Date().getTime());
 
   if (Object.keys(milliseconds).length !== 0) {

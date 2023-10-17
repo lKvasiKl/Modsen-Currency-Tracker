@@ -18,47 +18,63 @@ const movePupil = keyframes`
     }
 `;
 
+const textColor = ({ theme }) => theme.textColor;
+const backgroundColor = ({ theme }) => theme.backgroundColor;
+const darkGreenColor = ({ theme }) => theme.colors.darkGreen;
+const yellowColor = ({ theme }) => theme.colors.yellow;
+const lightGreenColor = ({ theme }) => theme.colors.lightGreen;
+const redColor = ({ theme }) => theme.colors.red;
+const spaceXXS2 = ({ theme }) => theme.space.XXS2;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+const spaceXS = ({ theme }) => theme.space.XS;
+const spaceXS12 = ({ theme }) => theme.space.XS12;
+const spaceS24 = ({ theme }) => theme.space.S24;
+const fontSizeXS = ({ theme }) => theme.font.fontSize.XS;
+const fontSizeL = ({ theme }) => theme.font.fontSize.L;
+const fontSizeXL = ({ theme }) => theme.font.fontSize.XL;
+const fontWeightXXS = ({ theme }) => theme.font.fontWeight.XXS;
+const fontWeightM = ({ theme }) => theme.font.fontWeight.M;
+
 export const ErrorPage = styled.main`
   ${displayFlex}
-  gap: ${({ theme }) => theme.space.XXS}px;
+  gap: ${spaceXXS}px;
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   a {
-    color: ${({ theme }) => theme.colors.lightGreen};
-    border: 1px solid ${({ theme }) => theme.colors.darkGreen};
-    font-size: ${({ theme }) => theme.font.fontSize.XS}px;
-    font-weight: ${({ theme }) => theme.font.fontWeight.XXS};
-    padding: ${({ theme }) => theme.space.XS12}px;
-    ${({ theme }) => theme.space.S24}px;
-    box-shadow: 0px 7px 0px -2px ${({ theme }) => theme.colors.darkGreen};
-    margin-top: ${({ theme }) => theme.space.XS}px;
+    color: ${lightGreenColor};
+    border: 1px solid ${darkGreenColor};
+    font-size: ${fontSizeXS}px;
+    font-weight: ${fontWeightXXS};
+    padding: ${spaceXS12}px ${spaceS24}px;
+    box-shadow: 0px 7px 0px -2px ${darkGreenColor};
+    margin-top: ${spaceXS}px;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
     border-radius: 15px;
 
     &:hover {
       box-shadow: none;
-      background-color: ${({ theme }) => theme.colors.darkGreen};
-      color: ${({ theme }) => theme.textColor};
+      background-color: ${darkGreenColor};
+      color: ${textColor};
     }
   }
 `;
 
 export const EyesContainer = styled.div`
   ${displayFlex}
-  gap: ${({ theme }) => theme.space.XXS2}px;
+  gap: ${spaceXXS2}px;
   justify-content: center;
 `;
 
 export const Eye = styled.div`
   background: linear-gradient(
     35deg,
-    ${({ theme }) => theme.colors.darkGreen} 0.18%,
-    ${({ theme }) => theme.colors.yellow} 49.3%,
-    ${({ theme }) => theme.colors.lightGreen} 99.88%
+    ${darkGreenColor} 1%,
+    ${yellowColor} 49%,
+    ${lightGreenColor} 99%
   );
   border-radius: 50%;
   display: grid;
@@ -68,7 +84,7 @@ export const Eye = styled.div`
 `;
 
 export const Pupil = styled.div`
-  background-color: ${({ theme }) => theme.backgroundColor};
+  background-color: ${backgroundColor};
   animation: ${movePupil} 2s infinite ease-in-out;
   width: 30px;
   border-radius: 50%;
@@ -77,13 +93,13 @@ export const Pupil = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.font.fontSize.XL}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.M};
+  font-size: ${fontSizeXL}px;
+  font-weight: ${fontWeightM};
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.colors.green} 0.18%,
-    ${({ theme }) => theme.colors.yellow} 49.3%,
-    ${({ theme }) => theme.colors.lightGreen} 99.88%
+    ${darkGreenColor} 1%,
+    ${yellowColor} 49%,
+    ${lightGreenColor} 99%
   );
   text-align: center;
   -webkit-background-clip: text;
@@ -91,8 +107,8 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  margin-top: ${({ theme }) => theme.space.XXS}px;
-  font-size: ${({ theme }) => theme.font.fontSize.L}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.XXS};
-  color: ${({ theme }) => theme.colors.red};
+  margin-top: ${spaceXXS}px;
+  font-size: ${fontSizeL}px;
+  font-weight: ${fontWeightXXS};
+  color: ${redColor};
 `;

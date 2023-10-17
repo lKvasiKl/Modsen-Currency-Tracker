@@ -12,8 +12,8 @@ const Router = () => {
     <Suspense fallback={<Loader />}>
       <Routes>
         <Route element={<AppContainer />}>
-          {Object.keys(NAVBAR_ITEMS).map((itemName) => {
-            const { path, element } = NAVBAR_ITEMS[itemName];
+          {Object.values(NAVBAR_ITEMS).map((item) => {
+            const { path, element } = item;
 
             return <Route element={element} key={path} path={path} />;
           })}

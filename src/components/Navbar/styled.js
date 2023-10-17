@@ -6,16 +6,29 @@ import {
   displayInlineBlock,
 } from "@constants/styles/mixins";
 
+const maxMobileWidthS = ({ theme }) => theme.media.S;
+const maxMobileWidthL = ({ theme }) => theme.media.L;
+const maxMobileWidthXL = ({ theme }) => theme.media.XL;
+
+const textColor = ({ theme }) => theme.textColor;
+const backgroundColor = ({ theme }) => theme.backgroundColor;
+const greenColor = ({ theme }) => theme.colors.green;
+const spaceXS12 = ({ theme }) => theme.space.XS12;
+const spaceL = ({ theme }) => theme.space.L;
+const spaceXXL = ({ theme }) => theme.space.XXL;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+const fontWeightXS = ({ theme }) => theme.font.fontWeight.XS;
+
 export const NavbarContainer = styled.nav`
   ${displayFlex}
-  background-color: ${({ theme }) => theme.backgroundColor};
-  padding: 0 ${({ theme }) => theme.space.XXL}px;
+  background-color: ${backgroundColor};
+  padding: 0 ${spaceXXL}px;
   align-items: center;
   justify-content: space-between;
   height: 103px;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
-    padding: 0 ${({ theme }) => theme.space.L}px;
+  @media (max-width: ${maxMobileWidthXL}px) {
+    padding: 0 ${spaceL}px;
   }
 `;
 
@@ -30,28 +43,28 @@ export const NavLinksContainer = styled.ul`
   width: 657px;
 
   a {
-    font-size: ${({ theme }) => theme.font.fontSize.S}px;
-    font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-    color: ${({ theme }) => theme.textColor};
+    font-size: ${fontSizeS}px;
+    font-weight: ${fontWeightXS};
+    color: ${textColor};
     text-decoration: none;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.green};
+      color: ${greenColor};
     }
 
     &.active {
-      color: ${({ theme }) => theme.colors.green};
+      color: ${greenColor};
       text-decoration: underline;
       text-underline-offset: 5px;
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.media.L}px) {
-    gap: ${({ theme }) => theme.space.L}px;
+  @media (max-width: ${maxMobileWidthL}px) {
+    gap: ${spaceL}px;
     justify-content: center;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.S}px) {
+  @media (max-width: ${maxMobileWidthS}px) {
     ${displayNone}
   }
 `;
@@ -60,14 +73,14 @@ export const SwitchContainer = styled.div`
   display: contents;
   max-width: 50px;
 
-  @media (max-width: ${({ theme }) => theme.media.S}px) {
+  @media (max-width: ${maxMobileWidthS}px) {
     ${displayNone}
   }
 `;
 
 export const ToggleSwitchLabel = styled.label`
   ${displayInlineBlock}
-  margin: 0 ${({ theme }) => theme.space.XS12}px;
+  margin: 0 ${spaceXS12}px;
   width: 50px;
   position: relative;
   height: 25px;

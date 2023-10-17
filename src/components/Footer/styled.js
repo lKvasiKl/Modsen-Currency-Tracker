@@ -3,11 +3,34 @@ import styled from "styled-components";
 import {
   displayFlex,
   flexRow,
-  fontNormal,
+  normalFontStyle,
   flexColumn,
-  fontNormal150,
+  lineHeightLarge,
   displayNone,
 } from "@constants/styles/mixins";
+
+const maxMobileWidthS = ({ theme }) => theme.media.S;
+const maxMobileWidthXL = ({ theme }) => theme.media.XL;
+
+const textColor = ({ theme }) => theme.textColor;
+const fontFamilyInter = ({ theme }) => theme.font.fontFamily.inter;
+const darkGreenColor = ({ theme }) => theme.colors.darkGreen;
+const yellowColor = ({ theme }) => theme.colors.yellow;
+const lightGreenColor = ({ theme }) => theme.colors.lightGreen;
+const grayColor = ({ theme }) => theme.colors.gray;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+const spaceM = ({ theme }) => theme.space.M;
+const spaceL = ({ theme }) => theme.space.L;
+const spaceL35 = ({ theme }) => theme.space.L35;
+const spaceL40 = ({ theme }) => theme.space.L40;
+const spaceXL55 = ({ theme }) => theme.space.XL55;
+const spaceXL79 = ({ theme }) => theme.space.XL79;
+const spaceXL105 = ({ theme }) => theme.space.XXL105;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+const fontSizeM = ({ theme }) => theme.font.fontSize.M;
+const fontWeightS = ({ theme }) => theme.font.fontWeight.S;
+const fontWeightXS = ({ theme }) => theme.font.fontWeight.XS;
+const fontWeightL = ({ theme }) => theme.font.fontWeight.L;
 
 export const FooterContainer = styled.footer`
   ${displayFlex}
@@ -15,33 +38,33 @@ export const FooterContainer = styled.footer`
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: ${({ theme }) => theme.media.S}px) {
-    padding: 0 ${({ theme }) => theme.space.L}px;
+  @media (max-width: ${maxMobileWidthS}px) {
+    padding: 0 ${spaceL}px;
     align-items: unset;
   }
 `;
 
 export const FooterWrapper = styled.section`
   ${flexRow}
-  gap: ${({ theme }) => theme.space.XL105}px;
+  gap: ${spaceXL105}px;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
-    gap: ${({ theme }) => theme.space.L35}px;
+  @media (max-width: ${maxMobileWidthXL}px) {
+    gap: ${spaceL35}px;
     flex-direction: column;
   }
 `;
 
 export const InfoContainer = styled.div`
   ${flexColumn}
-  gap: ${({ theme }) => theme.space.M}px;
+  gap: ${spaceM}px;
   max-width: 482px;
 `;
 
 export const Title = styled.div`
   ${displayFlex}
-  gap: ${({ theme }) => theme.space.XXS}px;
+  gap: ${spaceXXS}px;
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
+  @media (max-width: ${maxMobileWidthXL}px) {
     justify-content: center;
   }
 `;
@@ -51,39 +74,39 @@ export const Image = styled.img`
 `;
 
 export const Text = styled.h3`
-  ${fontNormal}
-  font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.L};
+  ${normalFontStyle}
+  font-size: ${fontSizeM}px;
+  font-weight: ${fontWeightL};
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.colors.darkGreen} 0.18%,
-    ${({ theme }) => theme.colors.yellow} 49.3%,
-    ${({ theme }) => theme.colors.lightGreen} 99.88%
+    ${darkGreenColor} 1%,
+    ${yellowColor} 49%,
+    ${lightGreenColor} 99%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
 
 export const Quote = styled.p`
-  ${fontNormal150}
-  color: ${({ theme }) => theme.textColor};
-  font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.XS};
+  ${lineHeightLarge}
+  color: ${textColor};
+  font-size: ${fontSizeM}px;
+  font-weight: ${fontWeightXS};
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
+  @media (max-width: ${maxMobileWidthXL}px) {
     text-align: justify;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.S}px) {
+  @media (max-width: ${maxMobileWidthS}px) {
     ${displayNone}
   }
 `;
 
 export const LinksContainer = styled.div`
   ${displayFlex}
-  gap: ${({ theme }) => theme.space.XL79}px;
+  gap: ${spaceXL79}px;
 
-  @media (max-width: ${({ theme }) => theme.media.S}px) {
+  @media (max-width: ${maxMobileWidthS}px) {
     ${displayNone}
   }
 `;
@@ -91,23 +114,23 @@ export const LinksContainer = styled.div`
 export const MobileLinksContainer = styled.div`
   ${flexColumn}
 
-  @media (min-width: ${({ theme }) => theme.media.S + 1}px) {
+  @media (min-width: ${maxMobileWidthS + 1}px) {
     ${displayNone}
   }
 `;
 
 export const Copyright = styled.p`
-  ${fontNormal150}
-  color: ${({ theme }) => theme.colors.gray};
-  font-family: ${({ theme }) => theme.font.fontFamily.inter};
-  font-size: ${({ theme }) => theme.font.fontSize.M}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.S};
-  padding-top: ${({ theme }) => theme.space.XL55}px;
-  padding-bottom: ${({ theme }) => theme.space.L40}px;
+  ${lineHeightLarge}
+  color: ${grayColor};
+  font-family: ${fontFamilyInter};
+  font-size: ${fontSizeM}px;
+  font-weight: ${fontWeightS};
+  padding-top: ${spaceXL55}px;
+  padding-bottom: ${spaceL40}px;
   user-select: none;
 
-  @media (max-width: ${({ theme }) => theme.media.S}px) {
-    font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  @media (max-width: ${maxMobileWidthS}px) {
+    font-size: ${fontSizeS}px;
     text-align: center;
   }
 `;

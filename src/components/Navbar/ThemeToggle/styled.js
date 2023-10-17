@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 import { displayInlineBlock, displayNone } from "@constants/styles/mixins";
 
+const backgroundColor = ({ theme }) => theme.backgroundColor;
+const greenColor = ({ theme }) => theme.colors.green;
+const spaceXS12 = ({ theme }) => theme.space.XS12;
+
 export const ToggleSwitch = styled.label`
   ${displayInlineBlock}
-  margin: 0 ${({ theme }) => theme.space.XS12}px;
+  margin: 0 ${spaceXS12}px;
   position: relative;
   width: 100%;
   max-width: 50px;
@@ -12,7 +16,7 @@ export const ToggleSwitch = styled.label`
 `;
 
 export const ToggleSwitchSlider = styled.span`
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${greenColor};
   position: absolute;
   cursor: pointer;
   border-radius: 25px;
@@ -23,7 +27,7 @@ export const ToggleSwitchSlider = styled.span`
   transition: background-color 0.2s ease;
 
   &:before {
-    background-color: ${({ theme }) => theme.backgroundColor};
+    background-color: ${backgroundColor};
     position: absolute;
     content: "";
     left: 2px;
@@ -39,11 +43,11 @@ export const ToggleSwitchInput = styled.input`
   ${displayNone}
 
   &:checked + ${ToggleSwitchSlider} {
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${greenColor};
   }
 
   &:checked + ${ToggleSwitchSlider}::before {
-    background-color: ${({ theme }) => theme.backgroundColor};
+    background-color: ${backgroundColor};
     transform: translateX(25px);
   }
 `;

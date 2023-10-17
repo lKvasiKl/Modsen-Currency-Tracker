@@ -2,6 +2,11 @@ import styled, { css } from "styled-components";
 
 import { displayFlex, flexColumn } from "@constants/styles/mixins";
 
+const prodigalGreenColor = ({ theme }) => theme.colors.prodigalGreen;
+const darkGrayColor = ({ theme }) => theme.colors.darkGray;
+const borderGrayColor = ({ theme }) => theme.colors.borderGray;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+
 const CommonStyles = css`
   color: ${({ theme }) => theme.textColor};
 `;
@@ -21,10 +26,10 @@ export const ModalContainer = styled.div`
 export const ModalWindow = styled.div`
   ${CommonStyles}
   ${flexColumn}
-  background-color: ${({ theme }) => theme.colors.borderGray};
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  padding: ${({ theme }) => theme.space.XXS}px;
-  box-shadow: 0px 0px 13px 0px ${({ theme }) => theme.colors.prodigalGreen};
+  background-color: ${borderGrayColor};
+  border: 1px solid ${darkGrayColor};
+  padding: ${spaceXXS}px;
+  box-shadow: 0px 0px 13px 0px ${prodigalGreenColor};
   width: fit-content;
   height: fit-content;
   position: relative;

@@ -1,14 +1,18 @@
 import { request } from "./axiosService";
 
-import { ENV_VARIABLES } from "@constants/envVariables";
+import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
+
+const CURRENCY_API_URL = getEnvVariables(ENV_VARIABLE_KEYS.currencyApiUrl);
+const CURRENCY_API_KEY = getEnvVariables(ENV_VARIABLE_KEYS.currencyApiKey);
+const SPLITTER = getEnvVariables(ENV_VARIABLE_KEYS.splitter);
 
 const getCurriencies = async (currencies) => {
   const options = {
     method: "GET",
-    url: `${ENV_VARIABLES.currencyApiUrl}`,
+    url: `${CURRENCY_API_URL}`,
     params: {
-      apikey: `${ENV_VARIABLES.currencyApiKey}`,
-      currencies: currencies.join(ENV_VARIABLES.splitter),
+      apikey: `${CURRENCY_API_KEY}`,
+      currencies: currencies.join(SPLITTER),
     },
   };
 

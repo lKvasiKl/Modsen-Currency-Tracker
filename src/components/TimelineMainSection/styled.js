@@ -2,32 +2,42 @@ import styled from "styled-components";
 
 import { displayFlex, flexColumn } from "@constants/styles/mixins";
 
+const maxMobileWidthXXS = ({ theme }) => theme.media.XXS;
+
+const textColor = ({ theme }) => theme.textColor;
+const yellowColor = ({ theme }) => theme.colors.yellow;
+const darkGreenColor = ({ theme }) => theme.colors.darkGreen;
+const spaceS = ({ theme }) => theme.space.S;
+const spaceL = ({ theme }) => theme.space.L;
+const spaceXL = ({ theme }) => theme.space.XL;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+
 export const Main = styled.main`
   ${flexColumn}
   align-items: center;
 `;
 
 export const ChartSection = styled.section`
-  margin-bottom: ${({ theme }) => theme.space.XL}px;
-  padding: 0 ${({ theme }) => theme.space.L}px;
+  margin-bottom: ${spaceXL}px;
+  padding: 0 ${spaceL}px;
   width: 100%;
   max-width: 1140px;
 `;
 
 export const ButtonContainer = styled.div`
   ${displayFlex}
-  margin-bottom: ${({ theme }) => theme.space.XL}px;
+  margin-bottom: ${spaceXL}px;
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+  @media (max-width: ${maxMobileWidthXXS}px) {
     flex-direction: column;
   }
 `;
 
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.darkGreen};
-  color: ${({ theme }) => theme.textColor};
-  margin: ${({ theme }) => theme.space.S}px;
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  background-color: ${darkGreenColor};
+  color: ${textColor};
+  margin: ${spaceS}px;
+  font-size: ${fontSizeS}px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
@@ -36,10 +46,10 @@ export const Button = styled.button`
   max-width: 230px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.yellow};
+    background-color: ${yellowColor};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
-    margin-bottom: ${({ theme }) => theme.space.S}px;
+  @media (max-width: ${maxMobileWidthXXS}px) {
+    margin-bottom: ${spaceS}px;
   }
 `;

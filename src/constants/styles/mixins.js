@@ -26,22 +26,26 @@ export const displayNone = css`
   display: none;
 `;
 
-export const fontNormal = css`
-  line-height: normal;
+const fontStyle = css`
   font-style: normal;
 `;
 
-export const fontNormal150 = css`
-  font-style: normal;
+export const normalFontStyle = css`
+  ${fontStyle}
+  line-height: normal;
+`;
+
+export const lineHeightLarge = css`
+  ${fontStyle}
   line-height: 150%;
 `;
 
-export const fontNormal49 = css`
-  font-style: normal;
-  line-height: 49px;
+export const lineHeightMedium = css`
+  ${fontStyle}
+  line-height: 50px;
 `;
 
-export const fontNormal41 = css`
-  font-style: normal;
-  line-height: 41px;
+export const lineHeightSmall = css`
+  ${fontStyle}
+  line-height: 40px;
 `;

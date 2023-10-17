@@ -1,10 +1,20 @@
 import styled, { css } from "styled-components";
 
-import { COLORS } from "@constants/styles/colors";
 import { displayFlex } from "@constants/styles/mixins";
 
+const whiteColor = ({ theme }) => theme.colors.white;
+const darkGrayColor = ({ theme }) => theme.colors.darkGray;
+const blueColor = ({ theme }) => theme.colors.blue;
+const lightBlueColor = ({ theme }) => theme.colors.lightBlue;
+const spaceXXS0 = ({ theme }) => theme.space.XXS0;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+const spaceXS = ({ theme }) => theme.space.XS;
+const spaceS = ({ theme }) => theme.space.S;
+const spaceM = ({ theme }) => theme.space.M;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+
 const CommonStyles = css`
-  color: ${COLORS.white};
+  color: ${whiteColor};
 `;
 
 export const Image = styled.img`
@@ -13,16 +23,16 @@ export const Image = styled.img`
 
 export const Label = styled.label`
   ${CommonStyles}
-  padding-left: ${({ theme }) => theme.space.M}px;
+  padding-left: ${spaceM}px;
 `;
 
 export const InputContainer = styled.div`
   ${CommonStyles}
   ${displayFlex}
-  border-bottom: 1px solid ${({ theme }) => theme.colors.darkGray};
-  margin-left: ${({ theme }) => theme.space.M}px;
-  margin-bottom: ${({ theme }) => theme.space.XS}px;
-  margin-right: ${({ theme }) => theme.space.M}px;
+  border-bottom: 1px solid ${darkGrayColor};
+  margin-left: ${spaceM}px;
+  margin-bottom: ${spaceXS}px;
+  margin-right: ${spaceM}px;
   height: 50px;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +40,7 @@ export const InputContainer = styled.div`
 
 export const CurrencyInput = styled.input`
   ${CommonStyles}
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  font-size: ${fontSizeS}px;
   height: 50px;
   border: none;
   background: transparent;
@@ -41,17 +51,17 @@ export const CurrencyInput = styled.input`
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;
-    margin: ${({ theme }) => theme.space.XXS0};
+    margin: ${spaceXXS0};
   }
 `;
 
 export const CurrencyContainer = styled.div`
   ${CommonStyles}
   ${displayFlex}
-  margin: ${({ theme }) => theme.space.XXS}px ${({ theme }) => theme.space.M}px;
-  padding: ${({ theme }) => theme.space.XXS}px ${({ theme }) => theme.space.S}px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  gap: ${({ theme }) => theme.space.S}px;
+  margin: ${spaceXXS}px ${spaceM}px;
+  padding: ${spaceXXS}px ${spaceS}px;
+  border: 1px solid ${darkGrayColor};
+  gap: ${spaceS}px;
   align-items: center;
   background: transparent;
   width: 252px;
@@ -59,27 +69,27 @@ export const CurrencyContainer = styled.div`
 `;
 
 export const CurrencySelectContainer = styled(CurrencyContainer)`
-  padding: ${({ theme }) => theme.space.XXS0};
+  padding: ${spaceXXS0};
 `;
 
 export const Text = styled.span`
   ${CommonStyles}
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  font-size: ${fontSizeS}px;
   background: transparent;
   text-align: center;
 `;
 
 export const ConvertButton = styled.button`
   ${CommonStyles}
-  margin: ${({ theme }) => theme.space.M}px;
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
-  background-color: ${({ theme }) => theme.colors.blue};
+  margin: ${spaceM}px;
+  font-size: ${fontSizeS}px;
+  background-color: ${blueColor};
   height: 50px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.lightBlue};
+    background-color: ${lightBlueColor};
   }
 `;

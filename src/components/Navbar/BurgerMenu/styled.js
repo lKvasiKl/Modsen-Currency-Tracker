@@ -2,19 +2,28 @@ import styled from "styled-components";
 
 import { displayFlex, displayNone } from "@constants/styles/mixins";
 
+const maxMobileWidthS = ({ theme }) => theme.media.S + 1;
+
+const textColor = ({ theme }) => theme.textColor;
+const backgroundColor = ({ theme }) => theme.backgroundColor;
+const greenColor = ({ theme }) => theme.colors.green;
+const spaceXS = ({ theme }) => theme.space.XS;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+const fontWeightXS = ({ theme }) => theme.font.fontWeight.XS;
+
 export const BurgerMenuContainer = styled.div`
   width: 30px;
   height: 30px;
   position: relative;
   cursor: pointer;
 
-  @media (min-width: ${({ theme }) => theme.media.S + 1}px) {
+  @media (min-width: ${maxMobileWidthS}px) {
     ${displayNone}
   }
 `;
 
 export const BurgerLine = styled.div`
-  background-color: ${({ theme }) => theme.textColor};
+  background-color: ${textColor};
   width: 30px;
   height: 4px;
   position: absolute;
@@ -41,12 +50,11 @@ export const BurgerLine = styled.div`
 
 export const BurgerMenuItems = styled.ul`
   ${displayFlex}
-  color: ${({ theme }) => theme.textColor};
+  color: ${textColor};
   height: ${({ $isOpen }) => ($isOpen ? "0" : "auto")};
-  background-color: ${({ theme }) => theme.backgroundColor};
-  padding-bottom: ${({ theme }) => theme.space.XS}px;
+  background-color: ${backgroundColor};
+  padding-bottom: ${spaceXS}px;
   list-style-type: none;
-  z-index: 1;
   align-items: center;
   flex-direction: column;
   transition: all 0.3s ease-in-out;
@@ -57,21 +65,21 @@ export const BurgerMenuItems = styled.ul`
   top: 10%;
 
   li {
-    padding-bottom: ${({ theme }) => theme.space.XS}px;
+    padding-bottom: ${spaceXS}px;
   }
 
   a {
-    font-size: ${({ theme }) => theme.font.fontSize.S}px;
-    font-weight: ${({ theme }) => theme.font.fontWeight.XS};
-    color: ${({ theme }) => theme.textColor};
+    font-size: ${fontSizeS}px;
+    font-weight: ${fontWeightXS};
+    color: ${textColor};
     text-decoration: none;
 
     &:hover {
-      color: ${({ theme }) => theme.colors.green};
+      color: ${greenColor};
     }
 
     &.active {
-      color: ${({ theme }) => theme.colors.green};
+      color: ${greenColor};
       text-decoration: underline;
       text-underline-offset: 5px;
     }

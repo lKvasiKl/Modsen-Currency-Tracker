@@ -1,5 +1,5 @@
 import ContactForm from "./ContactForm";
-import { CONTACT_INFO, CONTACT_TEXT } from "./config";
+import { CONTACT_INFO } from "./config";
 
 import {
   ContactInfoWrapper,
@@ -13,25 +13,34 @@ import {
 } from "./styled";
 
 const ContactInfo = () => {
+  const {
+    title,
+    innerTitle,
+    emailText,
+    emailAddress,
+    phoneText,
+    phoneNumber,
+    based,
+    address,
+  } = CONTACT_INFO;
+
   return (
     <Main>
-      <Title>{CONTACT_TEXT.title}</Title>
+      <Title>{title}</Title>
       <ContactInfoWrapper>
         <ContactForm />
         <InfoContainer>
-          <InnerTitle>{CONTACT_TEXT.innerTitle}</InnerTitle>
+          <InnerTitle>{innerTitle}</InnerTitle>
           <ContactContainer>
-            <Text>{CONTACT_TEXT.email}</Text>
-            <Link href={`mailto:${CONTACT_INFO.email}`}>
-              {CONTACT_INFO.email}
-            </Link>
+            <Text>{emailText}</Text>
+            <Link href={`mailto:${emailAddress}`}>{emailAddress}</Link>
           </ContactContainer>
           <ContactContainer>
-            <Text>{CONTACT_TEXT.phone}</Text>
-            <Link href={`tel:${CONTACT_INFO.phone}`}>{CONTACT_INFO.phone}</Link>
+            <Text>{phoneText}</Text>
+            <Link href={`tel:${phoneNumber}`}>{phoneNumber}</Link>
           </ContactContainer>
-          <InnerTitle>{CONTACT_TEXT.based}</InnerTitle>
-          <Text>{CONTACT_TEXT.address}</Text>
+          <InnerTitle>{based}</InnerTitle>
+          <Text>{address}</Text>
         </InfoContainer>
       </ContactInfoWrapper>
     </Main>

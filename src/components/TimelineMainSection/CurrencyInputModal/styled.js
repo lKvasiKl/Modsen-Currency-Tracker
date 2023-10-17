@@ -1,30 +1,36 @@
 import styled from "styled-components";
 
-import { COLORS } from "@constants/styles/colors";
+const darkGreenColor = ({ theme }) => theme.colors.darkGreen;
+const yellowColor = ({ theme }) => theme.colors.yellow;
+const whiteColor = ({ theme }) => theme.colors.white;
+const redColor = ({ theme }) => theme.colors.red;
+const spaceXXS = ({ theme }) => theme.space.XXS;
+const spaceS = ({ theme }) => theme.space.S;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
 
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.darkGreen};
-  color: ${COLORS.white};
-  margin: ${({ theme }) => theme.space.S}px;
-  font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  background-color: ${darkGreenColor};
+  color: ${whiteColor};
+  margin: ${spaceS}px;
+  font-size: ${fontSizeS}px;
   border-radius: 25px;
   border: none;
   height: 50px;
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.yellow};
+    background-color: ${yellowColor};
   }
 `;
 
 export const Text = styled.p`
-  margin-bottom: ${({ theme }) => theme.space.XXS}px;
-  color: ${COLORS.white};
+  margin-bottom: ${spaceXXS}px;
+  color: ${whiteColor};
   align-self: center;
   width: 250px;
   text-align: center;
 `;
 
 export const Error = styled(Text)`
-  color: ${({ theme }) => theme.colors.red};
+  color: ${redColor};
 `;

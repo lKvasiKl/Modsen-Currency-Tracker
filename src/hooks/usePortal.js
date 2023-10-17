@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 import { DEFAULT_ID } from "./config";
@@ -6,7 +6,7 @@ import { DEFAULT_ID } from "./config";
 function usePortal(id = DEFAULT_ID) {
   const portalContainerRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let element = document.getElementById(id);
     let elementCreated = false;
 

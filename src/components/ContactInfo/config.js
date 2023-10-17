@@ -1,13 +1,10 @@
-export const CONTACT_TEXT = {
+export const CONTACT_INFO = {
   title: "Contact us",
   innerTitle: "Contact",
-  email: "Email:",
-  phone: "Phone:",
+  emailText: "Email:",
+  emailAddress: "contact@modsen-software.com",
+  phoneText: "Phone:",
+  phoneNumber: "+48501157180",
   based: "Based in",
   address: "Stefana Okrzei 1a/10 Warsaw, Poland",
-};
-
-export const CONTACT_INFO = {
-  email: "contact@modsen-software.com",
-  phone: "+48501157180",
 };

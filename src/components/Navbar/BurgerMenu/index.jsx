@@ -27,11 +27,15 @@ const BurgerMenu = () => {
 
   return (
     <>
-      <BurgerMenuContainer data-cy="nav-burger-menu" onClick={handleToggleMenu}>
+      <BurgerMenuContainer
+        ref={menuRef}
+        data-cy="nav-burger-menu"
+        onClick={handleToggleMenu}
+      >
         {BURGER_LINE_ELEMENTS}
       </BurgerMenuContainer>
       {isOpen && (
-        <BurgerMenuItems ref={menuRef}>
+        <BurgerMenuItems>
           {Object.keys(NAVBAR_ITEMS).map((itemName) => {
             const { path } = NAVBAR_ITEMS[itemName];
 

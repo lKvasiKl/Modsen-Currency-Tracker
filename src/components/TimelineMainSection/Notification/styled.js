@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
+const textColor = ({ theme }) => theme.textColor;
+const spaceXS = ({ theme }) => theme.space.XS;
+
 export const NotificationContainer = styled.span`
-  background-color: ${(props) => props.color};
-  color: ${({ theme }) => theme.textColor};
-  padding: ${({ theme }) => theme.space.XS}px 0;
-  z-index: 1;
+  background-color: ${({ color }) => color};
+  color: ${textColor};
+  padding: ${spaceXS}px 0;
   text-align: center;
   transition: transform 0.3s ease-in-out;
   position: fixed;

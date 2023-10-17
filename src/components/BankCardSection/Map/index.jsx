@@ -2,19 +2,23 @@ import React, { PureComponent } from "react";
 import mapboxgl from "mapbox-gl";
 import PropTypes from "prop-types";
 
-import { ENV_VARIABLES } from "@constants/envVariables";
+import { getEnvVariables, ENV_VARIABLE_KEYS } from "@constants/envVariables";
 import { INITIAL_MAP_VALUE } from "../constants/map";
 
 import { MapContainer } from "./styled";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 
+const MAPBOX_ACCESS_TOKENT = getEnvVariables(
+  ENV_VARIABLE_KEYS.mapboxAccessToken,
+);
+
 class MapboxMap extends PureComponent {
   mapContainer = React.createRef();
   markers = [];
 
   componentDidMount() {
-    mapboxgl.accessToken = ENV_VARIABLES.mapboxAccessToken;
+    mapboxgl.accessToken = MAPBOX_ACCESS_TOKENT;
 
     this.map = new mapboxgl.Map({
       container: this.mapContainer.current,

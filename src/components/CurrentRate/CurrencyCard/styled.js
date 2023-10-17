@@ -4,17 +4,32 @@ import { COLORS } from "@constants/styles/colors";
 import {
   displayFlex,
   displayBlock,
-  fontNormal49,
-  fontNormal41,
+  lineHeightMedium,
+  lineHeightSmall,
 } from "@constants/styles/mixins";
+
+const maxMobileWidthXL = ({ theme }) => theme.media.XL;
+const maxMobileWidthXXS = ({ theme }) => theme.media.XXS;
+
+const darkGrayColor = ({ theme }) => theme.colors.darkGray;
+const cardLightColor = ({ theme }) => theme.colors.cardLightGray;
+const lightBlueColor = ({ theme }) => theme.colors.lightBlue;
+const spaceL = ({ theme }) => theme.space.L;
+const spaceXL56 = ({ theme }) => theme.space.XL56;
+const fontSizeS = ({ theme }) => theme.font.fontSize.S;
+const fontSizeM = ({ theme }) => theme.font.fontSize.M;
+const fontSizeL = ({ theme }) => theme.font.fontSize.L;
+const fontWeightXS = ({ theme }) => theme.font.fontSize.XS;
+const fontWeightS = ({ theme }) => theme.font.fontWeight.S;
+const borderGrayBackground = ({ theme }) => theme.colors.borderGray;
 
 export const CardContainer = styled.div`
   ${displayFlex}
-  padding: ${({ theme }) => theme.space.L}px;
-  gap: ${({ theme }) => theme.space.L}px;
-  border: 1px solid ${({ theme }) => theme.colors.darkGray};
-  background-color: ${({ theme }) => theme.colors.borderGray};
-  margin-bottom: ${({ theme }) => theme.space.XL56}px;
+  padding: ${spaceL}px;
+  gap: ${spaceL}px;
+  border: 1px solid ${darkGrayColor};
+  background-color: ${borderGrayBackground};
+  margin-bottom: ${spaceXL56}px;
   transition: ${({ $isInteractive }) =>
     $isInteractive ? "transform 0.5s" : "none"};
   border-radius: 8px;
@@ -31,20 +46,20 @@ export const CardContainer = styled.div`
       $isInteractive ? `0px 0px 25px 4px ${COLORS.shadowGreen}` : ""};
   }
 
-  @media (max-width: ${({ theme }) => theme.media.XL}px) {
+  @media (max-width: ${maxMobileWidthXL}px) {
     max-width: unset;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+  @media (max-width: ${maxMobileWidthXXS}px) {
     height: 100px;
-    padding-right: ${({ theme }) => theme.space.L}px;
+    padding-right: ${spaceL}px;
   }
 `;
 
 export const Image = styled.img`
   user-select: none;
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
+  @media (max-width: ${maxMobileWidthXXS}px) {
     width: 50px;
     height: 50px;
   }
@@ -55,25 +70,25 @@ export const CardContent = styled.div`
 `;
 
 export const CardTitle = styled.p`
-  ${fontNormal49}
-  color: ${({ theme }) => theme.colors.cardLightGray};
-  font-size: ${({ theme }) => theme.font.fontSize.L}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.S};
+  ${lineHeightMedium}
+  color: ${cardLightColor};
+  font-size: ${fontSizeL}px;
+  font-weight: ${fontWeightS};
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
-    font-size: ${({ theme }) => theme.font.fontSize.S}px;
+  @media (max-width: ${maxMobileWidthXXS}px) {
+    font-size: ${fontSizeS}px;
     line-height: normal;
   }
 `;
 
 export const CurrencyRate = styled.span`
-  ${fontNormal41}
-  color: ${({ theme }) => theme.colors.lightBlue};
-  font-size: ${({ theme }) => theme.font.fontSize.L}px;
-  font-weight: ${({ theme }) => theme.font.fontWeight.XS};
+  ${lineHeightSmall}
+  color: ${lightBlueColor};
+  font-size: ${fontSizeL}px;
+  font-weight: ${fontWeightXS};
 
-  @media (max-width: ${({ theme }) => theme.media.XXS}px) {
-    font-size: ${({ theme }) => theme.font.fontSize.M}px;
+  @media (max-width: ${maxMobileWidthXXS}px) {
+    font-size: ${fontSizeM}px;
     line-height: normal;
   }
 `;
