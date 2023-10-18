@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmodsen_currency_tracker=self.webpackChunkmodsen_currency_tracker||[]).push([[124],{124:(e,r,c)=>{c.r(r),c.d(r,{default:()=>u});var s=c(646),n=c(893);const u=()=>(0,n.jsx)(s.px,{})}}]);
